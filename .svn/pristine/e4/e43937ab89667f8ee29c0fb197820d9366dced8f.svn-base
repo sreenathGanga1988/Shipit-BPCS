@@ -1,0 +1,163 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Shipit.Production
+{
+    public partial class ProductionEntry : Form
+    {
+        Transaction.DataTransaction dttrans = null;
+        public ProductionEntry()
+        {
+            InitializeComponent();
+
+            dttrans = new Transaction.DataTransaction();
+            loadfactorycombo();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Getweekdata();
+        }
+        /// <summary>
+        /// load factory combo
+        /// </summary>
+        public void loadfactorycombo()
+        {
+            CourierDataDataContext courdatacontext = new CourierDataDataContext(Program.ConnStr);
+            var q = from factory in courdatacontext.Factory_Masters
+                    select factory;
+
+
+
+            cmb_factory.DataSource = q;
+            cmb_factory.DisplayMember = "Factory_name";
+            cmb_factory.ValueMember = "Factory_ID";
+            //   Buyercombo.DataBind();
+
+
+
+        }
+        /// <summary>
+        /// show week data
+        /// </summary>
+        public void Getweekdata()
+        {
+            DataTable dt = dttrans.Getweeklyplan(int.Parse(cmb_factory.SelectedValue.ToString()), int.Parse(cmb_year.Text.ToString()), cmb_month.Text.Trim(), cmb_week.Text.Trim());
+
+            tbl_weekdata .RowCount = 1;
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                tbl_weekdata.Rows.Add();
+                tbl_weekdata.Rows[i].Cells[1].Value = dt.Rows[i]["WeekID"].ToString();
+                tbl_weekdata.Rows[i].Cells[2].Value = dt.Rows[i]["Factory_Id"].ToString();
+                tbl_weekdata.Rows[i].Cells[3].Value = dt.Rows[i]["WeekNo"].ToString();
+                tbl_weekdata.Rows[i].Cells[4].Value = dt.Rows[i]["PO#"].ToString();
+                tbl_weekdata.Rows[i].Cells[5].Value = dt.Rows[i]["Expr1"].ToString();
+                tbl_weekdata.Rows[i].Cells[6].Value = dt.Rows[i]["Produced"].ToString();
+            }
+            getbalanceofBooking();
+        }
+
+
+
+        public void getbalanceofBooking()
+        {
+            for (int i = 0; i < tbl_weekdata.Rows.Count-1; i++)
+            {
+                int qty = 0;
+                int producedqty = 0;
+                if(String.IsNullOrEmpty (  tbl_weekdata.Rows[i].Cells[5].Value.ToString()))
+                {
+                    tbl_weekdata.Rows[i].Cells[5].Value = 0;
+                }
+                if (String.IsNullOrEmpty(tbl_weekdata.Rows[i].Cells[6].Value.ToString()))
+                {
+                    tbl_weekdata.Rows[i].Cells[6].Value = 0;
+                }
+
+                int balance=(int.Parse (tbl_weekdata.Rows[i].Cells[5].Value.ToString ())-int.Parse ( tbl_weekdata.Rows[i].Cells[6].Value.ToString ()));
+                tbl_weekdata.Rows[i].Cells[7].Value = balance.ToString();
+            }
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < tbl_weekdata.Rows.Count; i++)
+            {
+                if (Convert.ToBoolean(tbl_weekdata.Rows[i].Cells[0].Value) == true)
+                {
+                    if (validationcontrol(i))
+                    {
+                        CourierDataDataContext curdatacontext = new CourierDataDataContext(Program.ConnStr);
+                        ProductionReport_Detail pdds_detils = new ProductionReport_Detail();
+                        pdds_detils.WeekID = int.Parse(tbl_weekdata.Rows[i].Cells[1].Value.ToString());
+                        pdds_detils.Qty = int.Parse(tbl_weekdata.Rows[i].Cells[8].Value.ToString());
+                        pdds_detils.AddedBy = Program.uername;
+                        pdds_detils.AddedDate = DateTime.Now;
+                        curdatacontext.ProductionReport_Details.InsertOnSubmit(pdds_detils);
+
+
+                        curdatacontext.SubmitChanges();
+                    }
+
+                       
+                }
+            }
+            
+        }
+
+        private void tbl_weekdata_CurrentCellDirtyStateChanged(object sender, EventArgs e)
+        {
+            if (tbl_weekdata.IsCurrentCellDirty)
+            {
+                tbl_weekdata.CommitEdit(DataGridViewDataErrorContexts.Commit);
+            }
+            
+        }
+
+        public Boolean validationcontrol(int i)
+        {
+            Boolean sucess = false;
+            if (tbl_weekdata.Rows[i].Cells[8].Value == null || tbl_weekdata.Rows[i].Cells[8].Value.ToString().Trim() == "")
+            {
+                MessageBox.Show("Enter the Produced Qty");
+
+
+
+            }
+            else if (!dttrans.Isnumbericentry(tbl_weekdata.Rows[i].Cells[8].Value.ToString()))
+            {
+                MessageBox.Show("Entered Qty is Not Numeric");
+            }
+            else
+            {
+                sucess = true;
+            }
+
+
+
+
+            return sucess;
+
+        }
+
+        private void cmb_factory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dttrans.resrictacess(cmb_factory);
+        }
+   
+    
+    
+    
+    
+    
+    
+    }
+}

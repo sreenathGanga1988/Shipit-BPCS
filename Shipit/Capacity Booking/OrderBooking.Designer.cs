@@ -1,0 +1,408 @@
+﻿namespace Shipit
+{
+    partial class OrderBooking
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.lbl_balance = new System.Windows.Forms.Label();
+            this.lbl_Orderpending = new System.Windows.Forms.Label();
+            this.lbl_booked = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lbl_totalcap = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btn_getavailability = new System.Windows.Forms.Button();
+            this.cmb_month = new System.Windows.Forms.ComboBox();
+            this.cmb_year = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tbl_bookdata = new System.Windows.Forms.DataGridView();
+            this.Sl = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Factory = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BaseCapacity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BookedQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.waitingbook = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BalanceQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NewBooking = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Buyercombo = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Stylecombo = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.BookFactory = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.panel1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbl_bookdata)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.groupBox3);
+            this.panel1.Controls.Add(this.groupBox2);
+            this.panel1.Controls.Add(this.groupBox1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(953, 433);
+            this.panel1.TabIndex = 0;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.lbl_balance);
+            this.groupBox3.Controls.Add(this.lbl_Orderpending);
+            this.groupBox3.Controls.Add(this.lbl_booked);
+            this.groupBox3.Controls.Add(this.label6);
+            this.groupBox3.Controls.Add(this.label5);
+            this.groupBox3.Controls.Add(this.label3);
+            this.groupBox3.Controls.Add(this.label4);
+            this.groupBox3.Controls.Add(this.lbl_totalcap);
+            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupBox3.Location = new System.Drawing.Point(0, 375);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(953, 58);
+            this.groupBox3.TabIndex = 3;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Total";
+            // 
+            // lbl_balance
+            // 
+            this.lbl_balance.AutoSize = true;
+            this.lbl_balance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_balance.ForeColor = System.Drawing.Color.Maroon;
+            this.lbl_balance.Location = new System.Drawing.Point(857, 23);
+            this.lbl_balance.Name = "lbl_balance";
+            this.lbl_balance.Size = new System.Drawing.Size(16, 16);
+            this.lbl_balance.TabIndex = 7;
+            this.lbl_balance.Text = "0";
+            // 
+            // lbl_Orderpending
+            // 
+            this.lbl_Orderpending.AutoSize = true;
+            this.lbl_Orderpending.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Orderpending.ForeColor = System.Drawing.Color.Maroon;
+            this.lbl_Orderpending.Location = new System.Drawing.Point(667, 23);
+            this.lbl_Orderpending.Name = "lbl_Orderpending";
+            this.lbl_Orderpending.Size = new System.Drawing.Size(16, 16);
+            this.lbl_Orderpending.TabIndex = 6;
+            this.lbl_Orderpending.Text = "0";
+            // 
+            // lbl_booked
+            // 
+            this.lbl_booked.AutoSize = true;
+            this.lbl_booked.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_booked.ForeColor = System.Drawing.Color.Maroon;
+            this.lbl_booked.Location = new System.Drawing.Point(383, 23);
+            this.lbl_booked.Name = "lbl_booked";
+            this.lbl_booked.Size = new System.Drawing.Size(16, 16);
+            this.lbl_booked.TabIndex = 5;
+            this.lbl_booked.Text = "0";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(757, 23);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(73, 16);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "Balance :";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(486, 23);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(163, 16);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Qty Pending Approval:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(255, 23);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(110, 16);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Total Booked :";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(12, 23);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(161, 16);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Total Base Capacity  :";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // lbl_totalcap
+            // 
+            this.lbl_totalcap.AutoSize = true;
+            this.lbl_totalcap.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_totalcap.ForeColor = System.Drawing.Color.Maroon;
+            this.lbl_totalcap.Location = new System.Drawing.Point(186, 23);
+            this.lbl_totalcap.Name = "lbl_totalcap";
+            this.lbl_totalcap.Size = new System.Drawing.Size(16, 16);
+            this.lbl_totalcap.TabIndex = 0;
+            this.lbl_totalcap.Text = "0";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btn_getavailability);
+            this.groupBox2.Controls.Add(this.cmb_month);
+            this.groupBox2.Controls.Add(this.cmb_year);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox2.Location = new System.Drawing.Point(0, 0);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(953, 70);
+            this.groupBox2.TabIndex = 2;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Month Detail";
+            // 
+            // btn_getavailability
+            // 
+            this.btn_getavailability.Location = new System.Drawing.Point(528, 27);
+            this.btn_getavailability.Name = "btn_getavailability";
+            this.btn_getavailability.Size = new System.Drawing.Size(183, 23);
+            this.btn_getavailability.TabIndex = 4;
+            this.btn_getavailability.Text = "Get Availability";
+            this.btn_getavailability.UseVisualStyleBackColor = true;
+            this.btn_getavailability.Click += new System.EventHandler(this.btn_getavailability_Click);
+            // 
+            // cmb_month
+            // 
+            this.cmb_month.FormattingEnabled = true;
+            this.cmb_month.Items.AddRange(new object[] {
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December"});
+            this.cmb_month.Location = new System.Drawing.Point(358, 29);
+            this.cmb_month.Name = "cmb_month";
+            this.cmb_month.Size = new System.Drawing.Size(121, 21);
+            this.cmb_month.TabIndex = 3;
+            // 
+            // cmb_year
+            // 
+            this.cmb_year.FormattingEnabled = true;
+            this.cmb_year.Items.AddRange(new object[] {
+            "2014",
+            "2015",
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2020"});
+            this.cmb_year.Location = new System.Drawing.Point(81, 32);
+            this.cmb_year.Name = "cmb_year";
+            this.cmb_year.Size = new System.Drawing.Size(121, 21);
+            this.cmb_year.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(282, 32);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(37, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Month";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(26, 32);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(29, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Year";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.tbl_bookdata);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(953, 433);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Get Details";
+            // 
+            // tbl_bookdata
+            // 
+            this.tbl_bookdata.AllowUserToAddRows = false;
+            this.tbl_bookdata.AllowUserToDeleteRows = false;
+            this.tbl_bookdata.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbl_bookdata.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.tbl_bookdata.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tbl_bookdata.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Sl,
+            this.Factory,
+            this.BaseCapacity,
+            this.BookedQuantity,
+            this.waitingbook,
+            this.BalanceQty,
+            this.NewBooking,
+            this.Buyercombo,
+            this.Stylecombo,
+            this.BookFactory});
+            this.tbl_bookdata.Location = new System.Drawing.Point(3, 76);
+            this.tbl_bookdata.Name = "tbl_bookdata";
+            this.tbl_bookdata.RowHeadersVisible = false;
+            this.tbl_bookdata.Size = new System.Drawing.Size(947, 293);
+            this.tbl_bookdata.TabIndex = 0;
+            this.tbl_bookdata.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tbl_bookdata_CellClick);
+            // 
+            // Sl
+            // 
+            this.Sl.HeaderText = "Sl";
+            this.Sl.Name = "Sl";
+            this.Sl.Visible = false;
+            // 
+            // Factory
+            // 
+            this.Factory.HeaderText = "Factory";
+            this.Factory.Name = "Factory";
+            // 
+            // BaseCapacity
+            // 
+            this.BaseCapacity.HeaderText = "Base Capacity";
+            this.BaseCapacity.Name = "BaseCapacity";
+            // 
+            // BookedQuantity
+            // 
+            this.BookedQuantity.HeaderText = "Approved Booked Quantity";
+            this.BookedQuantity.Name = "BookedQuantity";
+            // 
+            // waitingbook
+            // 
+            this.waitingbook.HeaderText = "Booked & Waiting Approval";
+            this.waitingbook.Name = "waitingbook";
+            // 
+            // BalanceQty
+            // 
+            this.BalanceQty.HeaderText = "Balance Capacity";
+            this.BalanceQty.Name = "BalanceQty";
+            // 
+            // NewBooking
+            // 
+            this.NewBooking.HeaderText = "New Booking Qty";
+            this.NewBooking.Name = "NewBooking";
+            // 
+            // Buyercombo
+            // 
+            this.Buyercombo.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
+            this.Buyercombo.HeaderText = "Buyer";
+            this.Buyercombo.Name = "Buyercombo";
+            this.Buyercombo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Buyercombo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Stylecombo
+            // 
+            this.Stylecombo.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
+            this.Stylecombo.HeaderText = "Style";
+            this.Stylecombo.Name = "Stylecombo";
+            this.Stylecombo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Stylecombo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // BookFactory
+            // 
+            this.BookFactory.HeaderText = "Action";
+            this.BookFactory.Name = "BookFactory";
+            this.BookFactory.Text = "Confirm";
+            this.BookFactory.ToolTipText = "Confirm the booking";
+            this.BookFactory.UseColumnTextForButtonValue = true;
+            // 
+            // OrderBooking
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(953, 433);
+            this.Controls.Add(this.panel1);
+            this.Name = "OrderBooking";
+            this.Text = "OrderBooking";
+            this.panel1.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tbl_bookdata)).EndInit();
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button btn_getavailability;
+        private System.Windows.Forms.ComboBox cmb_month;
+        private System.Windows.Forms.ComboBox cmb_year;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DataGridView tbl_bookdata;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lbl_totalcap;
+        private System.Windows.Forms.Label lbl_balance;
+        private System.Windows.Forms.Label lbl_Orderpending;
+        private System.Windows.Forms.Label lbl_booked;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Sl;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Factory;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BaseCapacity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BookedQuantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn waitingbook;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BalanceQty;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NewBooking;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Buyercombo;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Stylecombo;
+        private System.Windows.Forms.DataGridViewButtonColumn BookFactory;
+    }
+}

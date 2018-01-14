@@ -1,0 +1,54 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Shipit.Production
+{
+    public partial class WeeklyChartform : Form
+    {
+        Production.Productiontransaction trans = null;
+        public WeeklyChartform()
+        {
+            InitializeComponent();
+            trans = new Productiontransaction();
+            LoadFactoryCombo();
+            if(Program.lctnpk!=0)
+            {
+                contextMenuStrip1.Visible = false;
+            }
+        }
+        public void LoadFactoryCombo()
+        {
+            CourierDataDataContext courdatacontext = new CourierDataDataContext(Program.ConnStr);
+            var q = from fctry in courdatacontext.Factory_Masters
+                    select fctry;
+
+
+
+            cmb_factory.DataSource = q;
+            cmb_factory.DisplayMember = "Factory_name";
+            cmb_factory.ValueMember = "Factory_ID";
+            //   Buyercombo.DataBind();
+
+
+
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DataTable dt = trans.GetAllFinalBookings(int.Parse(cmb_year .Text .ToString()), cmb_month.Text.Trim () , int.Parse(cmb_factory .SelectedValue.ToString()));
+            dataGridView1.DataSource = dt;
+        }
+
+        private void scheduleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Production.WeekChartEntry entry = new WeekChartEntry(int.Parse(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value.ToString()));
+            entry.ShowDialog ();
+        }
+    }
+}

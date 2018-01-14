@@ -1,0 +1,614 @@
+﻿namespace Shipit
+{
+    partial class Mainform
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.mastersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.factoryCapacityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newFactoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.holidaysToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.categoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.categoryPercentageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.atcMasterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.operationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bookingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.bookingConfirmationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.report1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.report2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.bookingsEditToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.bookingReportBeforeApprovalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.factoryAllocationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.productionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.weekPlaningToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newWeekAllocationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editWeeklyAllocationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.weeklyProductionEntryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.weekStatusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.poWiseProductionReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.factoryLineMasterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lineAssignerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dailyProductionUpdaterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.weekPlanVeiwerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.weekPlanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dailyPlanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.administratorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.uploadDataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.userRightsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.userToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.weeklyAllocationReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.linePlanReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.factoryWiseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.atwWiseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lbl_loc = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblUsername = new System.Windows.Forms.Label();
+            this.factoryWiseToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.searchAtcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.actionLogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mastersToolStripMenuItem,
+            this.operationsToolStripMenuItem,
+            this.productionToolStripMenuItem,
+            this.administratorToolStripMenuItem,
+            this.reportsToolStripMenuItem,
+            this.exitToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1049, 24);
+            this.menuStrip1.TabIndex = 0;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // mastersToolStripMenuItem
+            // 
+            this.mastersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.factoryCapacityToolStripMenuItem,
+            this.newFactoryToolStripMenuItem,
+            this.holidaysToolStripMenuItem,
+            this.categoryToolStripMenuItem,
+            this.categoryPercentageToolStripMenuItem,
+            this.atcMasterToolStripMenuItem});
+            this.mastersToolStripMenuItem.Name = "mastersToolStripMenuItem";
+            this.mastersToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.mastersToolStripMenuItem.Text = "Masters";
+            // 
+            // factoryCapacityToolStripMenuItem
+            // 
+            this.factoryCapacityToolStripMenuItem.Name = "factoryCapacityToolStripMenuItem";
+            this.factoryCapacityToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.factoryCapacityToolStripMenuItem.Text = "Factory Capacity";
+            this.factoryCapacityToolStripMenuItem.Visible = false;
+            this.factoryCapacityToolStripMenuItem.Click += new System.EventHandler(this.factoryCapacityToolStripMenuItem_Click);
+            // 
+            // newFactoryToolStripMenuItem
+            // 
+            this.newFactoryToolStripMenuItem.Name = "newFactoryToolStripMenuItem";
+            this.newFactoryToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.newFactoryToolStripMenuItem.Text = "Factory Capacity";
+            this.newFactoryToolStripMenuItem.Click += new System.EventHandler(this.newFactoryToolStripMenuItem_Click);
+            // 
+            // holidaysToolStripMenuItem
+            // 
+            this.holidaysToolStripMenuItem.Name = "holidaysToolStripMenuItem";
+            this.holidaysToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.holidaysToolStripMenuItem.Text = "Holidays";
+            this.holidaysToolStripMenuItem.Click += new System.EventHandler(this.holidaysToolStripMenuItem_Click);
+            // 
+            // categoryToolStripMenuItem
+            // 
+            this.categoryToolStripMenuItem.Name = "categoryToolStripMenuItem";
+            this.categoryToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.categoryToolStripMenuItem.Text = "Category";
+            this.categoryToolStripMenuItem.Click += new System.EventHandler(this.categoryToolStripMenuItem_Click);
+            // 
+            // categoryPercentageToolStripMenuItem
+            // 
+            this.categoryPercentageToolStripMenuItem.Name = "categoryPercentageToolStripMenuItem";
+            this.categoryPercentageToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.categoryPercentageToolStripMenuItem.Text = "Category Percentage";
+            this.categoryPercentageToolStripMenuItem.Visible = false;
+            this.categoryPercentageToolStripMenuItem.Click += new System.EventHandler(this.categoryPercentageToolStripMenuItem_Click);
+            // 
+            // atcMasterToolStripMenuItem
+            // 
+            this.atcMasterToolStripMenuItem.Name = "atcMasterToolStripMenuItem";
+            this.atcMasterToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.atcMasterToolStripMenuItem.Text = "Atc Master";
+            this.atcMasterToolStripMenuItem.Click += new System.EventHandler(this.atcMasterToolStripMenuItem_Click);
+            // 
+            // operationsToolStripMenuItem
+            // 
+            this.operationsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bookingToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.bookingConfirmationToolStripMenuItem,
+            this.toolStripSeparator2,
+            this.report1ToolStripMenuItem,
+            this.toolStripSeparator3,
+            this.report2ToolStripMenuItem,
+            this.toolStripSeparator4,
+            this.bookingsEditToolStripMenuItem,
+            this.toolStripSeparator5,
+            this.bookingReportBeforeApprovalToolStripMenuItem,
+            this.factoryAllocationToolStripMenuItem});
+            this.operationsToolStripMenuItem.Name = "operationsToolStripMenuItem";
+            this.operationsToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
+            this.operationsToolStripMenuItem.Text = "Operations";
+            // 
+            // bookingToolStripMenuItem
+            // 
+            this.bookingToolStripMenuItem.Name = "bookingToolStripMenuItem";
+            this.bookingToolStripMenuItem.Size = new System.Drawing.Size(246, 22);
+            this.bookingToolStripMenuItem.Text = "Booking";
+            this.bookingToolStripMenuItem.Click += new System.EventHandler(this.bookingToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(243, 6);
+            // 
+            // bookingConfirmationToolStripMenuItem
+            // 
+            this.bookingConfirmationToolStripMenuItem.Name = "bookingConfirmationToolStripMenuItem";
+            this.bookingConfirmationToolStripMenuItem.Size = new System.Drawing.Size(246, 22);
+            this.bookingConfirmationToolStripMenuItem.Text = "Booking Confirmation";
+            this.bookingConfirmationToolStripMenuItem.Click += new System.EventHandler(this.bookingConfirmationToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(243, 6);
+            // 
+            // report1ToolStripMenuItem
+            // 
+            this.report1ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.searchAtcToolStripMenuItem,
+            this.actionLogToolStripMenuItem});
+            this.report1ToolStripMenuItem.Name = "report1ToolStripMenuItem";
+            this.report1ToolStripMenuItem.Size = new System.Drawing.Size(246, 22);
+            this.report1ToolStripMenuItem.Text = "Booking report";
+            this.report1ToolStripMenuItem.Click += new System.EventHandler(this.report1ToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(243, 6);
+            // 
+            // report2ToolStripMenuItem
+            // 
+            this.report2ToolStripMenuItem.Name = "report2ToolStripMenuItem";
+            this.report2ToolStripMenuItem.Size = new System.Drawing.Size(246, 22);
+            this.report2ToolStripMenuItem.Text = "Yearly Approved Booking Details";
+            this.report2ToolStripMenuItem.Click += new System.EventHandler(this.report2ToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(243, 6);
+            // 
+            // bookingsEditToolStripMenuItem
+            // 
+            this.bookingsEditToolStripMenuItem.Name = "bookingsEditToolStripMenuItem";
+            this.bookingsEditToolStripMenuItem.Size = new System.Drawing.Size(246, 22);
+            this.bookingsEditToolStripMenuItem.Text = "Bookings Edit";
+            this.bookingsEditToolStripMenuItem.Click += new System.EventHandler(this.bookingsEditToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(243, 6);
+            // 
+            // bookingReportBeforeApprovalToolStripMenuItem
+            // 
+            this.bookingReportBeforeApprovalToolStripMenuItem.Name = "bookingReportBeforeApprovalToolStripMenuItem";
+            this.bookingReportBeforeApprovalToolStripMenuItem.Size = new System.Drawing.Size(246, 22);
+            this.bookingReportBeforeApprovalToolStripMenuItem.Text = "Total Booking Report";
+            this.bookingReportBeforeApprovalToolStripMenuItem.Click += new System.EventHandler(this.bookingReportBeforeApprovalToolStripMenuItem_Click);
+            // 
+            // factoryAllocationToolStripMenuItem
+            // 
+            this.factoryAllocationToolStripMenuItem.Name = "factoryAllocationToolStripMenuItem";
+            this.factoryAllocationToolStripMenuItem.Size = new System.Drawing.Size(246, 22);
+            this.factoryAllocationToolStripMenuItem.Text = "Factory Allocation";
+            this.factoryAllocationToolStripMenuItem.Click += new System.EventHandler(this.factoryAllocationToolStripMenuItem_Click);
+            // 
+            // productionToolStripMenuItem
+            // 
+            this.productionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.weekPlaningToolStripMenuItem,
+            this.weeklyProductionEntryToolStripMenuItem,
+            this.weekStatusToolStripMenuItem,
+            this.poWiseProductionReportToolStripMenuItem,
+            this.factoryLineMasterToolStripMenuItem,
+            this.lineAssignerToolStripMenuItem,
+            this.dailyProductionUpdaterToolStripMenuItem,
+            this.weekPlanVeiwerToolStripMenuItem});
+            this.productionToolStripMenuItem.Name = "productionToolStripMenuItem";
+            this.productionToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
+            this.productionToolStripMenuItem.Text = "Production";
+            // 
+            // weekPlaningToolStripMenuItem
+            // 
+            this.weekPlaningToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newWeekAllocationToolStripMenuItem,
+            this.editWeeklyAllocationToolStripMenuItem});
+            this.weekPlaningToolStripMenuItem.Name = "weekPlaningToolStripMenuItem";
+            this.weekPlaningToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
+            this.weekPlaningToolStripMenuItem.Text = "Week Planning";
+            this.weekPlaningToolStripMenuItem.Click += new System.EventHandler(this.weekPlaningToolStripMenuItem_Click);
+            // 
+            // newWeekAllocationToolStripMenuItem
+            // 
+            this.newWeekAllocationToolStripMenuItem.Name = "newWeekAllocationToolStripMenuItem";
+            this.newWeekAllocationToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
+            this.newWeekAllocationToolStripMenuItem.Text = "New Weekly Allocation";
+            this.newWeekAllocationToolStripMenuItem.Click += new System.EventHandler(this.newWeekAllocationToolStripMenuItem_Click);
+            // 
+            // editWeeklyAllocationToolStripMenuItem
+            // 
+            this.editWeeklyAllocationToolStripMenuItem.Name = "editWeeklyAllocationToolStripMenuItem";
+            this.editWeeklyAllocationToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
+            this.editWeeklyAllocationToolStripMenuItem.Text = "Edit Weekly Allocation";
+            this.editWeeklyAllocationToolStripMenuItem.Click += new System.EventHandler(this.editWeeklyAllocationToolStripMenuItem_Click);
+            // 
+            // weeklyProductionEntryToolStripMenuItem
+            // 
+            this.weeklyProductionEntryToolStripMenuItem.Enabled = false;
+            this.weeklyProductionEntryToolStripMenuItem.Name = "weeklyProductionEntryToolStripMenuItem";
+            this.weeklyProductionEntryToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
+            this.weeklyProductionEntryToolStripMenuItem.Text = "Weekly Production Entry";
+            this.weeklyProductionEntryToolStripMenuItem.Click += new System.EventHandler(this.weeklyProductionEntryToolStripMenuItem_Click);
+            // 
+            // weekStatusToolStripMenuItem
+            // 
+            this.weekStatusToolStripMenuItem.Enabled = false;
+            this.weekStatusToolStripMenuItem.Name = "weekStatusToolStripMenuItem";
+            this.weekStatusToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
+            this.weekStatusToolStripMenuItem.Text = "Monthly Status Report";
+            this.weekStatusToolStripMenuItem.Click += new System.EventHandler(this.weekStatusToolStripMenuItem_Click);
+            // 
+            // poWiseProductionReportToolStripMenuItem
+            // 
+            this.poWiseProductionReportToolStripMenuItem.Name = "poWiseProductionReportToolStripMenuItem";
+            this.poWiseProductionReportToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
+            this.poWiseProductionReportToolStripMenuItem.Text = "Po-wise Production Report";
+            this.poWiseProductionReportToolStripMenuItem.Click += new System.EventHandler(this.poWiseProductionReportToolStripMenuItem_Click);
+            // 
+            // factoryLineMasterToolStripMenuItem
+            // 
+            this.factoryLineMasterToolStripMenuItem.Name = "factoryLineMasterToolStripMenuItem";
+            this.factoryLineMasterToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
+            this.factoryLineMasterToolStripMenuItem.Text = "Factory Line Master";
+            this.factoryLineMasterToolStripMenuItem.Click += new System.EventHandler(this.factoryLineMasterToolStripMenuItem_Click);
+            // 
+            // lineAssignerToolStripMenuItem
+            // 
+            this.lineAssignerToolStripMenuItem.Name = "lineAssignerToolStripMenuItem";
+            this.lineAssignerToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
+            this.lineAssignerToolStripMenuItem.Text = "Line Assigner";
+            this.lineAssignerToolStripMenuItem.Click += new System.EventHandler(this.lineAssignerToolStripMenuItem_Click);
+            // 
+            // dailyProductionUpdaterToolStripMenuItem
+            // 
+            this.dailyProductionUpdaterToolStripMenuItem.Name = "dailyProductionUpdaterToolStripMenuItem";
+            this.dailyProductionUpdaterToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
+            this.dailyProductionUpdaterToolStripMenuItem.Text = "Daily Production updater";
+            this.dailyProductionUpdaterToolStripMenuItem.Click += new System.EventHandler(this.dailyProductionUpdaterToolStripMenuItem_Click);
+            // 
+            // weekPlanVeiwerToolStripMenuItem
+            // 
+            this.weekPlanVeiwerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.weekPlanToolStripMenuItem,
+            this.dailyPlanToolStripMenuItem});
+            this.weekPlanVeiwerToolStripMenuItem.Name = "weekPlanVeiwerToolStripMenuItem";
+            this.weekPlanVeiwerToolStripMenuItem.ShowShortcutKeys = false;
+            this.weekPlanVeiwerToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
+            this.weekPlanVeiwerToolStripMenuItem.Text = "Line Plan Veiwer";
+            // 
+            // weekPlanToolStripMenuItem
+            // 
+            this.weekPlanToolStripMenuItem.Name = "weekPlanToolStripMenuItem";
+            this.weekPlanToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+            this.weekPlanToolStripMenuItem.Text = "Week Plan";
+            this.weekPlanToolStripMenuItem.Click += new System.EventHandler(this.weekPlanToolStripMenuItem_Click);
+            // 
+            // dailyPlanToolStripMenuItem
+            // 
+            this.dailyPlanToolStripMenuItem.Name = "dailyPlanToolStripMenuItem";
+            this.dailyPlanToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+            this.dailyPlanToolStripMenuItem.Text = "Atc Plan";
+            this.dailyPlanToolStripMenuItem.Click += new System.EventHandler(this.dailyPlanToolStripMenuItem_Click);
+            // 
+            // administratorToolStripMenuItem
+            // 
+            this.administratorToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.uploadDataToolStripMenuItem,
+            this.userRightsToolStripMenuItem,
+            this.userToolStripMenuItem});
+            this.administratorToolStripMenuItem.Name = "administratorToolStripMenuItem";
+            this.administratorToolStripMenuItem.Size = new System.Drawing.Size(92, 20);
+            this.administratorToolStripMenuItem.Text = "Administrator";
+            // 
+            // uploadDataToolStripMenuItem
+            // 
+            this.uploadDataToolStripMenuItem.Name = "uploadDataToolStripMenuItem";
+            this.uploadDataToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.uploadDataToolStripMenuItem.Text = "Upload Data";
+            this.uploadDataToolStripMenuItem.Click += new System.EventHandler(this.uploadDataToolStripMenuItem_Click);
+            // 
+            // userRightsToolStripMenuItem
+            // 
+            this.userRightsToolStripMenuItem.Name = "userRightsToolStripMenuItem";
+            this.userRightsToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.userRightsToolStripMenuItem.Text = "User Rights";
+            this.userRightsToolStripMenuItem.Click += new System.EventHandler(this.userRightsToolStripMenuItem_Click);
+            // 
+            // userToolStripMenuItem
+            // 
+            this.userToolStripMenuItem.Name = "userToolStripMenuItem";
+            this.userToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.userToolStripMenuItem.Text = "User ";
+            this.userToolStripMenuItem.Click += new System.EventHandler(this.userToolStripMenuItem_Click);
+            // 
+            // reportsToolStripMenuItem
+            // 
+            this.reportsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.weeklyAllocationReportToolStripMenuItem,
+            this.linePlanReportToolStripMenuItem});
+            this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
+            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
+            this.reportsToolStripMenuItem.Text = "Reports";
+            // 
+            // weeklyAllocationReportToolStripMenuItem
+            // 
+            this.weeklyAllocationReportToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.factoryWiseToolStripMenuItem1});
+            this.weeklyAllocationReportToolStripMenuItem.Name = "weeklyAllocationReportToolStripMenuItem";
+            this.weeklyAllocationReportToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
+            this.weeklyAllocationReportToolStripMenuItem.Text = "Weekly Allocation Report";
+            this.weeklyAllocationReportToolStripMenuItem.Click += new System.EventHandler(this.weeklyAllocationReportToolStripMenuItem_Click);
+            // 
+            // linePlanReportToolStripMenuItem
+            // 
+            this.linePlanReportToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.factoryWiseToolStripMenuItem,
+            this.atwWiseToolStripMenuItem});
+            this.linePlanReportToolStripMenuItem.Name = "linePlanReportToolStripMenuItem";
+            this.linePlanReportToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
+            this.linePlanReportToolStripMenuItem.Text = "Line Plan report";
+            // 
+            // factoryWiseToolStripMenuItem
+            // 
+            this.factoryWiseToolStripMenuItem.Name = "factoryWiseToolStripMenuItem";
+            this.factoryWiseToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.factoryWiseToolStripMenuItem.Text = "FactoryWise ";
+            this.factoryWiseToolStripMenuItem.Click += new System.EventHandler(this.factoryWiseToolStripMenuItem_Click);
+            // 
+            // atwWiseToolStripMenuItem
+            // 
+            this.atwWiseToolStripMenuItem.Name = "atwWiseToolStripMenuItem";
+            this.atwWiseToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.atwWiseToolStripMenuItem.Text = "AtwWise";
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exitToolStripMenuItem.ForeColor = System.Drawing.Color.Maroon;
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 24);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1049, 31);
+            this.panel1.TabIndex = 8;
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel2.Controls.Add(this.lbl_loc);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.lblUsername);
+            this.panel2.Location = new System.Drawing.Point(731, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(315, 28);
+            this.panel2.TabIndex = 8;
+            // 
+            // lbl_loc
+            // 
+            this.lbl_loc.AutoSize = true;
+            this.lbl_loc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_loc.ForeColor = System.Drawing.Color.Maroon;
+            this.lbl_loc.Location = new System.Drawing.Point(219, 8);
+            this.lbl_loc.Name = "lbl_loc";
+            this.lbl_loc.Size = new System.Drawing.Size(30, 13);
+            this.lbl_loc.TabIndex = 10;
+            this.lbl_loc.Text = "Date";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(165, 8);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(54, 13);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Location :";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(3, 8);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(60, 13);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Logged in :";
+            // 
+            // lblUsername
+            // 
+            this.lblUsername.AutoSize = true;
+            this.lblUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsername.ForeColor = System.Drawing.Color.Maroon;
+            this.lblUsername.Location = new System.Drawing.Point(86, 8);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(38, 13);
+            this.lblUsername.TabIndex = 8;
+            this.lblUsername.Text = "User 1";
+            // 
+            // factoryWiseToolStripMenuItem1
+            // 
+            this.factoryWiseToolStripMenuItem1.Name = "factoryWiseToolStripMenuItem1";
+            this.factoryWiseToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.factoryWiseToolStripMenuItem1.Text = "FactoryWise";
+            this.factoryWiseToolStripMenuItem1.Click += new System.EventHandler(this.factoryWiseToolStripMenuItem1_Click);
+            // 
+            // searchAtcToolStripMenuItem
+            // 
+            this.searchAtcToolStripMenuItem.Name = "searchAtcToolStripMenuItem";
+            this.searchAtcToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.searchAtcToolStripMenuItem.Text = "Search Atc";
+            this.searchAtcToolStripMenuItem.Click += new System.EventHandler(this.searchAtcToolStripMenuItem_Click);
+            // 
+            // actionLogToolStripMenuItem
+            // 
+            this.actionLogToolStripMenuItem.Name = "actionLogToolStripMenuItem";
+            this.actionLogToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.actionLogToolStripMenuItem.Text = "Action Log";
+            this.actionLogToolStripMenuItem.Click += new System.EventHandler(this.actionLogToolStripMenuItem_Click);
+            // 
+            // Mainform
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.BackgroundImage = global::Shipit.Properties.Resources.inventory_management_mbaknol;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1049, 641);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.menuStrip1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.IsMdiContainer = true;
+            this.MainMenuStrip = this.menuStrip1;
+            this.Name = "Mainform";
+            this.Text = "Mainform";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Mainform_FormClosed);
+            this.Load += new System.EventHandler(this.Mainform_Load);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.ToolStripMenuItem mastersToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem factoryCapacityToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem operationsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bookingToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bookingConfirmationToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem newFactoryToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem holidaysToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem report1ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem report2ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem categoryToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem categoryPercentageToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem bookingsEditToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripMenuItem bookingReportBeforeApprovalToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem administratorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem uploadDataToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem productionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem weekPlaningToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem weeklyProductionEntryToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem weekStatusToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem userRightsToolStripMenuItem;
+        public System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem poWiseProductionReportToolStripMenuItem;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label lbl_loc;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblUsername;
+        private System.Windows.Forms.ToolStripMenuItem factoryLineMasterToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem lineAssignerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dailyProductionUpdaterToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem weekPlanVeiwerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem weekPlanToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dailyPlanToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem userToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem factoryAllocationToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem newWeekAllocationToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editWeeklyAllocationToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem atcMasterToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reportsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem weeklyAllocationReportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem linePlanReportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem factoryWiseToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem atwWiseToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem factoryWiseToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem searchAtcToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem actionLogToolStripMenuItem;
+    }
+}

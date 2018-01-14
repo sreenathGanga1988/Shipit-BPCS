@@ -1,0 +1,351 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Shipit.Production
+{ 
+    public partial class WeeklyPlanEdit : Form
+    {
+        Transaction.DataExporter DTPEXPTR = null;
+        Production.Productiontransaction trans = null;
+        public WeeklyPlanEdit()
+        {
+            InitializeComponent();
+            LoadFactoryCombo();
+            trans = new Productiontransaction();
+        }
+        public void LoadFactoryCombo()
+        {
+            CourierDataDataContext courdatacontext = new CourierDataDataContext(Program.ConnStr);
+            var q = from fctry in courdatacontext.Factory_Masters
+                    select fctry;
+
+
+
+            cmb_factory.DataSource = q;
+            cmb_factory.DisplayMember = "Factory_name";
+            cmb_factory.ValueMember = "Factory_ID";
+            //   Buyercombo.DataBind();
+
+
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DataTable dt = trans.GetweeklyAllocationofamonth(cmb_month.Text, int.Parse(cmb_year.Text), int.Parse(cmb_factory .SelectedValue .ToString ()));
+            tbl_weekrequirement.DataSource = dt;
+        }
+
+
+
+
+        /// <summary>
+        /// update the week of an Weekplan
+        /// </summary>
+        /// <param name="weekid"></param>
+        /// <param name="Weeknum"></param>
+        public void updateweek(int weekid,String Weeknum)
+        {
+
+            CourierDataDataContext couriercontext = new CourierDataDataContext(Program.ConnStr);
+            var updategrp = from factory in couriercontext.WeeklyPlan_Masters
+                            where factory.WeekID == weekid
+                            select factory;
+            foreach (var v in updategrp)
+            {
+                v.WeekNo = Weeknum;
+               couriercontext.SubmitChanges();
+            }
+
+            MessageBox.Show("Done");
+
+        }
+
+
+        /// <summary>
+        /// update the month of a weekplan
+        /// </summary>
+        /// <param name="weekid"></param>
+        /// <param name="Month"></param>
+        public void UpdatemonthMonth(int weekid, String Month)
+        {
+
+            CourierDataDataContext couriercontext = new CourierDataDataContext(Program.ConnStr);
+            var updategrp = from factory in couriercontext.WeeklyPlan_Masters
+                            where factory.WeekID == weekid
+                            select factory;
+            foreach (var v in updategrp)
+            {
+                v.Month = Month;
+                couriercontext.SubmitChanges();
+            }
+
+            MessageBox.Show("Done");
+        }
+
+
+
+        private void moveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int weekid = int.Parse(tbl_weekrequirement.Rows[tbl_weekrequirement.CurrentRow.Index].Cells[1].Value.ToString());
+            updateweek(weekid, "Week1");
+        }
+
+        private void moveToWeek2ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int weekid = int.Parse(tbl_weekrequirement.Rows[tbl_weekrequirement.CurrentRow.Index].Cells[1].Value.ToString());
+            updateweek(weekid, "Week2");
+        }
+
+        private void moveToWeek3ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int weekid = int.Parse(tbl_weekrequirement.Rows[tbl_weekrequirement.CurrentRow.Index].Cells[1].Value.ToString());
+            updateweek(weekid, "Week3");
+        }
+
+        private void moveToWeek4ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int weekid = int.Parse(tbl_weekrequirement.Rows[tbl_weekrequirement.CurrentRow.Index].Cells[1].Value.ToString());
+            updateweek(weekid, "Week4");
+        }
+
+        private void moveToWeek5ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int weekid = int.Parse(tbl_weekrequirement.Rows[tbl_weekrequirement.CurrentRow.Index].Cells[1].Value.ToString());
+            updateweek(weekid, "Week5");
+        }
+
+        private void januaryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int weekid = int.Parse(tbl_weekrequirement.Rows[tbl_weekrequirement.CurrentRow.Index].Cells[1].Value.ToString());
+            UpdatemonthMonth(weekid, "January");
+        }
+
+        private void februaryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int weekid = int.Parse(tbl_weekrequirement.Rows[tbl_weekrequirement.CurrentRow.Index].Cells[1].Value.ToString());
+            UpdatemonthMonth(weekid, "February");
+        }
+
+        private void marchToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int weekid = int.Parse(tbl_weekrequirement.Rows[tbl_weekrequirement.CurrentRow.Index].Cells[1].Value.ToString());
+            UpdatemonthMonth(weekid, "March");
+        }
+
+        private void aprilToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int weekid = int.Parse(tbl_weekrequirement.Rows[tbl_weekrequirement.CurrentRow.Index].Cells[1].Value.ToString());
+            UpdatemonthMonth(weekid, "April");
+        }
+
+        private void mayToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int weekid = int.Parse(tbl_weekrequirement.Rows[tbl_weekrequirement.CurrentRow.Index].Cells[1].Value.ToString());
+            UpdatemonthMonth(weekid, "May");
+        }
+
+        private void juneToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int weekid = int.Parse(tbl_weekrequirement.Rows[tbl_weekrequirement.CurrentRow.Index].Cells[1].Value.ToString());
+            UpdatemonthMonth(weekid, "June");
+        }
+
+        private void julyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int weekid = int.Parse(tbl_weekrequirement.Rows[tbl_weekrequirement.CurrentRow.Index].Cells[1].Value.ToString());
+            UpdatemonthMonth(weekid, "July");
+        }
+
+        private void augustToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int weekid = int.Parse(tbl_weekrequirement.Rows[tbl_weekrequirement.CurrentRow.Index].Cells[1].Value.ToString());
+            UpdatemonthMonth(weekid, "August");
+        }
+
+        private void septemberToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int weekid = int.Parse(tbl_weekrequirement.Rows[tbl_weekrequirement.CurrentRow.Index].Cells[1].Value.ToString());
+            UpdatemonthMonth(weekid, "September");
+        }
+
+        private void octoberToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int weekid = int.Parse(tbl_weekrequirement.Rows[tbl_weekrequirement.CurrentRow.Index].Cells[1].Value.ToString());
+            UpdatemonthMonth(weekid, "October");
+        }
+
+        private void novemberToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int weekid = int.Parse(tbl_weekrequirement.Rows[tbl_weekrequirement.CurrentRow.Index].Cells[1].Value.ToString());
+            UpdatemonthMonth(weekid, "November");
+        }
+
+        private void decemberToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int weekid = int.Parse(tbl_weekrequirement.Rows[tbl_weekrequirement.CurrentRow.Index].Cells[1].Value.ToString());
+            UpdatemonthMonth(weekid, "December");
+        }
+
+        private void tbl_weekrequirement_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+           
+        }
+
+        public void weekPlanEditfunction()
+        {
+            int weekid = int.Parse(tbl_weekrequirement.Rows[tbl_weekrequirement.CurrentRow.Index].Cells["WeekID"].Value.ToString());
+            int qty = int.Parse(tbl_weekrequirement.Rows[tbl_weekrequirement.CurrentRow.Index].Cells["Qty"].Value.ToString());
+            string styenum = tbl_weekrequirement.Rows[tbl_weekrequirement.CurrentRow.Index].Cells["stylenum"].Value.ToString();
+            string ponum = tbl_weekrequirement.Rows[tbl_weekrequirement.CurrentRow.Index].Cells["PO#"].Value.ToString();
+            DateTime actualdelivery = DateTime.Now.Date;
+            try
+            {
+                actualdelivery = DateTime.Parse(tbl_weekrequirement.Rows[tbl_weekrequirement.CurrentRow.Index].Cells["ActualDelivery_date"].Value.ToString());
+            }
+            catch (Exception)
+            {
+
+
+            }
+            editdetails(weekid, qty, styenum, ponum, actualdelivery);
+
+        }
+
+
+        public void weekPlanEditfunctionwithfactory()
+        {
+            if(cmb_factory.Text.Trim () !="")
+            { 
+
+                if((int.Parse(tbl_weekrequirement.Rows[tbl_weekrequirement.CurrentRow.Index].Cells["Factory_id"].Value.ToString())==int.Parse (cmb_factory.SelectedValue.ToString ())))
+                {
+            int weekid = int.Parse(tbl_weekrequirement.Rows[tbl_weekrequirement.CurrentRow.Index].Cells["WeekID"].Value.ToString());
+            int qty = int.Parse(tbl_weekrequirement.Rows[tbl_weekrequirement.CurrentRow.Index].Cells["Qty"].Value.ToString());
+            string styenum = tbl_weekrequirement.Rows[tbl_weekrequirement.CurrentRow.Index].Cells["stylenum"].Value.ToString();
+            string ponum = tbl_weekrequirement.Rows[tbl_weekrequirement.CurrentRow.Index].Cells["PO#"].Value.ToString();
+            String Atcnum = tbl_weekrequirement.Rows[tbl_weekrequirement.CurrentRow.Index].Cells["Atcno"].Value.ToString();
+            String Weeknum = tbl_weekrequirement.Rows[tbl_weekrequirement.CurrentRow.Index].Cells["WeekNo"].Value.ToString();
+            String Year = tbl_weekrequirement.Rows[tbl_weekrequirement.CurrentRow.Index].Cells["year"].Value.ToString();
+                String month = tbl_weekrequirement.Rows[tbl_weekrequirement.CurrentRow.Index].Cells["Month"].Value.ToString();
+            String factoryname = cmb_factory.Text;
+            DateTime actualdelivery = DateTime.Now.Date;
+                    String Action= "Production factory  for Style# "+styenum+" Po # "+ponum +"  Under Atc# "+Atcnum + "  which was allocated for "+factoryname +"  for  "+Year +'-'+month+"-"+Weeknum +" is changed to Factory " ;
+            try
+            {
+                actualdelivery = DateTime.Parse(tbl_weekrequirement.Rows[tbl_weekrequirement.CurrentRow.Index].Cells["ActualDelivery_date"].Value.ToString());
+            }
+            catch (Exception)
+            {
+
+
+            }
+            editdetails(weekid, qty, styenum, ponum, actualdelivery,factoryname,Action);
+                }
+        }
+        }
+
+        public void editdetails(int weekid, int qty, String stylenum, String Ponum, DateTime actualdelivery)
+        {
+            Production.WeekPlanEditform frm = new WeekPlanEditform(weekid, qty, stylenum, Ponum, actualdelivery);
+            frm.ShowDialog();
+        }
+
+        public void editdetails(int weekid, int qty, String stylenum, String Ponum, DateTime actualdelivery,String factoryname,String action)
+        {
+            Production.WeekPlanEditform frm = new WeekPlanEditform(weekid, qty, stylenum, Ponum, actualdelivery,factoryname ,action);
+            frm.ShowDialog();
+        }
+      
+        private void changeDeliveryDateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+
+            weekPlanEditfunction();
+        }
+
+
+
+
+
+      
+        private void updateStylenumToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            weekPlanEditfunction();
+        }
+
+        private void updatePONumToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            weekPlanEditfunction();
+        }
+
+        private void reduceQtyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            weekPlanEditfunction();
+        }
+
+        private void deleteAllocationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int weekid = int.Parse(tbl_weekrequirement.Rows[tbl_weekrequirement.CurrentRow.Index].Cells["WeekID"].Value.ToString());
+            CourierDataDataContext couriercontext = new CourierDataDataContext(Program.ConnStr);
+            var delet =    from details in couriercontext.WeeklyPlan_Masters
+    where details.WeekID == weekid
+    select details;
+
+            foreach (var detail in delet)
+            {
+                couriercontext.WeeklyPlan_Masters.DeleteOnSubmit(detail);
+            }
+
+            try
+            {
+                couriercontext.SubmitChanges();
+            }
+            catch (Exception )
+            {
+                
+                // Provide for exceptions.
+            }
+
+            MessageBox.Show("Done");
+        }
+
+        private void exportToExcelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            DTPEXPTR = new Transaction.DataExporter();
+
+            //     DTPEXPTR.exporttoexcel(dataGridView1);
+            DTPEXPTR.writeCSV(tbl_weekrequirement);
+        }
+
+        private void moveToolStripMenuItem_Click()
+        {
+
+        }
+
+        private void changeFactoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            weekPlanEditfunctionwithfactory();
+        }
+
+      
+
+
+
+
+
+
+
+
+    }
+
+      
+}

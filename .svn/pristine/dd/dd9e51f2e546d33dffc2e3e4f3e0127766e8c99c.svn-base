@@ -1,0 +1,13 @@
+﻿namespace Shipit {
+    
+    
+    public partial class CourierDetailsDataSet {
+    }
+}
+
+namespace Shipit.CourierDetailsDataSetTableAdapters {
+    
+    
+    public partial class ProductionReportTableAdapter {
+    }
+}

@@ -1,0 +1,1870 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4F025098-62A0-42B8-985B-17294FA8C88C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Shipit</RootNamespace>
+    <AssemblyName>Shipit</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <PublishUrl>\\IT-DEPT\Project\SHIPITFOROFFICE\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Unc</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>true</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>\\IT-DEPT\Project\SHIPITFOROFFICE\</InstallUrl>
+    <UpdateUrl>\\IT-DEPT\Project\SHIPITFOROFFICE\</UpdateUrl>
+    <MinimumRequiredVersion>1.0.0.182</MinimumRequiredVersion>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>287</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>images.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>AB7354FA466E6157075D12D25D0EB7DC97788155</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Shipit_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalDecisions.CrystalReports.Engine.1.0.0\lib\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.Controllers, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.DataDefModel, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalDecisions.ReportSource.1.0.0\lib\CrystalDecisions.ReportSource.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalDecisions.Shared.1.0.0\lib\CrystalDecisions.Shared.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.Web, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalDecisions.Windows.Forms.1.0.0\lib\CrystalDecisions.Windows.Forms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics2.Documents.Excel.v12.1, Version=12.1.20121.2135, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics2.Documents.Reports.v12.1, Version=12.1.20121.2135, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics2.Shared.v12.1, Version=12.1.20121.2135, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics2.Win.AppStylistSupport.v12.1, Version=12.1.20121.2135, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.Misc.v12.1, Version=12.1.20121.2135, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics2.Win.UltraWinDataSource.v12.1, Version=12.1.20121.2135, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinExplorerBar.v12.1, Version=12.1.20121.2135, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics2.Win.UltraWinGrid.DocumentExport.v12.1, Version=12.1.20121.2135, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinGrid.ExcelExport.v12.1, Version=12.1.20121.2135, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinGrid.v12.1, Version=12.1.20121.2135, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.v12.1, Version=12.1.20121.2135, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics3.Documents.Excel.v12.1, Version=12.1.20121.2135, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 10.0\Visual Studio Tools for Office\PIA\Office12\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Windows.11.0.3452\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Windows.11.0.3452\lib\net40\Microsoft.ReportViewer.DataVisualization.DLL</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Windows.11.0.3452\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.DLL</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Windows.11.0.3452\lib\net40\Microsoft.ReportViewer.WinForms.DLL</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.11.0.2\lib\net20\Microsoft.SqlServer.Types.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActualProduction\PoWiseProductionEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActualProduction\PoWiseProductionEntry.Designer.cs">
+      <DependentUpon>PoWiseProductionEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ActualProduction\ProductionPOSplitter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActualProduction\ProductionPOSplitter.Designer.cs">
+      <DependentUpon>ProductionPOSplitter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administrator\Usermasterfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administrator\Usermasterfrm.Designer.cs">
+      <DependentUpon>Usermasterfrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administrator\UserRights.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administrator\UserRights.Designer.cs">
+      <DependentUpon>UserRights.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ArtData.cs">
+      <DependentUpon>ArtData.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="ArtData.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ArtData.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="AutoReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AutoReport.Designer.cs">
+      <DependentUpon>AutoReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AutoScheduler\AutoSchedulerFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AutoScheduler\AutoSchedulerFrm.Designer.cs">
+      <DependentUpon>AutoSchedulerFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AutoScheduler\ShowSlots.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AutoScheduler\ShowSlots.Designer.cs">
+      <DependentUpon>ShowSlots.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Capacity Booking\AllBookingForm .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capacity Booking\AllBookingForm .Designer.cs">
+      <DependentUpon>AllBookingForm .cs</DependentUpon>
+    </Compile>
+    <Compile Include="Capacity Booking\AllMonthDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capacity Booking\AllMonthDetails.Designer.cs">
+      <DependentUpon>AllMonthDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Capacity Booking\ApprovedBooking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capacity Booking\ApprovedBooking.Designer.cs">
+      <DependentUpon>ApprovedBooking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Capacity Booking\ApprovedBookingSplit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capacity Booking\ApprovedBookingSplit.Designer.cs">
+      <DependentUpon>ApprovedBookingSplit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Capacity Booking\BokkingConfirmation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capacity Booking\BokkingConfirmation.Designer.cs">
+      <DependentUpon>BokkingConfirmation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Capacity Booking\BookingChanges.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capacity Booking\BookingChanges.Designer.cs">
+      <DependentUpon>BookingChanges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Capacity Booking\BreakDownform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capacity Booking\BreakDownform.Designer.cs">
+      <DependentUpon>BreakDownform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Capacity Booking\BookingReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capacity Booking\BookingReport.Designer.cs">
+      <DependentUpon>BookingReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Capacity Booking\BookingStatusForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capacity Booking\BookingStatusForm.Designer.cs">
+      <DependentUpon>BookingStatusForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Capacity Booking\SplitBookingFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capacity Booking\SplitBookingFrm.Designer.cs">
+      <DependentUpon>SplitBookingFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Class1.cs" />
+    <Compile Include="CM\ApproveProjection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CM\ApproveProjection.Designer.cs">
+      <DependentUpon>ApproveProjection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CM\CmCalculatorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CM\CmCalculatorForm.Designer.cs">
+      <DependentUpon>CmCalculatorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CM\CmReports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CM\CmReports.Designer.cs">
+      <DependentUpon>CmReports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CM\CompareProjrection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CM\CompareProjrection.Designer.cs">
+      <DependentUpon>CompareProjrection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CM\CrystalForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CM\CrystalForm.Designer.cs">
+      <DependentUpon>CrystalForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CM\Dataform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CM\Dataform.Designer.cs">
+      <DependentUpon>Dataform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CM\Rdlcreport\DerReportform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CM\Rdlcreport\DerReportform.Designer.cs">
+      <DependentUpon>DerReportform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\AltUOMMaster.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\ArtDataModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ArtDataModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\ArtDataModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\ArtDataModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ArtDataModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\AtcDetail.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\AtcMaster.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\AtcRawMaterialMaster.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\BankMaster.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\BuyerDestinationMaster.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\BuyerMaster.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\BuyerPOMaster.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\BuyerStyleMaster.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\CalculationModeMaster.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\ChannelMaster.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\ColorMaster.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\CostingComponentMaster.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\CountryMaster.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\CourierEntry.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\CurrencyMaster.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\CutOrderDO.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\CutOrderMaster.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\CuttingDetail.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\DeliveryMethodMaster.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\DeliveryOrderDetail.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\DeliveryOrderMaster.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\DeliveryOrderStockDetail.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\DeliveryOrderStockMaster.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\DeliveryReceiptDetail.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\DeliveryReceiptMaster.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\DeliveryReceiptStockDetail.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\DeliveryStockReceiptMaster.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\DeliveryTermMaster.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\DocDetail.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\DocMaster.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\ELMAH_Error.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\EtaDate.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\ExtraRequestReasonMaster.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\FabricRollmaster.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\FactoryType.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\FactWareLinkMaster.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\GarmentCategory.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\GoodsInTransit.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\InventoryLoanMaster.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\InventoryMaster.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\InventoryMissingDetail.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\InventoryMissingRequest.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\InventoryStockTransferDetail.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\InventoryStockTransferMaster.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\InvoiceDetail.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\InvoiceMaster.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\ItemGroupMaster.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\JobContractDetail.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\JobContractMaster.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\JobContractOptionalDetail.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\JobContractOptionalMaster.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\LCBankAdviceDetail.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\LCDetail.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\LCMaster.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\LocationMaster.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\LocationType.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\MerchandiserMaster.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\MrnDetail.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\MrnMaster.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\PaymentModeMaster.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\PaymentTermMaster.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\person.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\POApproval.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\POCurrExRate.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\POPackDetail.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\PoPackMaster.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\ProcurementDetail.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\ProcurementMaster.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\ProductionReportDetail.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\RecieptMaster.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\RequestOrderDetail.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\RequestOrderMaster.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\RequestOrderStockDetail.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\RequestOrderStockMaster.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\RoInDetail.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\ROINMaster.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\RollInventoryMaster.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\SeasonMaster.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\SeasonType.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\ServicePOMaster.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\ServiceTypeMaster.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\ShipmentHandOverDetail.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\ShipmentHandOverMaster.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\SizeMaster.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\SkuRawmaterialDetail.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\SkuRawMaterialMaster.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\StockGoodsInTransit.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\StockInventoryMaster.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\StockMRNDetail.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\StockMrnMaster.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\StockPODetail.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\StockPOMaster.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\StockRecieptMaster.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\StyleColor.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\StyleCostingComponentDetail.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\StyleCostingDetail.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\StyleCostingMaster.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\StyleSize.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\SupplierDocumentMaster.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\SupplierInvoiceDetail.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\SupplierInvoiceMaster.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\SupplierMaster.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\SupplierStockInvoiceDetail.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\SupplierStockInvoiceMaster.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\SupplierUserMaster.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\SupportTicket.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\sysdiagram.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\TemplateColor.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\TemplateComposition.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\TemplateConstruction.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\TemplateSize.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\TemplateWeight.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\TemplateWidth.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Template_Master.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\TransferToGstockDetail.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\TransferToGstockMaster.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\UOMMaster.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\UserMaster.cs">
+      <DependentUpon>ArtDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DER\AERReportGenerator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DER\AERReportGenerator.Designer.cs">
+      <DependentUpon>AERReportGenerator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DER\AERSubReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DER\AERSubReport.Designer.cs">
+      <DependentUpon>AERSubReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DER\DailyEfficiencyReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DER\DailyEfficiencyReport.Designer.cs">
+      <DependentUpon>DailyEfficiencyReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DER\DerReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DER\DerReport.Designer.cs">
+      <DependentUpon>DerReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DER\DerSubReportfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DER\DerSubReportfrm.Designer.cs">
+      <DependentUpon>DerSubReportfrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DER\SimpleDer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DER\SimpleDer.Designer.cs">
+      <DependentUpon>SimpleDer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\Stylemaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\Stylemaster.Designer.cs">
+      <DependentUpon>Stylemaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Merchandising\ArtGridReports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Merchandising\ArtGridReports.Designer.cs">
+      <DependentUpon>ArtGridReports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Merchandising\ASQCreator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Merchandising\ASQCreator.Designer.cs">
+      <DependentUpon>ASQCreator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Merchandising\AtcChartForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Merchandising\AtcChartForm.Designer.cs">
+      <DependentUpon>AtcChartForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Merchandising\FinalCosting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Merchandising\FinalCosting.Designer.cs">
+      <DependentUpon>FinalCosting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Merchandising\Merchandisingreport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Merchandising\Merchandisingreport.Designer.cs">
+      <DependentUpon>Merchandisingreport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Merchandising\PurchaseReports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Merchandising\PurchaseReports.Designer.cs">
+      <DependentUpon>PurchaseReports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Planning\PlanningFormDragable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Planning\PlanningFormDragable.Designer.cs">
+      <DependentUpon>PlanningFormDragable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ApprovedReports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\ApprovedReports.Designer.cs">
+      <DependentUpon>ApprovedReports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Logonvalues.cs" />
+    <Compile Include="ShipitControls\ControlSetupper.cs" />
+    <Compile Include="CourierDetailsDataSet.cs">
+      <DependentUpon>CourierDetailsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CourierDetailsDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CourierDetailsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ActualProduction\DailyPacking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActualProduction\DailyPacking.Designer.cs">
+      <DependentUpon>DailyPacking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ActualProduction\DailyProduction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActualProduction\DailyProduction.Designer.cs">
+      <DependentUpon>DailyProduction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\CategoryMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\CategoryMaster.Designer.cs">
+      <DependentUpon>CategoryMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\CategoryPercentage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\CategoryPercentage.Designer.cs">
+      <DependentUpon>CategoryPercentage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CourierData.cs">
+      <DependentUpon>CourierData.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="CourierData.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CourierData.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\FactoryHolidays.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\FactoryHolidays.Designer.cs">
+      <DependentUpon>FactoryHolidays.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Loginform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Loginform.Designer.cs">
+      <DependentUpon>Loginform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mainform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mainform.Designer.cs">
+      <DependentUpon>Mainform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\AtcMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\AtcMaster.Designer.cs">
+      <DependentUpon>AtcMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\NewFactory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\NewFactory.Designer.cs">
+      <DependentUpon>NewFactory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Notification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Notification.Designer.cs">
+      <DependentUpon>Notification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Capacity Booking\OrderBooking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capacity Booking\OrderBooking.Designer.cs">
+      <DependentUpon>OrderBooking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Planning\LInePlanning.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Planning\LInePlanning.Designer.cs">
+      <DependentUpon>LInePlanning.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\DailyProductionUpdater.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\DailyProductionUpdater.Designer.cs">
+      <DependentUpon>DailyProductionUpdater.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\EditLinePlanForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\EditLinePlanForm.Designer.cs">
+      <DependentUpon>EditLinePlanForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\FactoryLinesMasterFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\FactoryLinesMasterFrm.Designer.cs">
+      <DependentUpon>FactoryLinesMasterFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Planning\LineCapacityForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Planning\LineCapacityForm.Designer.cs">
+      <DependentUpon>LineCapacityForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\LinePlanEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\LinePlanEdit.Designer.cs">
+      <DependentUpon>LinePlanEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\POWiseLineAssigner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\POWiseLineAssigner.Designer.cs">
+      <DependentUpon>POWiseLineAssigner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\ProductionReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\ProductionReport.Designer.cs">
+      <DependentUpon>ProductionReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\Productiontransaction.cs" />
+    <Compile Include="Production\ProductionDayClose.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\ProductionDayClose.Designer.cs">
+      <DependentUpon>ProductionDayClose.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\WeeklyChartform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\WeeklyChartform.Designer.cs">
+      <DependentUpon>WeeklyChartform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\WeeklyPlanEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\WeeklyPlanEdit.Designer.cs">
+      <DependentUpon>WeeklyPlanEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\WeekPlanEditform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\WeekPlanEditform.Designer.cs">
+      <DependentUpon>WeekPlanEditform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\WeekPlanSplitter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\WeekPlanSplitter.Designer.cs">
+      <DependentUpon>WeekPlanSplitter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\WeekPlanviewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\WeekPlanviewer.Designer.cs">
+      <DependentUpon>WeekPlanviewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="CM\ProjectionReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CM\ProjectionReport.Designer.cs">
+      <DependentUpon>ProjectionReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuantityCalcuulater.cs" />
+    <Compile Include="Reports\AtcLinePlanrReportfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\AtcLinePlanrReportfrm.Designer.cs">
+      <DependentUpon>AtcLinePlanrReportfrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\BookingReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\BookingReport.Designer.cs">
+      <DependentUpon>BookingReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Frm_ProductionActual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Frm_ProductionActual.Designer.cs">
+      <DependentUpon>Frm_ProductionActual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Lineplan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Lineplan.Designer.cs">
+      <DependentUpon>Lineplan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Lineplanstatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Lineplanstatus.Designer.cs">
+      <DependentUpon>Lineplanstatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\QuickReports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\QuickReports.Designer.cs">
+      <DependentUpon>QuickReports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\RDLC\CapacityReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\RDLC\CapacityReport.Designer.cs">
+      <DependentUpon>CapacityReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\RDLC\LineplanReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\RDLC\LineplanReportForm.Designer.cs">
+      <DependentUpon>LineplanReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\RDLC\PendingLinePlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\RDLC\PendingLinePlan.Designer.cs">
+      <DependentUpon>PendingLinePlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\RDLC\POPending.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\RDLC\POPending.Designer.cs">
+      <DependentUpon>POPending.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\RDLC\WeekAllocationReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\RDLC\WeekAllocationReportForm.Designer.cs">
+      <DependentUpon>WeekAllocationReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="test.Designer.cs">
+      <DependentUpon>test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\ActionLogger.cs" />
+    <Compile Include="Transaction\AtracoCalaender.cs" />
+    <Compile Include="Transaction\ArtTransaction.cs" />
+    <Compile Include="Transaction\BuildConnection.cs" />
+    <Compile Include="Transaction\ClsEmailer.cs" />
+    <Compile Include="Transaction\DataExporter.cs" />
+    <Compile Include="DataTransaction.cs" />
+    <Compile Include="Transaction\OrginTransaction.cs" />
+    <Compile Include="Transaction\PlanTransaction.cs" />
+    <Compile Include="Transaction\ReportTransaction.cs" />
+    <Compile Include="ShipitControls\XmlLogfileStream.cs" />
+    <Compile Include="Try\SuperUserAuthenication.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Try\SuperUserAuthenication.Designer.cs">
+      <DependentUpon>SuperUserAuthenication.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Try\tryform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Try\tryform.Designer.cs">
+      <DependentUpon>tryform.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ActualProduction\PoWiseProductionEntry.resx">
+      <DependentUpon>PoWiseProductionEntry.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActualProduction\ProductionPOSplitter.resx">
+      <DependentUpon>ProductionPOSplitter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administrator\Usermasterfrm.resx">
+      <DependentUpon>Usermasterfrm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administrator\UserRights.resx">
+      <DependentUpon>UserRights.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="ArtData.dbml.layout">
+      <DependentUpon>ArtData.dbml</DependentUpon>
+    </None>
+    <EmbeddedResource Include="AutoReport.resx">
+      <DependentUpon>AutoReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AutoScheduler\AutoSchedulerFrm.resx">
+      <DependentUpon>AutoSchedulerFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AutoScheduler\ShowSlots.resx">
+      <DependentUpon>ShowSlots.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capacity Booking\AllBookingForm .resx">
+      <DependentUpon>AllBookingForm .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capacity Booking\AllMonthDetails.resx">
+      <DependentUpon>AllMonthDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capacity Booking\ApprovedBooking.resx">
+      <DependentUpon>ApprovedBooking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capacity Booking\ApprovedBookingSplit.resx">
+      <DependentUpon>ApprovedBookingSplit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capacity Booking\BokkingConfirmation.resx">
+      <DependentUpon>BokkingConfirmation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capacity Booking\BookingReport.resx">
+      <DependentUpon>BookingReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capacity Booking\BookingStatusForm.resx">
+      <DependentUpon>BookingStatusForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capacity Booking\SplitBookingFrm.resx">
+      <DependentUpon>SplitBookingFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActualProduction\DailyPacking.resx">
+      <DependentUpon>DailyPacking.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActualProduction\DailyProduction.resx">
+      <DependentUpon>DailyProduction.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CM\ApproveProjection.resx">
+      <DependentUpon>ApproveProjection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CM\CmCalculatorForm.resx">
+      <DependentUpon>CmCalculatorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CM\CmReports.resx">
+      <DependentUpon>CmReports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CM\CompareProjrection.resx">
+      <DependentUpon>CompareProjrection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CM\CrystalForm.resx">
+      <DependentUpon>CrystalForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CM\Dataform.resx">
+      <DependentUpon>Dataform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CM\Rdlcreport\DER.rdlc" />
+    <EmbeddedResource Include="CM\Rdlcreport\DerReportform.resx">
+      <DependentUpon>DerReportform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CM\Rdlcreport\Report1.rdlc" />
+    <EmbeddedResource Include="DER\AERReportGenerator.resx">
+      <DependentUpon>AERReportGenerator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DER\AERSubReport.resx">
+      <DependentUpon>AERSubReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DER\DailyEfficiencyReport.resx">
+      <DependentUpon>DailyEfficiencyReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DER\DerReport.resx">
+      <DependentUpon>DerReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DER\DerSubReportfrm.resx">
+      <DependentUpon>DerSubReportfrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DER\SimpleDer.resx">
+      <DependentUpon>SimpleDer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\AtcMaster.resx">
+      <DependentUpon>AtcMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\NewFactory.resx">
+      <DependentUpon>NewFactory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\Stylemaster.resx">
+      <DependentUpon>Stylemaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Merchandising\ArtGridReports.resx">
+      <DependentUpon>ArtGridReports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Merchandising\ASQCreator.resx">
+      <DependentUpon>ASQCreator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Merchandising\AtcChartForm.resx">
+      <DependentUpon>AtcChartForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Merchandising\FinalCosting.resx">
+      <DependentUpon>FinalCosting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Merchandising\Merchandisingreport.resx">
+      <DependentUpon>Merchandisingreport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Merchandising\PurchaseReports.resx">
+      <DependentUpon>PurchaseReports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Planning\LInePlanning.resx">
+      <DependentUpon>LInePlanning.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Planning\PlanningFormDragable.resx">
+      <DependentUpon>PlanningFormDragable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\DailyProductionUpdater.resx">
+      <DependentUpon>DailyProductionUpdater.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\EditLinePlanForm.resx">
+      <DependentUpon>EditLinePlanForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\FactoryLinesMasterFrm.resx">
+      <DependentUpon>FactoryLinesMasterFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Planning\LineCapacityForm.resx">
+      <DependentUpon>LineCapacityForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\LinePlanEdit.resx">
+      <DependentUpon>LinePlanEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\POWiseLineAssigner.resx">
+      <DependentUpon>POWiseLineAssigner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\ProductionReport.resx">
+      <DependentUpon>ProductionReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\ProductionDayClose.resx">
+      <DependentUpon>ProductionDayClose.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\WeeklyChartform.resx">
+      <DependentUpon>WeeklyChartform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\WeeklyPlanEdit.resx">
+      <DependentUpon>WeeklyPlanEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\WeekPlanEditform.resx">
+      <DependentUpon>WeekPlanEditform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\WeekPlanSplitter.resx">
+      <DependentUpon>WeekPlanSplitter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\WeekPlanviewer.resx">
+      <DependentUpon>WeekPlanviewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\licenses.licx" />
+    <EmbeddedResource Include="CM\ProjectionReport.resx">
+      <DependentUpon>ProjectionReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Reports\ApprovedReports.resx">
+      <DependentUpon>ApprovedReports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\AtcLinePlanrReportfrm.resx">
+      <DependentUpon>AtcLinePlanrReportfrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\BookingReport.resx">
+      <DependentUpon>BookingReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Frm_ProductionActual.resx">
+      <DependentUpon>Frm_ProductionActual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Lineplan.resx">
+      <DependentUpon>Lineplan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Lineplanstatus.resx">
+      <DependentUpon>Lineplanstatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\QuickReports.resx">
+      <DependentUpon>QuickReports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RDLC\Bookingreport.rdlc" />
+    <EmbeddedResource Include="Reports\RDLC\CapacityReport.resx">
+      <DependentUpon>CapacityReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RDLC\LinePlan.rdlc" />
+    <EmbeddedResource Include="Reports\RDLC\LineplanReportForm.resx">
+      <DependentUpon>LineplanReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RDLC\PendingLinePlan.rdlc" />
+    <EmbeddedResource Include="Reports\RDLC\PendingLinePlan.resx">
+      <DependentUpon>PendingLinePlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RDLC\PendingPoAllocation.rdlc" />
+    <EmbeddedResource Include="Reports\RDLC\POPending.resx">
+      <DependentUpon>POPending.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RDLC\ProductionRpt.rdlc" />
+    <EmbeddedResource Include="Reports\RDLC\RptProduction.rdlc" />
+    <EmbeddedResource Include="Reports\RDLC\SimpleProductionReport.rdlc" />
+    <EmbeddedResource Include="Reports\RDLC\WeekAllocationReportForm.resx">
+      <DependentUpon>WeekAllocationReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RDLC\WeekPlan.rdlc" />
+    <EmbeddedResource Include="test.resx">
+      <DependentUpon>test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Try\SuperUserAuthenication.resx">
+      <DependentUpon>SuperUserAuthenication.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Try\tryform.resx">
+      <DependentUpon>tryform.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="ArtData.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>ArtData.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="CourierData.dbml.layout">
+      <DependentUpon>CourierData.dbml</DependentUpon>
+    </None>
+    <EmbeddedResource Include="Capacity Booking\BookingChanges.resx">
+      <DependentUpon>BookingChanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capacity Booking\BreakDownform.resx">
+      <DependentUpon>BreakDownform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\CategoryMaster.resx">
+      <DependentUpon>CategoryMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\CategoryPercentage.resx">
+      <DependentUpon>CategoryPercentage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\FactoryHolidays.resx">
+      <DependentUpon>FactoryHolidays.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Loginform.resx">
+      <DependentUpon>Loginform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mainform.resx">
+      <DependentUpon>Mainform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Notification.resx">
+      <DependentUpon>Notification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capacity Booking\OrderBooking.resx">
+      <DependentUpon>OrderBooking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="CourierData.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>CourierData.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CourierDetailsDataSet.xsc">
+      <DependentUpon>CourierDetailsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CourierDetailsDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CourierDetailsDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CourierDetailsDataSet.xss">
+      <DependentUpon>CourierDetailsDataSet.xsd</DependentUpon>
+    </None>
+    <EntityDeploy Include="DataModels\ArtDataModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ArtDataModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DataModels\ArtDataModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ArtDataModel.edmx</DependentUpon>
+      <LastGenOutput>ArtDataModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="DataModels\ArtDataModel.edmx.diagram">
+      <DependentUpon>ArtDataModel.edmx</DependentUpon>
+    </None>
+    <None Include="DataModels\ArtDataModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ArtDataModel.edmx</DependentUpon>
+      <LastGenOutput>ArtDataModel.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Shipit_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\packages\Microsoft.SqlServer.Types.11.0.2\nativeBinaries\x64\msvcr100.dll">
+      <Link>SqlServerTypes\x64\msvcr100.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\packages\Microsoft.SqlServer.Types.11.0.2\nativeBinaries\x64\SqlServerSpatial110.dll">
+      <Link>SqlServerTypes\x64\SqlServerSpatial110.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\packages\Microsoft.SqlServer.Types.11.0.2\nativeBinaries\x86\msvcr100.dll">
+      <Link>SqlServerTypes\x86\msvcr100.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\packages\Microsoft.SqlServer.Types.11.0.2\nativeBinaries\x86\SqlServerSpatial110.dll">
+      <Link>SqlServerTypes\x86\SqlServerSpatial110.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images.ico" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <None Include="Resources\refresh.bmp" />
+    <None Include="Resources\images.jpg" />
+    <None Include="Resources\ppc.jpg" />
+    <None Include="Resources\inventory-management-mbaknol.jpg" />
+    <None Include="Resources\login Back.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="obj\" />
+    <Folder Include="Properties\DataSources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="CrystalDecisions.CrystalReports.Engine">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.ClientDoc">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.CommLayer">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.CommonControls">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.CommonObjectModel">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.Controllers">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.CubeDefModel">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.DataDefModel">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.DataSetConversion">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.ObjectFactory">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.Prompting">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.ReportDefModel">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.XmlSerialize">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportSource">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.Shared">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.Windows.Forms">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="FlashControlV71">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Infragistics2.Documents.Excel.v12.1">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Infragistics2.Documents.Reports.v12.1">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Infragistics2.Shared.v12.1">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Infragistics2.Win.AppStylistSupport.v12.1">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Infragistics2.Win.Misc.v12.1">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Infragistics2.Win.UltraWinDataSource.v12.1">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Infragistics2.Win.UltraWinEditors.v12.1">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Infragistics2.Win.UltraWinExplorerBar.v12.1">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Infragistics2.Win.UltraWinGrid.DocumentExport.v12.1">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Infragistics2.Win.UltraWinGrid.ExcelExport.v12.1">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Infragistics2.Win.UltraWinGrid.v12.1">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Infragistics2.Win.UltraWinListView.v12.1">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Infragistics2.Win.UltraWinStatusBar.v12.1">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Infragistics2.Win.UltraWinTabControl.v12.1">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Infragistics2.Win.UltraWinToolbars.v12.1">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Infragistics2.Win.UltraWinTree.v12.1">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Infragistics2.Win.v12.1">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Infragistics3.Documents.Excel.v12.1">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="log4net">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.ReportViewer.Common">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.ReportViewer.DataVisualization">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.ReportViewer.ProcessingObjectModel">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.ReportViewer.WinForms">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.SqlServer.Types">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="ShockwaveFlashObjects">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

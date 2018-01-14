@@ -1,0 +1,74 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Shipit.Reports
+{
+    public partial class AtcLinePlanrReportfrm : Form
+    {
+        Transaction.DataTransaction dttrans = null;
+        public AtcLinePlanrReportfrm()
+        {
+            InitializeComponent();
+            dttrans = new Transaction.DataTransaction();
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DataTable dt = dttrans.ATCplanofFactory(cmb_factory.Text);
+            dataGridView1.DataSource = dt;
+            dataGridView1.Columns[0].Visible = false;
+            dataGridView1.Columns[1].Visible = false;
+        }
+
+
+
+
+
+        public void loadfactorycombo()
+        {
+            try
+            {
+                DataTable atcnum = dttrans.getAtcnumbers();
+
+                if(atcnum!=null)
+                {
+                    if(atcnum.Rows.Count>0)
+                    {
+                     for(int i=0;i<atcnum.Rows.Count;i++)
+                     {
+                         cmb_factory.Items.Add(atcnum.Rows[i][0].ToString().Trim());
+                     }
+                    }
+                }
+                
+
+               
+                
+            }
+            catch (Exception exp)
+            {
+                
+                throw;
+            }
+       //     cmb_factory.ValueMember = "atcmaster";
+            //   Buyercombo.DataBind();
+
+
+
+        }
+
+        private void AtcLinePlanrReportfrm_Load(object sender, EventArgs e)
+        {
+            loadfactorycombo();
+        }
+
+    }
+}

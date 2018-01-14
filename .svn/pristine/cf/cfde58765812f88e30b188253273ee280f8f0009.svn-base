@@ -1,0 +1,257 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Shipit.Production
+{
+    public partial class tryfrm : Form
+    {
+        Transaction.DataTransaction trans = null;
+        Transaction.DataExporter DTPEXPTR = null;
+        String type = "";
+
+        public tryfrm()
+        {
+            InitializeComponent();
+            type = "normal";
+            trans = new Transaction.DataTransaction();
+            loadfactorycombo();
+        }
+
+        private void tryfrm_Load(object sender, EventArgs e)
+        {
+            this.dataGridView1.Columns.Add("column1", "Target");
+
+            this.dataGridView1.Columns.Add("column2", "Production");
+
+            this.dataGridView1.Columns.Add("column3", "Target");
+
+            this.dataGridView1.Columns.Add("column4", "Production");
+
+            this.dataGridView1.Columns.Add("column5", "Target");
+
+            this.dataGridView1.Columns.Add("column6", "Production");
+
+            this.dataGridView1.Columns.Add("column7", "Target");
+
+            this.dataGridView1.Columns.Add("column8", "Production");
+
+            for (int j = 0; j < this.dataGridView1.ColumnCount; j++)
+            {
+
+                this.dataGridView1.Columns[j].Width = 45;
+
+            }
+
+            this.dataGridView1.ColumnHeadersHeightSizeMode =
+
+                 DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+
+            this.dataGridView1.ColumnHeadersHeight =
+
+                        this.dataGridView1.ColumnHeadersHeight * 2;
+
+            this.dataGridView1.ColumnHeadersDefaultCellStyle.Alignment =
+
+                 DataGridViewContentAlignment.BottomCenter;
+
+            this.dataGridView1.CellPainting += new
+
+                 DataGridViewCellPaintingEventHandler(dataGridView1_CellPainting);
+
+            this.dataGridView1.Paint += new PaintEventHandler(dataGridView1_Paint); 
+         
+        }
+
+        private void dataGridView1_ColumnWidthChanged(object sender, DataGridViewColumnEventArgs e)
+        {
+            //stores the cordinates of the gridview in a rectangle
+            //Rectangle rtHeader = this.dataGridView1.DisplayRectangle;
+            //rtHeader.Height = this.dataGridView1.ColumnHeadersHeight / 10;
+            //this.dataGridView1.Invalidate(rtHeader); 
+        }
+        public void loadfactorycombo()
+        {
+            CourierDataDataContext courdatacontext = new CourierDataDataContext(Program.ConnStr);
+            var q = from factory in courdatacontext.Factory_Masters
+                    select factory;
+
+
+
+            factorycombo.DataSource = q;
+            factorycombo.DisplayMember = "Factory_name";
+            factorycombo.ValueMember = "Factory_ID";
+            //   Buyercombo.DataBind();
+
+
+
+        }
+        private void dataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+
+            if (e.RowIndex == -1 && e.ColumnIndex > -1)
+            {
+
+                e.PaintBackground(e.CellBounds, false);
+
+
+
+                Rectangle r2 = e.CellBounds;
+
+                r2.Y += e.CellBounds.Height / 2;
+
+                r2.Height = e.CellBounds.Height / 2;
+
+                e.PaintContent(r2);
+
+                e.Handled = true;
+
+            }
+
+                        
+        }
+
+        private void dataGridView1_Paint(object sender, PaintEventArgs e)
+        {
+            string[] monthes = { "Week1", "Week2", "Week3", "Week4" };
+
+            for (int j = 0; j < 8; )
+            {
+
+                //get the column header cell
+
+                Rectangle r1 = this.dataGridView1.GetCellDisplayRectangle(j, -1, true);
+
+
+
+                r1.X += 1;
+
+                r1.Y += 1;
+
+                r1.Width = r1.Width * 2 - 2;
+
+                r1.Height = r1.Height / 2 - 2;
+
+                e.Graphics.FillRectangle(new
+
+                   SolidBrush(this.dataGridView1.ColumnHeadersDefaultCellStyle.BackColor), r1);
+
+                StringFormat format = new StringFormat();
+
+                format.Alignment = StringAlignment.Center;
+
+                format.LineAlignment = StringAlignment.Center;
+
+                e.Graphics.DrawString(monthes[j / 2],
+
+                    this.dataGridView1.ColumnHeadersDefaultCellStyle.Font,
+
+                    new SolidBrush(this.dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor),
+
+                    r1,
+
+                    format);
+
+                j += 2;
+
+            }
+        
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            MessageBox.Show(e.RowIndex.ToString () + ", "+          e.ColumnIndex.ToString());
+        }
+             
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            int week1target=0;
+            int week2target=0;
+           int week3target=0;
+            int week4target=0;
+
+            int week1produced = 0;
+            int week2produced = 0;
+            int week3produced = 0;
+            int week4produced = 0;
+
+            if (cmb_month.Text.Trim() != "" && cmb_year .Text.Trim() != "" && factorycombo.Text.Trim() != "")
+            {
+                lbl_header.Text = "Production Report - " + factorycombo.Text.Trim() + " " + cmb_year.Text.Trim() + "-" + cmb_month.Text.Trim() + "";
+                DataTable dt = trans.GetProductionofamonth(cmb_month.Text.Trim(), int.Parse(cmb_year.Text), int.Parse(factorycombo.SelectedValue.ToString ()));
+
+                if (dt.Rows.Count > 0)
+                {
+
+                    for(int i=0;i<dt.Rows.Count ;i++)
+                    {
+                        if(dt.Rows[i][2].ToString ().Trim ()=="Week1")
+                        {
+                            week1target = week1target + int.Parse(dt.Rows[i][0].ToString());
+                            week1produced = week1produced + int.Parse(dt.Rows[i][1].ToString());
+
+                        }
+                        else if (dt.Rows[i][2].ToString().Trim() == "Week2")
+                        {
+                            week2target = week2target + int.Parse(dt.Rows[i][0].ToString());
+                            week2produced = week2produced + int.Parse(dt.Rows[i][1].ToString());
+                        }
+                        else if (dt.Rows[i][2].ToString().Trim() == "Week3")
+                        {
+                            week3target = week3target + int.Parse(dt.Rows[i][0].ToString());
+                            week3produced = week3produced + int.Parse(dt.Rows[i][1].ToString());
+                        }
+                        else if (dt.Rows[i][2].ToString().Trim() == "Week4")
+                        {
+                            week4target = week4target + int.Parse(dt.Rows[i][0].ToString());
+                            week4produced = week4produced + int.Parse(dt.Rows[i][1].ToString());
+                        }
+                        
+                    }
+                }
+
+
+                dataGridView1.Rows.Add();
+
+                dataGridView1.Rows[0].Cells[0].Value = week1target.ToString();
+                dataGridView1.Rows[0].Cells[1].Value = week1produced.ToString();
+
+                dataGridView1.Rows[0].Cells[2].Value = week2target.ToString();
+                dataGridView1.Rows[0].Cells[3].Value = week2produced .ToString();
+
+                dataGridView1.Rows[0].Cells[4].Value = week3target.ToString();
+                dataGridView1.Rows[0].Cells[5].Value = week3produced.ToString();
+
+                dataGridView1.Rows[0].Cells[6].Value = week4target.ToString();
+                dataGridView1.Rows[0].Cells[7].Value = week4produced.ToString();
+
+
+
+                int totaltarget = week1target + week2target + week3target + week4target;
+                int totalproduced = week1produced + +week2produced + week3produced + week4produced;
+
+                lbl_target.Text = "Target : " + totaltarget.ToString();
+                lbl_lblproduced.Text = "Produced : " + totalproduced.ToString();
+
+                
+            }
+        }
+
+        private void factorycombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            trans.resrictacess(factorycombo);
+        }
+    }
+}

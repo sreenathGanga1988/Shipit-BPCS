@@ -1,0 +1,252 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Shipit
+{
+    public partial class BookingChanges : Form
+    {
+        Transaction.DataTransaction dtrans = null;
+        String year = "";
+        String month = "";
+        public BookingChanges()
+        {
+            InitializeComponent();
+        }
+        public BookingChanges(int bookid,String currentfact)
+        {
+            InitializeComponent();
+            tabControl1.SelectedTab = tb_factory;
+            lbl_orderid.Text = bookid.ToString();
+            lbl_currentvalue.Text = currentfact;
+            LoadFactoryCombo();
+            dtrans = new Transaction.DataTransaction();
+        }
+        public BookingChanges(int bookid, String currentfact,String Year,String Month,int currentqty)
+        {
+            InitializeComponent();
+            tabControl1.SelectedTab = tb_qty;
+            lbl_orderidforqty .Text = bookid.ToString();
+            lbl_fct .Text = currentfact;
+            lbl_currentQty.Text = currentqty.ToString();
+            year = Year;
+            month = Month;
+            dtrans = new Transaction.DataTransaction();
+
+            
+        }
+
+        public BookingChanges(int bookid, String curentstyle,int asd)
+        {
+            InitializeComponent();
+            tabControl1.SelectedTab = tb_style ;
+            lbl_currentstyleBookid.Text = bookid.ToString();
+            lbl_currentstyle.Text = curentstyle;
+
+
+        }
+        public void LoadFactoryCombo()
+        {
+            CourierDataDataContext courdatacontext = new CourierDataDataContext(Program.ConnStr);
+            var q = from fctry in courdatacontext.Factory_Masters
+                    select fctry;
+
+
+
+            cmb_factory.DataSource = q;
+            cmb_factory.DisplayMember = "Factory_name";
+            cmb_factory.ValueMember = "Factory_ID";
+            //   Buyercombo.DataBind();
+
+
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int factoryid = int.Parse(cmb_factory.SelectedValue.ToString());
+            int orderid = int.Parse(lbl_orderid.Text.ToString());
+
+            int balance = dtrans.getbalance(orderid, factoryid);
+            int orderqty = 0;
+
+            if (balance > 0)
+            {
+                MessageBox.Show("Balance Available is " +balance .ToString ());
+
+                CourierDataDataContext countxt = new CourierDataDataContext(Program.ConnStr);
+                var q = from orderdtl in countxt.OrderBooking_tbls
+                        where orderdtl.Order_id == orderid
+                        select orderdtl;
+                foreach (var order in q)
+                {
+
+                    orderqty = int.Parse(order.BookQty .ToString());
+                    if (balance - orderqty >= 0)
+                    {
+
+                        order.Factory_Id = int.Parse (factoryid.ToString ());
+                        countxt.SubmitChanges();
+                        MessageBox.Show("Done");
+                        this.Close();
+                    }
+
+
+                    else
+                    {
+                        MessageBox.Show("Not enough quantity to accumalate ther Order ");
+                    }
+                }
+
+               
+
+
+
+                
+
+            }
+            else
+            {
+                MessageBox.Show("No Balance Capacity available in the Location");
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+         if( validationcontrol())
+            {
+                int orderid = int.Parse ( lbl_orderidforqty.Text);
+               CourierDataDataContext countxt = new CourierDataDataContext(Program.ConnStr);
+                var q = from orderdtl in countxt.OrderBooking_tbls
+                        where orderdtl.Order_id == orderid
+                        select orderdtl;
+                foreach (var order in q)
+                {
+                    int   orderqty = int.Parse(txt_newqty.Text);
+                    order.BookQty = orderqty;
+                    countxt.SubmitChanges();
+                    MessageBox.Show("Done");
+                    this.Close();
+                }
+
+
+            }
+
+            
+        }
+
+
+        public Boolean iscorrectentry()
+        {
+            Boolean iscorrect = false;
+
+            try
+            {
+                int asd = int.Parse(txt_newqty.Text);
+                iscorrect = true;
+            }
+            catch (Exception exp)
+            {
+                iscorrect = false;
+               
+            }
+            return iscorrect;
+
+        }
+
+
+        public Boolean isqtyok()
+        {
+
+
+
+            Boolean sucess = false;
+
+
+           
+
+            int blance = dtrans.getbalancebyfactoryname(lbl_fct.Text.Trim(), int.Parse ( year), month.Trim ());
+            int currentqty = int.Parse(lbl_currentQty.Text);
+            blance = blance + currentqty;
+
+            if (blance < int.Parse(txt_newqty.Text))
+            {
+               
+            }
+            else
+            {
+                sucess = true;
+            }
+
+
+            if (currentqty > int.Parse(txt_newqty.Text))
+            {
+                sucess = true;
+            }
+
+            return sucess;
+        }
+
+
+        public Boolean validationcontrol()
+        {
+
+
+
+            Boolean sucess = false;
+
+            if (txt_newqty.Text == null || txt_newqty.Text == "")
+            {
+                MessageBox.Show("Error In factory details");
+
+            }
+
+            else if (!iscorrectentry())
+            {
+                MessageBox.Show("Enter the correct Data");
+            }
+            else if (!isqtyok())
+            {
+                MessageBox.Show("No Capacity Available");
+            }
+
+            else
+            {
+                sucess = true;
+            }
+
+
+            return sucess;
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (txt_style.Text.Trim()!="")
+            {
+                int orderid = int.Parse(lbl_currentstyleBookid .Text);
+                CourierDataDataContext countxt = new CourierDataDataContext(Program.ConnStr);
+                var q = from orderdtl in countxt.OrderBooking_tbls
+                        where orderdtl.Order_id == orderid
+                        select orderdtl;
+                foreach (var order in q)
+                {
+                   
+                    order.Style = txt_style.Text.Trim ();
+                    countxt.SubmitChanges();
+                    MessageBox.Show("Done");
+                    this.Close();
+                }
+
+
+            }
+        }
+
+    }
+}

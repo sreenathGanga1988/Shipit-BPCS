@@ -1,0 +1,122 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Shipit
+{
+    public partial class Notification : Form
+    {
+      
+        Transaction.DataTransaction DATTRAN = null;
+        int k = 0;
+        public Notification()
+        {
+            InitializeComponent();
+            DATTRAN = new Transaction.DataTransaction();
+            try
+            {
+                getallnonapprovedentries();
+            }
+            catch(Exception exp)
+            {
+
+            }
+     
+            givemessg();
+            if (k == 1)
+            {
+                this.Close();
+            }
+        }
+
+
+
+
+
+
+
+        public void getallnonapprovedentries()
+        {
+            CourierDataDataContext couriercontext = new CourierDataDataContext(Program.ConnStr);
+
+            var orderdetails = from c in couriercontext.OrderBooking_tbls
+                          join b in couriercontext.Buyer_Masters on c.Buyer_ID equals b.Buyer_Id
+                          join f in couriercontext.Factory_Masters  on c.Factory_Id equals f.Factory_ID 
+                          where c.ISApproved!="Y" && c.UserId==Program.uername
+                          select new 
+                          {
+                              bookid = c.Order_id ,
+                              factoryname = f.Factory_name ,
+                              year = c.Year ,
+                              month = c.Month ,
+                              buyer = b.BuyerName ,
+                              style = c.Style ,
+                              qty =  c.BookQty,
+                             
+                          };
+            int i=0;
+            foreach (var element in orderdetails)
+       {
+                
+int monthnum=DATTRAN.getmonthname (element.month );
+           DateTime startdate = new DateTime(int.Parse ((element.year).ToString ()) ,monthnum, 1);
+           DateTime datetoday = DateTime.Now.Date;
+
+           if ((startdate - datetoday).TotalDays < 150)
+           {
+               tbl_pending.Rows.Add();
+               tbl_pending.Rows[i].Cells[0].Value = element.factoryname;
+               tbl_pending.Rows[i].Cells[1].Value = element.year;
+               tbl_pending.Rows[i].Cells[2].Value = element.month;
+               tbl_pending.Rows[i].Cells[3].Value = element.buyer;
+               tbl_pending.Rows[i].Cells[4].Value = element.qty;
+               tbl_pending.Rows[i].Cells[5].Value = element.style;
+             
+
+
+               
+               ++i;
+           }
+          }
+            getsum();
+        }
+
+
+
+
+
+        public void getsum()
+        {
+            int sum = 0;
+            for(int i=0;i<tbl_pending.Rows.Count-1;i ++)
+            {
+                sum += int.Parse(tbl_pending.Rows[i].Cells[4].Value.ToString());
+
+            }
+            lbl_sum.Text = "Your Total Quantity Pending for  Approval is " + sum.ToString();
+        }
+
+        public void givemessg()
+        {
+           
+            k = tbl_pending.Rows.Count-1;
+
+            String Msg = "You have " + k + " Booking Pending to be confirmed ";
+            lbl_msgr.Text = Msg;
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+    
+    
+    }
+}

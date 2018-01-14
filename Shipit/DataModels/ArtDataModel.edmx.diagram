@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a3813da7943a49f78d531420d170f6a1" Name="Diagram1" ZoomLevel="74">
+        <EntityTypeShape EntityType="ArtModel.AltUOMMaster" Width="1.5" PointX="3.75" PointY="107" />
+        <EntityTypeShape EntityType="ArtModel.AtcDetail" Width="1.5" PointX="8.25" PointY="38.125" />
+        <EntityTypeShape EntityType="ArtModel.AtcMaster" Width="1.5" PointX="6" PointY="35.75" />
+        <EntityTypeShape EntityType="ArtModel.AtcRawMaterialMaster" Width="1.5" PointX="1.5" PointY="70.5" />
+        <EntityTypeShape EntityType="ArtModel.BankMaster" Width="1.5" PointX="6" PointY="85.875" />
+        <EntityTypeShape EntityType="ArtModel.BuyerDestinationMaster" Width="1.5" PointX="6" PointY="32" />
+        <EntityTypeShape EntityType="ArtModel.BuyerMaster" Width="1.5" PointX="3.75" PointY="36.125" />
+        <EntityTypeShape EntityType="ArtModel.BuyerPOMaster" Width="1.5" PointX="6" PointY="23.375" />
+        <EntityTypeShape EntityType="ArtModel.BuyerStyleMaster" Width="1.5" PointX="6" PointY="26.875" />
+        <EntityTypeShape EntityType="ArtModel.CalculationModeMaster" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ArtModel.ChannelMaster" Width="1.5" PointX="6" PointY="29.75" />
+        <EntityTypeShape EntityType="ArtModel.ColorMaster" Width="1.5" PointX="2.75" PointY="7.75" />
+        <EntityTypeShape EntityType="ArtModel.CostingComponentMaster" Width="1.5" PointX="10.5" PointY="29.875" />
+        <EntityTypeShape EntityType="ArtModel.CountryMaster" Width="1.5" PointX="0.75" PointY="52.375" />
+        <EntityTypeShape EntityType="ArtModel.CourierEntry" Width="1.5" PointX="7.75" PointY="9.75" />
+        <EntityTypeShape EntityType="ArtModel.CurrencyMaster" Width="1.5" PointX="0.75" PointY="61.375" />
+        <EntityTypeShape EntityType="ArtModel.CutOrderDO" Width="1.5" PointX="37.5" PointY="53.375" />
+        <EntityTypeShape EntityType="ArtModel.CutOrderMaster" Width="1.5" PointX="8.25" PointY="51.375" />
+        <EntityTypeShape EntityType="ArtModel.CuttingDetail" Width="1.5" PointX="9.75" PointY="9.75" />
+        <EntityTypeShape EntityType="ArtModel.DeliveryMethodMaster" Width="1.5" PointX="12" PointY="39.875" />
+        <EntityTypeShape EntityType="ArtModel.DeliveryOrderDetail" Width="1.5" PointX="32.25" PointY="53.375" />
+        <EntityTypeShape EntityType="ArtModel.DeliveryOrderMaster" Width="1.5" PointX="14.25" PointY="52.125" />
+        <EntityTypeShape EntityType="ArtModel.DeliveryOrderStockDetail" Width="1.5" PointX="22.25" PointY="63.125" />
+        <EntityTypeShape EntityType="ArtModel.DeliveryOrderStockMaster" Width="1.5" PointX="5.25" PointY="52.375" />
+        <EntityTypeShape EntityType="ArtModel.DeliveryReceiptDetail" Width="1.5" PointX="34.5" PointY="56.75" />
+        <EntityTypeShape EntityType="ArtModel.DeliveryReceiptMaster" Width="1.5" PointX="16.5" PointY="50.375" />
+        <EntityTypeShape EntityType="ArtModel.DeliveryReceiptStockDetail" Width="1.5" PointX="25.5" PointY="53.375" />
+        <EntityTypeShape EntityType="ArtModel.DeliveryStockReceiptMaster" Width="1.5" PointX="7.5" PointY="43.375" />
+        <EntityTypeShape EntityType="ArtModel.DeliveryTermMaster" Width="1.5" PointX="6" PointY="83.25" />
+        <EntityTypeShape EntityType="ArtModel.DocDetail" Width="1.5" PointX="10.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ArtModel.DocMaster" Width="1.5" PointX="15.25" PointY="64.125" />
+        <EntityTypeShape EntityType="ArtModel.ELMAH_Error" Width="1.5" PointX="0.75" PointY="10.75" />
+        <EntityTypeShape EntityType="ArtModel.EtaDate" Width="1.5" PointX="2.75" PointY="10.75" />
+        <EntityTypeShape EntityType="ArtModel.ExtraRequestReasonMaster" Width="1.5" PointX="6" PointY="66.5" />
+        <EntityTypeShape EntityType="ArtModel.FabricRollmaster" Width="1.5" PointX="0.75" PointY="1.25" />
+        <EntityTypeShape EntityType="ArtModel.FactoryType" Width="1.5" PointX="10.75" PointY="4.75" />
+        <EntityTypeShape EntityType="ArtModel.FactWareLinkMaster" Width="1.5" PointX="5.25" PointY="90" />
+        <EntityTypeShape EntityType="ArtModel.GarmentCategory" Width="1.5" PointX="4.75" PointY="10.75" />
+        <EntityTypeShape EntityType="ArtModel.GoodsInTransit" Width="1.5" PointX="35.25" PointY="53.625" />
+        <EntityTypeShape EntityType="ArtModel.InventoryLoanMaster" Width="1.5" PointX="5.25" PointY="92.75" />
+        <EntityTypeShape EntityType="ArtModel.InventoryMaster" Width="1.5" PointX="30" PointY="52.25" />
+        <EntityTypeShape EntityType="ArtModel.InventoryMissingDetail" Width="1.5" PointX="8" PointY="6.625" />
+        <EntityTypeShape EntityType="ArtModel.InventoryMissingRequest" Width="1.5" PointX="5.75" PointY="6" />
+        <EntityTypeShape EntityType="ArtModel.InventoryStockTransferDetail" Width="1.5" PointX="8" PointY="1.25" />
+        <EntityTypeShape EntityType="ArtModel.InventoryStockTransferMaster" Width="1.5" PointX="5.75" PointY="1" />
+        <EntityTypeShape EntityType="ArtModel.InvoiceDetail" Width="1.5" PointX="10.5" PointY="86.375" />
+        <EntityTypeShape EntityType="ArtModel.InvoiceMaster" Width="1.5" PointX="8.25" PointY="86.375" />
+        <EntityTypeShape EntityType="ArtModel.ItemGroupMaster" Width="1.5" PointX="1.5" PointY="67.25" />
+        <EntityTypeShape EntityType="ArtModel.JobContractDetail" Width="1.5" PointX="17.5" PointY="59.25" />
+        <EntityTypeShape EntityType="ArtModel.JobContractMaster" Width="1.5" PointX="11.25" PointY="58.375" />
+        <EntityTypeShape EntityType="ArtModel.JobContractOptionalDetail" Width="1.5" PointX="10.5" PointY="43.125" />
+        <EntityTypeShape EntityType="ArtModel.JobContractOptionalMaster" Width="1.5" PointX="8.25" PointY="47.375" />
+        <EntityTypeShape EntityType="ArtModel.LCBankAdviceDetail" Width="1.5" PointX="12.75" PointY="70.5" />
+        <EntityTypeShape EntityType="ArtModel.LCDetail" Width="1.5" PointX="10.5" PointY="70" />
+        <EntityTypeShape EntityType="ArtModel.LCMaster" Width="1.5" PointX="8.25" PointY="66.875" />
+        <EntityTypeShape EntityType="ArtModel.LocationMaster" Width="1.5" PointX="3" PointY="50.25" />
+        <EntityTypeShape EntityType="ArtModel.LocationType" Width="1.5" PointX="0.75" PointY="55.25" />
+        <EntityTypeShape EntityType="ArtModel.MerchandiserMaster" Width="1.5" PointX="11.75" PointY="7.75" />
+        <EntityTypeShape EntityType="ArtModel.MrnDetail" Width="1.5" PointX="27.75" PointY="53" />
+        <EntityTypeShape EntityType="ArtModel.MrnMaster" Width="1.5" PointX="22.5" PointY="52.75" />
+        <EntityTypeShape EntityType="ArtModel.PaymentModeMaster" Width="1.5" PointX="11.75" PointY="10.75" />
+        <EntityTypeShape EntityType="ArtModel.PaymentTermMaster" Width="1.5" PointX="6" PointY="80.625" />
+        <EntityTypeShape EntityType="ArtModel.person" Width="1.5" PointX="12.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ArtModel.POApproval" Width="1.5" PointX="12.75" PointY="3.75" />
+        <EntityTypeShape EntityType="ArtModel.POCurrExRate" Width="1.5" PointX="3" PointY="98.125" />
+        <EntityTypeShape EntityType="ArtModel.POPackDetail" Width="1.5" PointX="13.5" PointY="29.875" />
+        <EntityTypeShape EntityType="ArtModel.PoPackMaster" Width="1.5" PointX="8.25" PointY="29.375" />
+        <EntityTypeShape EntityType="ArtModel.ProcurementDetail" Width="1.5" PointX="25.5" PointY="46.75" />
+        <EntityTypeShape EntityType="ArtModel.ProcurementMaster" Width="1.5" PointX="23.25" PointY="46" />
+        <EntityTypeShape EntityType="ArtModel.ProductionReportDetail" Width="1.5" PointX="19.75" PointY="64.625" />
+        <EntityTypeShape EntityType="ArtModel.RecieptMaster" Width="1.5" PointX="17.25" PointY="54" />
+        <EntityTypeShape EntityType="ArtModel.RequestOrderDetail" Width="1.5" PointX="13.5" PointY="44.375" />
+        <EntityTypeShape EntityType="ArtModel.RequestOrderMaster" Width="1.5" PointX="11.25" PointY="52.625" />
+        <EntityTypeShape EntityType="ArtModel.RequestOrderStockDetail" Width="1.5" PointX="13.5" PointY="48.5" />
+        <EntityTypeShape EntityType="ArtModel.RequestOrderStockMaster" Width="1.5" PointX="11.25" PointY="47.625" />
+        <EntityTypeShape EntityType="ArtModel.RoInDetail" Width="1.5" PointX="15.75" PointY="44.25" />
+        <EntityTypeShape EntityType="ArtModel.ROINMaster" Width="1.5" PointX="19.5" PointY="53.375" />
+        <EntityTypeShape EntityType="ArtModel.RollInventoryMaster" Width="1.5" PointX="3" PointY="3.625" />
+        <EntityTypeShape EntityType="ArtModel.SeasonMaster" Width="1.5" PointX="2.75" PointY="13.75" />
+        <EntityTypeShape EntityType="ArtModel.SeasonType" Width="1.5" PointX="4.75" PointY="13.75" />
+        <EntityTypeShape EntityType="ArtModel.ServicePOMaster" Width="1.5" PointX="3" PointY="60.5" />
+        <EntityTypeShape EntityType="ArtModel.ServiceTypeMaster" Width="1.5" PointX="0.75" PointY="58.875" />
+        <EntityTypeShape EntityType="ArtModel.ShipmentHandOverDetail" Width="1.5" PointX="19.75" PointY="49.375" />
+        <EntityTypeShape EntityType="ArtModel.ShipmentHandOverMaster" Width="1.5" PointX="5.25" PointY="47.375" />
+        <EntityTypeShape EntityType="ArtModel.SizeMaster" Width="1.5" PointX="13.75" PointY="6.75" />
+        <EntityTypeShape EntityType="ArtModel.SkuRawmaterialDetail" Width="1.5" PointX="6" PointY="69.5" />
+        <EntityTypeShape EntityType="ArtModel.SkuRawMaterialMaster" Width="1.5" PointX="3.75" PointY="68.75" />
+        <EntityTypeShape EntityType="ArtModel.StockGoodsInTransit" Width="1.5" PointX="25.25" PointY="56.875" />
+        <EntityTypeShape EntityType="ArtModel.StockInventoryMaster" Width="1.5" PointX="20" PointY="57.625" />
+        <EntityTypeShape EntityType="ArtModel.StockMRNDetail" Width="1.5" PointX="12.75" PointY="62.375" />
+        <EntityTypeShape EntityType="ArtModel.StockMrnMaster" Width="1.5" PointX="22.5" PointY="57.75" />
+        <EntityTypeShape EntityType="ArtModel.StockPODetail" Width="1.5" PointX="10.5" PointY="65" />
+        <EntityTypeShape EntityType="ArtModel.StockPOMaster" Width="1.5" PointX="8.25" PointY="59.375" />
+        <EntityTypeShape EntityType="ArtModel.StockRecieptMaster" Width="1.5" PointX="15.25" PointY="59" />
+        <EntityTypeShape EntityType="ArtModel.StyleColor" Width="1.5" PointX="13.75" PointY="9.75" />
+        <EntityTypeShape EntityType="ArtModel.StyleCostingComponentDetail" Width="1.5" PointX="12.75" PointY="34.5" />
+        <EntityTypeShape EntityType="ArtModel.StyleCostingDetail" Width="1.5" PointX="18.75" PointY="44.875" />
+        <EntityTypeShape EntityType="ArtModel.StyleCostingMaster" Width="1.5" PointX="10.5" PointY="33.625" />
+        <EntityTypeShape EntityType="ArtModel.StyleSize" Width="1.5" PointX="11.75" PointY="13.75" />
+        <EntityTypeShape EntityType="ArtModel.SupplierDocumentMaster" Width="1.5" PointX="13.75" PointY="12.75" />
+        <EntityTypeShape EntityType="ArtModel.SupplierInvoiceDetail" Width="1.5" PointX="10.5" PointY="81.5" />
+        <EntityTypeShape EntityType="ArtModel.SupplierInvoiceMaster" Width="1.5" PointX="8.25" PointY="80.875" />
+        <EntityTypeShape EntityType="ArtModel.SupplierMaster" Width="1.5" PointX="6" PointY="59.75" />
+        <EntityTypeShape EntityType="ArtModel.SupplierStockInvoiceDetail" Width="1.5" PointX="10.5" PointY="77.5" />
+        <EntityTypeShape EntityType="ArtModel.SupplierStockInvoiceMaster" Width="1.5" PointX="8.25" PointY="77.125" />
+        <EntityTypeShape EntityType="ArtModel.SupplierUserMaster" Width="1.5" PointX="14.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ArtModel.SupportTicket" Width="1.5" PointX="15.75" PointY="3.75" />
+        <EntityTypeShape EntityType="ArtModel.sysdiagram" Width="1.5" PointX="6.75" PointY="15.75" />
+        <EntityTypeShape EntityType="ArtModel.Template_Master" Width="1.5" PointX="1.5" PointY="74.25" />
+        <EntityTypeShape EntityType="ArtModel.TemplateColor" Width="1.5" PointX="3.75" PointY="86.25" />
+        <EntityTypeShape EntityType="ArtModel.TemplateComposition" Width="1.5" PointX="3.75" PointY="83.75" />
+        <EntityTypeShape EntityType="ArtModel.TemplateConstruction" Width="1.5" PointX="3.75" PointY="101.75" />
+        <EntityTypeShape EntityType="ArtModel.TemplateSize" Width="1.5" PointX="3.75" PointY="80.625" />
+        <EntityTypeShape EntityType="ArtModel.TemplateWeight" Width="1.5" PointX="3.75" PointY="66.25" />
+        <EntityTypeShape EntityType="ArtModel.TemplateWidth" Width="1.5" PointX="3.75" PointY="104.375" />
+        <EntityTypeShape EntityType="ArtModel.TransferToGstockDetail" Width="1.5" PointX="32.25" PointY="64.375" />
+        <EntityTypeShape EntityType="ArtModel.TransferToGstockMaster" Width="1.5" PointX="5.25" PointY="76.375" />
+        <EntityTypeShape EntityType="ArtModel.UOMMaster" Width="1.5" PointX="1.5" PointY="80.75" />
+        <EntityTypeShape EntityType="ArtModel.UserMaster" Width="1.5" PointX="15.75" PointY="7.75" />
+        <AssociationConnector Association="ArtModel.FK_AltUOMMaster_UOMMaster" />
+        <AssociationConnector Association="ArtModel.FK_AltUOMMaster_UOMMaster1" />
+        <AssociationConnector Association="ArtModel.FK_AtcDetails_AtcMaster" />
+        <AssociationConnector Association="ArtModel.FK_CutOrderMaster_AtcDetails" />
+        <AssociationConnector Association="ArtModel.FK_JobContractDetail_AtcDetails" />
+        <AssociationConnector Association="ArtModel.FK_JobContractOptionalDetail_AtcDetails" />
+        <AssociationConnector Association="ArtModel.FK_POPackDetails_AtcDetails" />
+        <AssociationConnector Association="ArtModel.FK_StyleCostingMaster_AtcDetails" />
+        <AssociationConnector Association="ArtModel.FK_AtcMaster_AtcMaster" />
+        <AssociationConnector Association="ArtModel.FK_AtcRawMaterialMaster_tbl_AtcMaster" />
+        <AssociationConnector Association="ArtModel.FK_CutOrderMaster_AtcMaster" />
+        <AssociationConnector Association="ArtModel.FK_DeliveryOrderMaster_AtcMaster" />
+        <AssociationConnector Association="ArtModel.FK_JobContractMaster_AtcMaster" />
+        <AssociationConnector Association="ArtModel.FK_JobContractOptionalMaster_AtcMaster" />
+        <AssociationConnector Association="ArtModel.FK_PoPackMaster_AtcMaster" />
+        <AssociationConnector Association="ArtModel.FK_RequestOrderMaster_AtcMaster" />
+        <AssociationConnector Association="ArtModel.FK_RequestOrderStockMaster_AtcMaster" />
+        <AssociationConnector Association="ArtModel.FK_SkuMaster_tbl_SkuMaster_tbl" />
+        <AssociationConnector Association="ArtModel.FK_AtcRawMaterialMaster_tbl_Template_Master" />
+        <AssociationConnector Association="ArtModel.FK_SkuMaster_tbl_SkuMaster_tbl1" />
+        <AssociationConnector Association="ArtModel.FK_InvoiceMaster_BankMaster" />
+        <AssociationConnector Association="ArtModel.FK_LCMaster_BankMaster" />
+        <AssociationConnector Association="ArtModel.FK_BuyerDestinationMaster_BuyerMaster" />
+        <AssociationConnector Association="ArtModel.FK_PoPackMaster_BuyerDestinationMaster" />
+        <AssociationConnector Association="ArtModel.FK_BuyerPOMaster_BuyerMaster" />
+        <AssociationConnector Association="ArtModel.FK_BuyerStyleMaster_BuyerMaster" />
+        <AssociationConnector Association="ArtModel.FK_PoPackMaster_ChannelMaster" />
+        <AssociationConnector Association="ArtModel.FK_StyleCostingComponentDetails_CostingComponentMaster" />
+        <AssociationConnector Association="ArtModel.FK_SupplierMaster_CountryMaster" />
+        <AssociationConnector Association="ArtModel.FK_WarehouseMaster_CountryMaster" />
+        <AssociationConnector Association="ArtModel.FK_POCurrExRate_CurrencyMaster" />
+        <AssociationConnector Association="ArtModel.FK_ServicePOMaster_CurrencyMaster" />
+        <AssociationConnector Association="ArtModel.FK_StockPOMaster_CurrencyMaster" />
+        <AssociationConnector Association="ArtModel.FK_SupplierMaster_CurrencyMaster" />
+        <AssociationConnector Association="ArtModel.FK_WarehouseMaster_CurrencyMaster" />
+        <AssociationConnector Association="ArtModel.FK_CutOrderDO_CutOrderDO" />
+        <AssociationConnector Association="ArtModel.FK_CutOrderDO_CutOrderMaster" />
+        <AssociationConnector Association="ArtModel.FK_CutOrderDO_DeliveryOrderDetails" />
+        <AssociationConnector Association="ArtModel.FK_CutOrderMaster_ExtraRequestReasonMaster" />
+        <AssociationConnector Association="ArtModel.FK_CutOrderMaster_LocationMaster" />
+        <AssociationConnector Association="ArtModel.FK_CutOrderMaster_SkuRawmaterialDetail" />
+        <AssociationConnector Association="ArtModel.FK_DeliveryOrderMaster_DeliveryMethodMaster" />
+        <AssociationConnector Association="ArtModel.FK_DeliveryOrderStockMaster_DeliveryMethodMaster" />
+        <AssociationConnector Association="ArtModel.FK_DeliveryOrderDetails_DeliveryOrderMaster" />
+        <AssociationConnector Association="ArtModel.FK_DeliveryOrderDetails_InventoryMaster" />
+        <AssociationConnector Association="ArtModel.FK_DeliveryReceiptDetail_DeliveryOrderDetails" />
+        <AssociationConnector Association="ArtModel.FK_DeliveryOrderMaster_DeliveryOrderMaster" />
+        <AssociationConnector Association="ArtModel.FK_DeliveryOrderMaster_LocationMaster" />
+        <AssociationConnector Association="ArtModel.FK_DeliveryOrderMaster_LocationMaster1" />
+        <AssociationConnector Association="ArtModel.FK_DeliveryOrderReceipt_DeliveryOrderMaster" />
+        <AssociationConnector Association="ArtModel.FK_GoodsInTransit_DeliveryOrderMaster" />
+        <AssociationConnector Association="ArtModel.FK_DeliveryOrderStockDetails_DeliveryOrderStockDetails" />
+        <AssociationConnector Association="ArtModel.FK_DeliveryOrderStockDetails_StockInventoryMaster" />
+        <AssociationConnector Association="ArtModel.FK_DeliveryReceiptStockDetail_DeliveryOrderStockDetails" />
+        <AssociationConnector Association="ArtModel.FK_DeliveryOrderStockMaster_DeliveryOrderStockMaster" />
+        <AssociationConnector Association="ArtModel.FK_DeliveryOrderStockMaster_LocationMaster" />
+        <AssociationConnector Association="ArtModel.FK_DeliveryOrderStockMaster_LocationMaster1" />
+        <AssociationConnector Association="ArtModel.FK_DeliveryStockReceiptMaster_DeliveryOrderStockMaster" />
+        <AssociationConnector Association="ArtModel.FK_StockGoodsInTransit_DeliveryOrderStockMaster" />
+        <AssociationConnector Association="ArtModel.FK_DeliveryReceiptDetail_DeliveryReceiptDetail" />
+        <AssociationConnector Association="ArtModel.FK_DeliveryReceiptDetail_DeliveryReceiptDetail1" />
+        <AssociationConnector Association="ArtModel.FK_DeliveryOrderReceipt_LocationMaster" />
+        <AssociationConnector Association="ArtModel.FK_DeliveryReceiptStockDetail_DeliveryStockReceiptMaster" />
+        <AssociationConnector Association="ArtModel.FK_DeliveryReceiptStockDetail_StockInventoryMaster" />
+        <AssociationConnector Association="ArtModel.FK_StockPOMaster_DeliveryTermMaster" />
+        <AssociationConnector Association="ArtModel.FK_DocMaster_LocationMaster" />
+        <AssociationConnector Association="ArtModel.FK_DocMaster_SupplierMaster" />
+        <AssociationConnector Association="ArtModel.FK_RollInventoryMaster_FabricRollmaster" />
+        <AssociationConnector Association="ArtModel.FK_FactWareLinkMaster_LocationMaster" />
+        <AssociationConnector Association="ArtModel.FK_FactWareLinkMaster_LocationMaster1" />
+        <AssociationConnector Association="ArtModel.FK_GoodsInTransit_InventoryMaster" />
+        <AssociationConnector Association="ArtModel.FK_InventoryLoanMaster_InventoryLoanMaster" />
+        <AssociationConnector Association="ArtModel.FK_InventoryLoanMaster_LocationMaster" />
+        <AssociationConnector Association="ArtModel.FK_InventoryMaster_LocationMaster" />
+        <AssociationConnector Association="ArtModel.FK_InventoryMaster_MrnDetails" />
+        <AssociationConnector Association="ArtModel.FK_InventoryMaster_ProcurementDetails" />
+        <AssociationConnector Association="ArtModel.FK_InventoryMaster_SkuRawmaterialDetail" />
+        <AssociationConnector Association="ArtModel.FK_TransferToGstockDetails_InventoryMaster" />
+        <AssociationConnector Association="ArtModel.FK_InventoryMissingDetails_InventoryMissingRequest" />
+        <AssociationConnector Association="ArtModel.FK_InventoryStockTransferDetails_InventoryStockTransferMaster" />
+        <AssociationConnector Association="ArtModel.FK_InvoiceDetails_InvoiceMaster" />
+        <AssociationConnector Association="ArtModel.FK_Template_Master_ItemGroupMaster" />
+        <AssociationConnector Association="ArtModel.FK_JobContractDetail_JobContractMaster" />
+        <AssociationConnector Association="ArtModel.FK_JobContractDetail_PoPackMaster" />
+        <AssociationConnector Association="ArtModel.FK_ProductionReportDetails_JobContractDetail" />
+        <AssociationConnector Association="ArtModel.FK_ShipmentHandOverDetails_JobContractDetail" />
+        <AssociationConnector Association="ArtModel.FK_JobContractMaster_JobContractMaster" />
+        <AssociationConnector Association="ArtModel.FK_JobContractOptionalDetail_JobContractOptionalMaster" />
+        <AssociationConnector Association="ArtModel.FK_JobContractOptionalDetail_PoPackMaster" />
+        <AssociationConnector Association="ArtModel.FK_JobContractOptionalMaster_JobContractOptionalMaster" />
+        <AssociationConnector Association="ArtModel.FK_LCBankAdviceDetails_LCDetails" />
+        <AssociationConnector Association="ArtModel.FK_LCDetails_LCMaster" />
+        <AssociationConnector Association="ArtModel.FK_LCMaster_SupplierMaster" />
+        <AssociationConnector Association="ArtModel.FK_LocationMaster_LocationType" />
+        <AssociationConnector Association="ArtModel.FK_MrnMaster_LocationMaster" />
+        <AssociationConnector Association="ArtModel.FK_RecieptMaster_LocationMaster" />
+        <AssociationConnector Association="ArtModel.FK_RequestOrderMaster_LocationMaster" />
+        <AssociationConnector Association="ArtModel.FK_RequestOrderStockMaster_LocationMaster" />
+        <AssociationConnector Association="ArtModel.FK_ROINMaster_LocationMaster" />
+        <AssociationConnector Association="ArtModel.FK_ShipmentHandOverMaster_LocationMaster" />
+        <AssociationConnector Association="ArtModel.FK_StockInventoryMaster_LocationMaster" />
+        <AssociationConnector Association="ArtModel.FK_StockMrnMaster_LocationMaster" />
+        <AssociationConnector Association="ArtModel.FK_StockRecieptMaster_LocationMaster" />
+        <AssociationConnector Association="ArtModel.FK_TransferToGstockMaster_LocationMaster" />
+        <AssociationConnector Association="ArtModel.FK_MrnDetails_MrnMaster" />
+        <AssociationConnector Association="ArtModel.FK_MrnDetails_ProcurementDetails" />
+        <AssociationConnector Association="ArtModel.FK_MrnDetails_SkuRawmaterialDetail" />
+        <AssociationConnector Association="ArtModel.FK_MrnMaster_MrnMaster" />
+        <AssociationConnector Association="ArtModel.FK_MrnMaster_RecieptMaster" />
+        <AssociationConnector Association="ArtModel.FK_StockPOMaster_PaymentTermMaster" />
+        <AssociationConnector Association="ArtModel.FK_POPackDetails_PoPackMaster" />
+        <AssociationConnector Association="ArtModel.FK_ProcurementDetails_ProcurementMaster" />
+        <AssociationConnector Association="ArtModel.FK_ProcurementDetails_SkuRawmaterialDetail" />
+        <AssociationConnector Association="ArtModel.FK_ProcurementDetails_UOMMaster" />
+        <AssociationConnector Association="ArtModel.FK_SupplierInvoiceDetail_ProcurementDetails" />
+        <AssociationConnector Association="ArtModel.FK_RecieptMaster_SupplierMaster" />
+        <AssociationConnector Association="ArtModel.FK_RequestOrderDetails_RequestOrderMaster" />
+        <AssociationConnector Association="ArtModel.FK_RoInDetails_RequestOrderDetails" />
+        <AssociationConnector Association="ArtModel.FK_ROINMaster_RequestOrderMaster" />
+        <AssociationConnector Association="ArtModel.FK_RequestOrderStockDetails_RequestOrderStockMaster" />
+        <AssociationConnector Association="ArtModel.FK_RoInDetails_ROINMaster" />
+        <AssociationConnector Association="ArtModel.ServiceTypePK" />
+        <AssociationConnector Association="ArtModel.FK_ShipmentHandOverDetails_ShipmentHandOverMaster" />
+        <AssociationConnector Association="ArtModel.FK_SkuRawmaterialDetail_SkuRawMaterialMaster" />
+        <AssociationConnector Association="ArtModel.FK_TransferToGstockDetails_SkuRawmaterialDetail" />
+        <AssociationConnector Association="ArtModel.FK_SkuRawMaterialMaster_UOMMaster" />
+        <AssociationConnector Association="ArtModel.FK_StyleCostingDetails_SkuRawMaterialMaster" />
+        <AssociationConnector Association="ArtModel.FK_StockGoodsInTransit_StockInventoryMaster" />
+        <AssociationConnector Association="ArtModel.FK_StockInventoryMaster_StockMRNDetails" />
+        <AssociationConnector Association="ArtModel.FK_StockInventoryMaster_StockPODetails" />
+        <AssociationConnector Association="ArtModel.FK_StockInventoryMaster_Template_Master" />
+        <AssociationConnector Association="ArtModel.FK_StockReceiptDetails_StockPODetails" />
+        <AssociationConnector Association="ArtModel.FK_StockReceiptDetails_StockPOMaster" />
+        <AssociationConnector Association="ArtModel.FK_StockReceiptDetails_Template_Master" />
+        <AssociationConnector Association="ArtModel.FK_StockMrnMaster_StockMrnMaster" />
+        <AssociationConnector Association="ArtModel.FK_StockMrnMaster_StockRecieptMaster" />
+        <AssociationConnector Association="ArtModel.FK_StockPODetails_StockPOMaster" />
+        <AssociationConnector Association="ArtModel.FK_StockPOMaster_StockPOMaster" />
+        <AssociationConnector Association="ArtModel.FK_StockPOMaster_SupplierMaster" />
+        <AssociationConnector Association="ArtModel.FK_StockRecieptMaster_SupplierMaster" />
+        <AssociationConnector Association="ArtModel.FK_StyleCostingComponentDetails_StyleCostingMaster" />
+        <AssociationConnector Association="ArtModel.FK_StyleCostingDetails_StyleCostingDetails" />
+        <AssociationConnector Association="ArtModel.FK_SupplierInvoiceDetails_SupplierInvoiceMaster" />
+        <AssociationConnector Association="ArtModel.FK_SupplierInvoiceMaster_SupplierMaster" />
+        <AssociationConnector Association="ArtModel.FK_SupplierStockInvoiceMaster_SupplierMaster" />
+        <AssociationConnector Association="ArtModel.FK_SupplierStockInvoiceDetails_SupplierStockInvoiceMaster" />
+        <AssociationConnector Association="ArtModel.FK_Template_Master_UOMMaster" />
+        <AssociationConnector Association="ArtModel.FK_TemplateColor_Template_Master" />
+        <AssociationConnector Association="ArtModel.FK_TemplateComposition_Template_Master" />
+        <AssociationConnector Association="ArtModel.FK_TemplateConstruction_Template_Master" />
+        <AssociationConnector Association="ArtModel.FK_TemplateSize_Template_Master" />
+        <AssociationConnector Association="ArtModel.FK_TemplateWeight_Template_Master" />
+        <AssociationConnector Association="ArtModel.FK_TemplateWidth_Template_Master" />
+        <AssociationConnector Association="ArtModel.FK_TransferToGstockDetails_Template_Master" />
+        <AssociationConnector Association="ArtModel.FK_TransferToGstockDetails_TransferToGstockMaster" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

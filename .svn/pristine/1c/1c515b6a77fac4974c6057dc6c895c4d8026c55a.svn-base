@@ -1,0 +1,62 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+namespace Shipit.Production
+{
+    class Productiontransaction
+    {
+        public DataTable GetAllFinalBookings(int year,String Month,int factoryid)
+        {
+            DataTable dt = new DataTable();
+
+            using (SqlConnection con = new SqlConnection(Program.ConnStr))
+            {
+                con.Open();
+
+
+                SqlCommand cmd = new SqlCommand(@"SELECT    FinalBooking_master.Book_id, Buyer_Master.BuyerName as Buyer, FinalBooking_master.AtcNO as Atc# , FinalBooking_master.Style as Style, FinalBooking_master.BookQty as BookQty,isnull( (SELECT        SUM(Qty) AS Expr1
+FROM            WeeklyPlan_Master
+GROUP BY Year, Month, WeekNo, Factory_Id ,Book_Id
+HAVING        (WeekNo = N'Week1') AND (Factory_Id = FinalBooking_master.Factory_id ) AND (Year = @year) AND (Month = @month)and Book_Id=FinalBooking_master.Book_Id ) ,0)as Week1, isnull((SELECT        SUM(Qty) AS Expr1
+FROM            WeeklyPlan_Master
+GROUP BY Year, Month, WeekNo, Factory_Id,Book_Id
+HAVING        (WeekNo = N'Week2') AND (Factory_Id = FinalBooking_master.Factory_id ) AND (Year = @year) AND (Month = @month) and Book_Id=FinalBooking_master.Book_Id ),0) as Week2,isnull( (SELECT      SUM(Qty) AS Expr1
+FROM            WeeklyPlan_Master
+GROUP BY Year, Month, WeekNo, Factory_Id,Book_Id
+HAVING        (WeekNo = N'Week3') AND (Factory_Id = FinalBooking_master.Factory_id ) AND (Year = @year) AND (Month = @month)and Book_Id=FinalBooking_master.Book_Id ),0) as Week3,isnull( (SELECT      SUM(Qty) AS Expr1
+FROM            WeeklyPlan_Master
+GROUP BY Year, Month, WeekNo, Factory_Id,Book_Id
+HAVING        (WeekNo = N'Week4') AND (Factory_Id = FinalBooking_master.Factory_id ) AND (Year = @year) AND (Month = @month)and Book_Id=FinalBooking_master.Book_Id ) ,0)as Week4 , isnull((SELECT        SUM(Qty) AS Expr1
+FROM            WeeklyPlan_Master
+GROUP BY Year, Month, WeekNo, Factory_Id,Book_Id
+HAVING        (WeekNo = N'Week5') AND (Factory_Id = FinalBooking_master.Factory_id ) AND (Year = @year) AND (Month = @month) and Book_Id=FinalBooking_master.Book_Id ),0) as Week5, '0' as [Balance to Schedule]
+FROM            FinalBooking_master INNER JOIN
+                         Buyer_Master ON FinalBooking_master.BuyerID = Buyer_Master.Buyer_Id
+WHERE        (FinalBooking_master.Factory_id = @factid) AND (FinalBooking_master.Year = @year) AND (FinalBooking_master.Month = @month)", con);
+
+
+                cmd.Parameters.AddWithValue("@factid", factoryid);
+                cmd.Parameters.AddWithValue("@year", year);
+                cmd.Parameters.AddWithValue("@month", Month);
+               
+
+
+
+                SqlDataReader rdr = cmd.ExecuteReader();
+
+                dt.Load(rdr);
+
+
+
+            }
+            return dt;
+        }
+
+
+    }
+}

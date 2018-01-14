@@ -1,0 +1,285 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Shipit.Production
+{
+    public partial class WeekChartEntry : Form
+    {
+        int weekflag=0;
+        public WeekChartEntry()
+        {
+            InitializeComponent();
+        }
+        public WeekChartEntry(int bookid)
+        {
+            InitializeComponent();
+            getdetailsofabooking(bookid);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="bookid"></param>
+        public void getdetailsofabooking(int bookid)
+        {
+            CourierDataDataContext couriercontext = new CourierDataDataContext(Program.ConnStr);
+
+            var orderdetails = from fb in couriercontext.FinalBooking_masters
+                               join fc in couriercontext.Factory_Masters  on fb.Factory_id  equals fc.Factory_ID 
+                               where  fb.Book_Id  == bookid
+                               select new
+                               {
+                                   bookid = fb.Book_Id,
+                                   factoryname = fc.Factory_name,
+                                   year = fb.Year,
+                                   month = fb.Month ,
+                                   consumption =fb.ConsumptionQty ,
+                                    qty = fb.BookQty,
+                                    capacity=fc.MonthlyCapacity,
+                                    factory_id= fc.Factory_ID,
+                                   stylenum=fb.Style,
+                               };
+            foreach (var element in orderdetails)
+            {
+
+
+                txt_bookID.Text = element.bookid.ToString ();
+                txt_factoryname.Text = element.factoryname;
+                txt_consumptionQty.Text = element.consumption.ToString();
+                txt_weeklycapacity.Text  = (int.Parse(element.capacity.ToString()) / 4).ToString ();
+                cmb_month.Text = element.month;
+                cmb_year.Text = element.year.ToString ();
+                lbl_factory_id.Text = element.factory_id.ToString ();
+                txt_totalqty.Text  = element.qty.ToString();
+                txt_style.Text = element.stylenum;
+                   
+            }
+
+            var qtySum = (from ord in couriercontext.WeeklyPlan_Masters 
+                          where ord.Book_Id==bookid
+
+                             select ord.Qty ).Sum();
+            if (qtySum == null)
+            {
+                txt_scheduledQty.Text = "0";
+            }
+           
+            else if( qtySum.ToString().Trim() != "")
+            {
+                txt_scheduledQty.Text = qtySum.ToString();
+            }
+            else
+            {
+                txt_scheduledQty.Text = "0";
+            }
+        }
+
+        public void getWeeklyplanData(int factoryid,int year,String month,String Week)
+        {
+            int scheduled=0;
+            int consumption = 0;
+
+             CourierDataDataContext courdatacontext = new CourierDataDataContext(Program.ConnStr);
+             var q = from weekplan in courdatacontext.WeeklyPlan_Masters
+                     where weekplan.Factory_Id == factoryid && weekplan.Month == month && weekplan.Year == year && weekplan.WeekNo == Week
+                     select new
+                     {
+                         alreadyplannedqty = weekplan.Qty,
+                         consumptionqty = weekplan.ConsumptionQty
+                     };
+             foreach (var element in q)
+             {
+                 scheduled = scheduled + int.Parse(element.alreadyplannedqty.ToString ());
+                 consumption = consumption + int.Parse(element.consumptionqty.ToString());
+             }
+             txt_scheduledCapacity.Text = consumption.ToString();
+             txt_balanceCapacity.Text = (int.Parse(txt_weeklycapacity.Text.ToString()) - int.Parse(txt_scheduledCapacity.Text.ToString())).ToString();
+
+            
+        }
+
+        private void cmb_week_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (weekflag > 0)
+            {
+                getWeeklyplanData(int.Parse(lbl_factory_id.Text.Trim()), int.Parse(cmb_year.Text), cmb_month.Text.Trim(), cmb_week.Text.Trim());
+            }
+        }
+
+        private void cmb_week_Click(object sender, EventArgs e)
+        {
+            weekflag++;
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            if (validationcontrol())
+            {
+                CourierDataDataContext courdatacontext = new CourierDataDataContext(Program.ConnStr);
+                WeeklyPlan_Master  mstr= new WeeklyPlan_Master() ;
+
+
+                mstr.Book_Id = int.Parse(txt_bookID.Text);
+                mstr.Factory_Id = int.Parse(lbl_factory_id.Text);
+                mstr.Month = cmb_month.Text.Trim();
+                mstr.Year = int.Parse ( cmb_year.Text.Trim());
+                mstr.WeekNo = cmb_week.Text.Trim();
+                mstr.Qty = int.Parse(txt_newQty.Text.ToString());
+                mstr.ConsumptionQty = (int )float.Parse(txt_newConsumptionQty .Text.ToString());
+                mstr.PO_ = txt_pono.Text.Trim().ToString();
+                mstr.AddedBy = Program.uername ;
+                mstr.AddedDate = DateTime.Now;
+                mstr.stylenum = txt_style.Text.Trim();
+                mstr.ActualDelivery_date = dateTimePicker1.Value.Date;
+                mstr.InhouseDate = dateTimePicker2.Value.Date;
+                courdatacontext.WeeklyPlan_Masters.InsertOnSubmit(mstr);
+
+                courdatacontext.SubmitChanges();
+                MessageBox.Show("Done");
+                this.Close();
+            }
+        }
+        public Boolean validationcontrol()
+        {
+
+
+
+            Boolean sucess = false;
+
+            if (cmb_week.Text == null || cmb_week.Text == "")
+            {
+                MessageBox.Show("Choose a Week");
+                cmb_week.Focus();
+
+            }
+
+            else if (!iscorrectentry())
+            {
+                MessageBox.Show("Enter the Numeric Value ");
+                txt_newQty.Focus();
+            }
+            else if (!isqtyok())
+            {
+                
+            }
+
+            else
+            {
+                sucess = true;
+            }
+
+
+            return sucess;
+
+        }
+
+
+
+         public Boolean iscorrectentry()
+        {
+            Boolean iscorrect = false;
+
+            try
+            {
+                int asd = int.Parse(txt_newQty .Text);
+                iscorrect = true;
+            }
+            catch (Exception exp)
+            {
+                iscorrect = false;
+               
+            }
+            return iscorrect;
+
+        }
+
+
+        public Boolean isqtyok()
+        {
+
+
+
+            Boolean sucess = false;
+
+
+
+
+            int blancecapacity = int.Parse(txt_balanceCapacity.Text);
+            int blanceorderqty = int.Parse(txt_totalqty.Text)-int.Parse(txt_scheduledQty .Text) ;
+
+
+            if (blancecapacity < int.Parse(txt_newQty.Text))
+            {
+                MessageBox.Show("Exceeds Weekly Capacity of Factory");
+            }
+
+
+            else if (blanceorderqty < int.Parse(txt_newQty.Text))
+            {
+                MessageBox.Show("You Cannot Enter Qty More than the Order Qty");
+            }
+            else
+            {
+                sucess = true;
+            }
+            return sucess;
+        }
+
+        private void WeekChartEntry_Load(object sender, EventArgs e)
+        {
+
+        }
+
+
+        public float consumptionqty(float totalqty, float consumptionqty, float enterqty)
+        {
+            float newconsumption = 0;
+            float enteredcomsumption = consumptionqty / totalqty;
+            newconsumption =enteredcomsumption *enterqty;
+            return newconsumption;
+
+
+    }
+
+        private void txt_newQty_KeyUp(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                float k = consumptionqty(float.Parse(txt_totalqty.Text), float.Parse(txt_consumptionQty.Text), float.Parse(txt_newQty.Text));
+
+
+                if (k > 0)
+                {
+                    txt_newConsumptionQty.Text = k.ToString();
+                }
+                else
+                {
+                    txt_newConsumptionQty.Text = txt_newQty.Text;
+                }
+            }
+            catch (Exception)
+            {
+                
+                
+            }
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+
+
+
+
+
+    }
+}

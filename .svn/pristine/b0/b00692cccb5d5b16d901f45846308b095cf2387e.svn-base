@@ -1,0 +1,82 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Shipit.Production
+{
+    public partial class WeekPlanviewer : Form
+    {
+        Transaction.DataTransaction dttrans = null;
+        Transaction.AtracoCalaender atcclndr = null;
+        int weekflag = 0;
+        DataTable dateofmonth = new DataTable();
+        DataTable Podetails = new DataTable();
+        public WeekPlanviewer()
+        {
+            InitializeComponent();
+            dttrans = new Transaction.DataTransaction();
+            atcclndr = new Transaction.AtracoCalaender();
+            loadfactorycombo();
+        }
+
+        private void WeekPlanviewer_Load(object sender, EventArgs e)
+        {
+            loadfactorycombo();
+        }
+        /// <summary>
+        /// load factory combo
+        /// </summary>
+        public void loadfactorycombo()
+        {
+            CourierDataDataContext courdatacontext = new CourierDataDataContext(Program.ConnStr);
+            var q = from factory in courdatacontext.Factory_Masters
+                    select factory;
+
+
+
+            cmb_factory.DataSource = q;
+            cmb_factory.DisplayMember = "Factory_name";
+            cmb_factory.ValueMember = "Factory_ID";
+            //   Buyercombo.DataBind();
+
+
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (cmb_factory.Text != "" && cmb_year.Text != "" && cmb_month.Text!="")
+            {
+                DataTable dt = dttrans.GetFactoryPlanofaMonth(cmb_month.Text.Trim(), int.Parse(cmb_year.Text.ToString()), int.Parse(cmb_factory.SelectedValue.ToString()));
+                dataGridView1.DataSource = dt;
+                diplaybalances();
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.Rows.Count > 0)
+            {
+                (dataGridView1.DataSource as DataTable).DefaultView.RowFilter = string.Format("DateofProd = '{0}'", dtp_bydate.Value .Date);
+
+                
+            }
+        }
+
+
+
+        public void diplaybalances()
+        {
+            dataGridView1.Columns[1].Visible = false;
+            dataGridView1.Columns[0].Visible = false;
+        }
+    
+    
+    }
+}

@@ -1,0 +1,182 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net.Mail;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Data;
+using System.Data.SqlClient;
+
+namespace Shipit.Transaction
+{
+   public static class ClsEmailer
+    {
+
+      
+
+       public static void bookingnotifier(String userName,String Buyer,String factory,String Year,String Month,String style,String Qty )
+       {
+
+
+         
+        
+
+         String   body = "New capacity Booking is done by  " + userName + "  for " + Buyer + " in factory  "+factory +" for the month of  "+Year +"-"+Month+ " against Style "+style +"and booking qty is "+Qty  ;
+         int balance = getbalancebyfactoryname(factory, int.Parse(Year), Month);
+         String Capacityavailable = Environment.NewLine + "The Balance Capacity available of this Location is " + balance.ToString(); ;
+         body = body + Capacityavailable;
+           
+           String subject = "New Capacity Booking";
+
+      //     email23(subject, body, "MA1Shipit", "Zohair");
+        email23(subject, body, "capacitychart@atraco.ae", "Zohair");
+       }
+
+
+
+
+
+
+       public static void approvalorrejectnotifier(String touserName, String Buyer, String factory,String Year, String Month,String qty,String ourstyle , String actiontype )
+       {
+           String subject = "Capacity Booking  "+actiontype;
+
+           String body = " Capacity Booking for  " + Buyer.Trim() + " ,Style Number  " + ourstyle.Trim() + " Booked under factory  " + factory.Trim() + " for the month of  " + Year.Trim () + "-" + Month.Trim() + " is  " + actiontype.Trim() + "  by " + Program.uername;
+           int balance = getbalancebyfactoryname(factory, int.Parse(Year), Month);
+           String Capacityavailable = Environment.NewLine + "The Balance Capacity available of this Location is " + balance.ToString(); ;
+           body = body + Capacityavailable;
+           CourierDataDataContext courdatacontext = new CourierDataDataContext(Program.ConnStr);
+           var q = from user in courdatacontext.UserMasters
+                   where user.Username==touserName
+                   select new
+                   {                 
+
+                      email =user.EmailID 
+
+                   };
+
+           String emailid = "admin@atraco.ae";
+           foreach (var v in q)
+           {
+
+               //here you can read by v.price and v.pname
+
+             //  emailid = v.email;
+
+           }
+        //   email23(subject, body, emailid, "User");
+           email23(subject, body, "capacitychart@atraco.ae", "User");
+
+       }
+
+
+       public static void factorychangingNotifier( String Year, String Month, String ourstyle, String Atcnum, String Oldfactory, String newFactory)
+       {
+           String subject = "Production Factory Changed for    " + Atcnum;
+
+           String body = "Production Factory Changed for    " + Atcnum + " ,Style Number  " + ourstyle.Trim() + " Booked under factory  " + Oldfactory.Trim() + " for the month of  " + Year.Trim() + "-" + Month.Trim() + " to  " + newFactory.Trim() + "  by " + Program.uername;
+           int balance = getbalancebyfactoryname(newFactory, int.Parse(Year), Month);
+           String Capacityavailable = Environment.NewLine + "The Balance Capacity available of this Location is " + balance.ToString(); ;
+           body = body + Capacityavailable;
+           email23(subject, body, "capacitychart@atraco.ae", "User");
+
+       }
+
+
+
+
+
+       public static void email23(String subject, String body,String toadress ,String toname)
+       {
+           var fromAddress = new MailAddress("atracogen@gmail.com", "Booking Notification ");
+           var toAddress = new MailAddress(toadress, toname);
+           const string fromPassword = "8812686ba";
+           //const string subject = "Subject";
+           //const string body = "Body";
+
+           var smtp = new SmtpClient
+           {
+               Host = "smtp.gmail.com",
+               Port = 587,
+               EnableSsl = true,
+               DeliveryMethod = SmtpDeliveryMethod.Network,
+               UseDefaultCredentials = false,
+               Credentials = new System.Net.NetworkCredential(fromAddress.Address, fromPassword)
+           };
+           using (var message = new MailMessage(fromAddress, toAddress)
+           {
+               Subject = subject,
+               Body = body
+           })
+           {
+               if (Program.logloc != "Training")
+               {
+                 smtp.Send(message);
+               }
+           }
+       }
+
+
+
+       public static  int getbalancebyfactoryname(String factoryname, int Year, String Month)
+       {
+           int balance = 0;
+           DataTable dt = new DataTable();
+
+           using (SqlConnection con = new SqlConnection(Program.ConnStr))
+           {
+               con.Open();
+
+
+               SqlCommand cmd = new SqlCommand(@"SELECT  ( MonthlyCapacity  -( isnull((SELECT SUM(BookQty) AS Expr1
+         FROM      OrderBooking_tbl  WHERE (ISApproved = N'N') AND (Year = @YEAR) AND (Month = @month) AND (Factory_Id = fm.Factory_ID )),0)   + isnull( (SELECT SUM(ConsumptionQty) AS Expr1
+         FROM      FinalBooking_master   WHERE (Year = @year) AND (Month = @month) AND (Factory_Id = fm.Factory_ID )),0))) as Balance
+FROM            Factory_Master fM
+WHERE        (Factory_name = @factoryname)", con);
+
+
+
+               cmd.Parameters.AddWithValue("@year", Year);
+               cmd.Parameters.AddWithValue("@month", Month);
+               cmd.Parameters.AddWithValue("@factoryname", factoryname);
+               SqlDataReader rdr = cmd.ExecuteReader();
+
+               dt.Load(rdr);
+
+
+               if (dt != null)
+               {
+                   if (dt.Rows.Count != 0)
+                   {
+                       if (dt.Rows[0][0].ToString().Trim() == "")
+                       {
+                           balance = 0;
+                       }
+                       else
+                       {
+                           balance = int.Parse(dt.Rows[0][0].ToString());
+                       }
+                   }
+               }
+
+
+           }
+           return balance;
+
+       }
+
+
+
+       ///load the comboboxes at the load event of the form
+
+    
+
+     
+
+
+
+
+
+    }
+}

@@ -1,0 +1,180 @@
+﻿namespace Shipit.Reports
+{
+    partial class Reportform
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Reportform));
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.lbl_motham = new System.Windows.Forms.Label();
+            this.lbl_dec = new System.Windows.Forms.Label();
+            this.lbl_feb = new System.Windows.Forms.Label();
+            this.lbl_jan = new System.Windows.Forms.Label();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.groupBox1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.toolStrip1);
+            this.groupBox1.Controls.Add(this.groupBox3);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupBox1.Location = new System.Drawing.Point(0, 172);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(740, 90);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "***";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.groupBox3.Controls.Add(this.lbl_motham);
+            this.groupBox3.Controls.Add(this.lbl_dec);
+            this.groupBox3.Controls.Add(this.lbl_feb);
+            this.groupBox3.Controls.Add(this.lbl_jan);
+            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupBox3.Location = new System.Drawing.Point(3, 29);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(734, 58);
+            this.groupBox3.TabIndex = 6;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Total";
+            // 
+            // lbl_motham
+            // 
+            this.lbl_motham.AutoSize = true;
+            this.lbl_motham.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_motham.ForeColor = System.Drawing.Color.Maroon;
+            this.lbl_motham.Location = new System.Drawing.Point(1406, 27);
+            this.lbl_motham.Name = "lbl_motham";
+            this.lbl_motham.Size = new System.Drawing.Size(16, 16);
+            this.lbl_motham.TabIndex = 16;
+            this.lbl_motham.Text = "0";
+            // 
+            // lbl_dec
+            // 
+            this.lbl_dec.AutoSize = true;
+            this.lbl_dec.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_dec.ForeColor = System.Drawing.Color.Maroon;
+            this.lbl_dec.Location = new System.Drawing.Point(1291, 27);
+            this.lbl_dec.Name = "lbl_dec";
+            this.lbl_dec.Size = new System.Drawing.Size(16, 16);
+            this.lbl_dec.TabIndex = 15;
+            this.lbl_dec.Text = "0";
+            // 
+            // lbl_feb
+            // 
+            this.lbl_feb.AutoSize = true;
+            this.lbl_feb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_feb.ForeColor = System.Drawing.Color.Maroon;
+            this.lbl_feb.Location = new System.Drawing.Point(141, 27);
+            this.lbl_feb.Name = "lbl_feb";
+            this.lbl_feb.Size = new System.Drawing.Size(16, 16);
+            this.lbl_feb.TabIndex = 5;
+            this.lbl_feb.Text = "0";
+            // 
+            // lbl_jan
+            // 
+            this.lbl_jan.AutoSize = true;
+            this.lbl_jan.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_jan.ForeColor = System.Drawing.Color.Maroon;
+            this.lbl_jan.Location = new System.Drawing.Point(26, 27);
+            this.lbl_jan.Name = "lbl_jan";
+            this.lbl_jan.Size = new System.Drawing.Size(16, 16);
+            this.lbl_jan.TabIndex = 0;
+            this.lbl_jan.Text = "0";
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(63, 22);
+            this.toolStripButton2.Text = "Cancel";
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(65, 22);
+            this.toolStripButton1.Text = "Submit";
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton2,
+            this.toolStripButton1});
+            this.toolStrip1.Location = new System.Drawing.Point(3, 4);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(734, 25);
+            this.toolStrip1.TabIndex = 16;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // Reportform
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(740, 262);
+            this.Controls.Add(this.groupBox1);
+            this.Name = "Reportform";
+            this.Text = "Reportform";
+            this.Load += new System.EventHandler(this.Reportform_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Label lbl_motham;
+        private System.Windows.Forms.Label lbl_dec;
+        private System.Windows.Forms.Label lbl_feb;
+        private System.Windows.Forms.Label lbl_jan;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+
+    }
+}

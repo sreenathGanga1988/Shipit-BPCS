@@ -1,0 +1,49 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+
+namespace Shipit.Reports
+{
+    public partial class BookingReport : Form
+    {
+        public BookingReport()
+        {
+            InitializeComponent();
+        }
+
+        private void BookingReport_Load(object sender, EventArgs e)
+        {
+            this.orderDetailFullTableAdapter.Connection.ConnectionString = Program.ConnStr;
+            // TODO: This line of code loads data into the 'courierDetailsDataSet.OrderDetailFull' table. You can move, or remove it, as needed.
+            this.orderDetailFullTableAdapter.Fill(this.courierDetailsDataSet.OrderDetailFull);
+
+        }
+
+        private void ultraButton1_Click(object sender, EventArgs e)
+        {
+            this.ultraGrid1.Rows.ColumnFilters.ClearAllFilters();
+        }
+
+        private void ultraButton2_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+         
+            saveFileDialog1.Title = "Save an Excel File";
+            saveFileDialog1.ShowDialog();
+            if (saveFileDialog1.FileName != "")
+            {
+                this.ultraGridExcelExporter1.Export(this.ultraGrid1, saveFileDialog1.FileName);
+            }
+        }
+
+        private void cmb_factory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
+}

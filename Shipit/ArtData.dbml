@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Art" Class="ArtDataDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=ATRACO-SVR-003\HONEWSERVER;Initial Catalog=Art;User ID=sa" SettingsObjectName="Shipit.Properties.Settings" SettingsPropertyName="ArtConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.AtcMaster" Member="AtcMasters">
+    <Type Name="AtcMaster">
+      <Column Name="AtcId" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AtcNum" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Buyer_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Country_ID" Type="System.Decimal" DbType="Decimal(5,0)" CanBeNull="true" />
+      <Column Name="MerchandiserName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NoofStyles" Type="System.Decimal" DbType="Decimal(3,0)" CanBeNull="true" />
+      <Column Name="HouseDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ShipDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FinishDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AddedBy" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="AddedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsCompleted" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="IsClosed" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="SeasonName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

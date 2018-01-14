@@ -1,0 +1,26 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Shipit.Reports
+{
+    public partial class Reportform : Form
+    {
+        public Reportform()
+        {
+            InitializeComponent();
+        }
+
+        private void Reportform_Load(object sender, EventArgs e)
+        {
+
+        
+        }
+    }
+}

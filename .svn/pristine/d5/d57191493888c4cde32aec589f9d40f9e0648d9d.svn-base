@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="CourierDetails" Class="CourierDataDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="ConnectionString" ConnectionString="Data Source=It-dept\MSSQLSERVERRAJ;Initial Catalog=CourierDetails;Persist Security Info=True;User ID=sa;Password=sreenath" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Factory_Master" Member="Factory_Masters">
+    <Type Name="Factory_Master">
+      <Column Name="Factory_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Factory_name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="MonthlyCapacity" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Buyer_Master" Member="Buyer_Masters">
+    <Type Name="Buyer_Master">
+      <Column Name="Buyer_Id" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BuyerName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AddedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Factory_Holidays" Member="Factory_Holidays">
+    <Type Name="Factory_Holiday">
+      <Column Name="HolidayID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Year" Type="System.Decimal" DbType="Decimal(5,0)" CanBeNull="true" />
+      <Column Name="Month" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Factory_ID" Type="System.Decimal" DbType="Decimal(5,0)" CanBeNull="true" />
+      <Column Name="LeaveNum" Type="System.Decimal" DbType="Decimal(3,0)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Category_Master" Member="Category_Masters">
+    <Type Name="Category_Master">
+      <Column Name="CategoryIID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CategoryName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PcsPerline" Type="System.Decimal" DbType="Decimal(6,0)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FactoryPercentage" Member="FactoryPercentages">
+    <Type Name="FactoryPercentage">
+      <Column Name="PercentageID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CategoryID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="Percentage" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="AddedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Is_Active" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="FactoryID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FinalBooking_master" Member="FinalBooking_masters">
+    <Type Name="FinalBooking_master">
+      <Column Name="Book_Id" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Factory_id" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="Order_Id" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="Month" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Year" Type="System.Decimal" DbType="Decimal(5,0)" CanBeNull="true" />
+      <Column Name="BuyerID" Type="System.Decimal" DbType="Decimal(5,0)" CanBeNull="true" />
+      <Column Name="Style" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BookQty" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="ConsumptionQty" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="ApprovalDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ComplexityLevel" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="CategoryID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="AtcNO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NoOfPO" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="ActualQty" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="IsFinalApproved" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ProductionReport_Detail" Member="ProductionReport_Details">
+    <Type Name="ProductionReport_Detail">
+      <Column Name="PtroductionId" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="WeekID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="Qty" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="AddedBy" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="AddedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserMaster" Member="UserMasters">
+    <Type Name="UserMaster">
+      <Column Name="userID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Username" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="UserType" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="EmailID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="EmailPassword" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LctnPK" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.User_Rights" Member="User_Rights">
+    <Type Name="User_Right">
+      <Column Name="UserrightID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="User_Id" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="Form_name" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Access_Right" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OrderBooking_tbl" Member="OrderBooking_tbls">
+    <Type Name="OrderBooking_tbl">
+      <Column Name="Order_id" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Factory_Id" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="Year" Type="System.Decimal" DbType="Decimal(5,0)" CanBeNull="true" />
+      <Column Name="Month" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="BookQty" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="Buyer_ID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="Style" Type="System.String" DbType="NChar(100)" CanBeNull="true" />
+      <Column Name="ISApproved" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="ApprovedDate" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="UserId" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AddedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ApprovedBy" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ApprovalDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LineMaster" Member="LineMasters">
+    <Type Name="LineMaster">
+      <Column Name="Lineid" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FactoryID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="LineNum" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AddedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AddedBy" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BasicCapacity" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="IsWorking" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FactoryWeeklyPlan_tbl" Member="FactoryWeeklyPlan_tbls">
+    <Type Name="FactoryWeeklyPlan_tbl">
+      <Column Name="FctProdID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Factid" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="Year" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="Month" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="Weeknum" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="Ponum" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="WeekID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="LineID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="LineNum" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DateofProd" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TargetQty" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="AddedBy" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AddedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ActualProduced_tbl" Member="ActualProduced_tbls">
+    <Type Name="ActualProduced_tbl">
+      <Column Name="ProducedID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FctProdID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="ProducedQty" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="PackedQty" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="AddedBy" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="AddedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Atc_master" Member="Atc_masters">
+    <Type Name="Atc_master">
+      <Column Name="Atc_id" Type="System.Decimal" DbType="Decimal(5,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AtcNum" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Buyer_id" Type="System.Decimal" DbType="Decimal(5,0)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.WeeklyPlan_Master" Member="WeeklyPlan_Masters">
+    <Type Name="WeeklyPlan_Master">
+      <Column Name="WeekID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Month" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Year" Type="System.Decimal" DbType="Decimal(6,0)" CanBeNull="true" />
+      <Column Name="WeekNo" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="Factory_Id" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="Book_Id" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="Qty" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="PO#" Member="PO_" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ConsumptionQty" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="AddedBy" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AddedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ActualDelivery_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="stylenum" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="InhouseDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

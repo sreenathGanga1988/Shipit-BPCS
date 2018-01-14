@@ -1,0 +1,452 @@
+﻿namespace Shipit
+{
+    partial class AllMonthDetails
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.components = new System.ComponentModel.Container();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.lbl_message = new System.Windows.Forms.Label();
+            this.btn_enquryCapacity = new System.Windows.Forms.Button();
+            this.btn_enquiry = new System.Windows.Forms.Button();
+            this.btn_getCapacity = new System.Windows.Forms.Button();
+            this.btn_getavailability = new System.Windows.Forms.Button();
+            this.cmb_year = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.lbl_motham = new System.Windows.Forms.Label();
+            this.lbl_dec = new System.Windows.Forms.Label();
+            this.lbl_nov = new System.Windows.Forms.Label();
+            this.lbl_oct = new System.Windows.Forms.Label();
+            this.lbl_sept = new System.Windows.Forms.Label();
+            this.lbl_august = new System.Windows.Forms.Label();
+            this.lbl_july = new System.Windows.Forms.Label();
+            this.lbl_june = new System.Windows.Forms.Label();
+            this.lbl_may = new System.Windows.Forms.Label();
+            this.lbl_april = new System.Windows.Forms.Label();
+            this.lbl_march = new System.Windows.Forms.Label();
+            this.lbl_feb = new System.Windows.Forms.Label();
+            this.lbl_jan = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.exportToExcelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.showBreakUpOfMonthToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsm_stylewisebrk = new System.Windows.Forms.ToolStripMenuItem();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.groupBox2.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.linkLabel1);
+            this.groupBox2.Controls.Add(this.lbl_message);
+            this.groupBox2.Controls.Add(this.btn_enquryCapacity);
+            this.groupBox2.Controls.Add(this.btn_enquiry);
+            this.groupBox2.Controls.Add(this.btn_getCapacity);
+            this.groupBox2.Controls.Add(this.btn_getavailability);
+            this.groupBox2.Controls.Add(this.cmb_year);
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox2.Location = new System.Drawing.Point(0, 0);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(1276, 87);
+            this.groupBox2.TabIndex = 4;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Month Detail";
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(1163, 35);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(127, 13);
+            this.linkLabel1.TabIndex = 9;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Show Rejected Bookings";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // lbl_message
+            // 
+            this.lbl_message.AutoSize = true;
+            this.lbl_message.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_message.ForeColor = System.Drawing.Color.Maroon;
+            this.lbl_message.Location = new System.Drawing.Point(425, 62);
+            this.lbl_message.Name = "lbl_message";
+            this.lbl_message.Size = new System.Drawing.Size(13, 15);
+            this.lbl_message.TabIndex = 8;
+            this.lbl_message.Text = "*";
+            // 
+            // btn_enquryCapacity
+            // 
+            this.btn_enquryCapacity.Location = new System.Drawing.Point(903, 30);
+            this.btn_enquryCapacity.Name = "btn_enquryCapacity";
+            this.btn_enquryCapacity.Size = new System.Drawing.Size(254, 23);
+            this.btn_enquryCapacity.TabIndex = 7;
+            this.btn_enquryCapacity.Text = "Get Capacity Availability";
+            this.btn_enquryCapacity.UseVisualStyleBackColor = true;
+            this.btn_enquryCapacity.Visible = false;
+            this.btn_enquryCapacity.Click += new System.EventHandler(this.btn_enquryCapacity_Click);
+            // 
+            // btn_enquiry
+            // 
+            this.btn_enquiry.Location = new System.Drawing.Point(692, 30);
+            this.btn_enquiry.Name = "btn_enquiry";
+            this.btn_enquiry.Size = new System.Drawing.Size(183, 23);
+            this.btn_enquiry.TabIndex = 6;
+            this.btn_enquiry.Text = "Get Booking Data";
+            this.btn_enquiry.UseVisualStyleBackColor = true;
+            this.btn_enquiry.Visible = false;
+            this.btn_enquiry.Click += new System.EventHandler(this.btn_enquiry_Click);
+            // 
+            // btn_getCapacity
+            // 
+            this.btn_getCapacity.Location = new System.Drawing.Point(447, 30);
+            this.btn_getCapacity.Name = "btn_getCapacity";
+            this.btn_getCapacity.Size = new System.Drawing.Size(183, 23);
+            this.btn_getCapacity.TabIndex = 5;
+            this.btn_getCapacity.Text = "Capacity Availability(After Approval)";
+            this.btn_getCapacity.UseVisualStyleBackColor = true;
+            this.btn_getCapacity.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btn_getavailability
+            // 
+            this.btn_getavailability.Location = new System.Drawing.Point(233, 30);
+            this.btn_getavailability.Name = "btn_getavailability";
+            this.btn_getavailability.Size = new System.Drawing.Size(183, 23);
+            this.btn_getavailability.TabIndex = 4;
+            this.btn_getavailability.Text = " Booking Status(After Approval)";
+            this.btn_getavailability.UseVisualStyleBackColor = true;
+            this.btn_getavailability.Click += new System.EventHandler(this.btn_getavailability_Click);
+            // 
+            // cmb_year
+            // 
+            this.cmb_year.FormattingEnabled = true;
+            this.cmb_year.Items.AddRange(new object[] {
+            "2014",
+            "2015",
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2020"});
+            this.cmb_year.Location = new System.Drawing.Point(81, 32);
+            this.cmb_year.Name = "cmb_year";
+            this.cmb_year.Size = new System.Drawing.Size(121, 21);
+            this.cmb_year.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(26, 32);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(29, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Year";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.groupBox3);
+            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 87);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1276, 507);
+            this.panel1.TabIndex = 5;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.lbl_motham);
+            this.groupBox3.Controls.Add(this.lbl_dec);
+            this.groupBox3.Controls.Add(this.lbl_nov);
+            this.groupBox3.Controls.Add(this.lbl_oct);
+            this.groupBox3.Controls.Add(this.lbl_sept);
+            this.groupBox3.Controls.Add(this.lbl_august);
+            this.groupBox3.Controls.Add(this.lbl_july);
+            this.groupBox3.Controls.Add(this.lbl_june);
+            this.groupBox3.Controls.Add(this.lbl_may);
+            this.groupBox3.Controls.Add(this.lbl_april);
+            this.groupBox3.Controls.Add(this.lbl_march);
+            this.groupBox3.Controls.Add(this.lbl_feb);
+            this.groupBox3.Controls.Add(this.lbl_jan);
+            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupBox3.Location = new System.Drawing.Point(0, 449);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(1276, 58);
+            this.groupBox3.TabIndex = 4;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Total";
+            // 
+            // lbl_motham
+            // 
+            this.lbl_motham.AutoSize = true;
+            this.lbl_motham.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_motham.ForeColor = System.Drawing.Color.Maroon;
+            this.lbl_motham.Location = new System.Drawing.Point(1406, 27);
+            this.lbl_motham.Name = "lbl_motham";
+            this.lbl_motham.Size = new System.Drawing.Size(16, 16);
+            this.lbl_motham.TabIndex = 16;
+            this.lbl_motham.Text = "0";
+            // 
+            // lbl_dec
+            // 
+            this.lbl_dec.AutoSize = true;
+            this.lbl_dec.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_dec.ForeColor = System.Drawing.Color.Maroon;
+            this.lbl_dec.Location = new System.Drawing.Point(1291, 27);
+            this.lbl_dec.Name = "lbl_dec";
+            this.lbl_dec.Size = new System.Drawing.Size(16, 16);
+            this.lbl_dec.TabIndex = 15;
+            this.lbl_dec.Text = "0";
+            // 
+            // lbl_nov
+            // 
+            this.lbl_nov.AutoSize = true;
+            this.lbl_nov.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_nov.ForeColor = System.Drawing.Color.Maroon;
+            this.lbl_nov.Location = new System.Drawing.Point(1176, 27);
+            this.lbl_nov.Name = "lbl_nov";
+            this.lbl_nov.Size = new System.Drawing.Size(16, 16);
+            this.lbl_nov.TabIndex = 14;
+            this.lbl_nov.Text = "0";
+            // 
+            // lbl_oct
+            // 
+            this.lbl_oct.AutoSize = true;
+            this.lbl_oct.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_oct.ForeColor = System.Drawing.Color.Maroon;
+            this.lbl_oct.Location = new System.Drawing.Point(1061, 27);
+            this.lbl_oct.Name = "lbl_oct";
+            this.lbl_oct.Size = new System.Drawing.Size(16, 16);
+            this.lbl_oct.TabIndex = 13;
+            this.lbl_oct.Text = "0";
+            // 
+            // lbl_sept
+            // 
+            this.lbl_sept.AutoSize = true;
+            this.lbl_sept.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_sept.ForeColor = System.Drawing.Color.Maroon;
+            this.lbl_sept.Location = new System.Drawing.Point(946, 27);
+            this.lbl_sept.Name = "lbl_sept";
+            this.lbl_sept.Size = new System.Drawing.Size(16, 16);
+            this.lbl_sept.TabIndex = 12;
+            this.lbl_sept.Text = "0";
+            // 
+            // lbl_august
+            // 
+            this.lbl_august.AutoSize = true;
+            this.lbl_august.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_august.ForeColor = System.Drawing.Color.Maroon;
+            this.lbl_august.Location = new System.Drawing.Point(831, 27);
+            this.lbl_august.Name = "lbl_august";
+            this.lbl_august.Size = new System.Drawing.Size(16, 16);
+            this.lbl_august.TabIndex = 11;
+            this.lbl_august.Text = "0";
+            // 
+            // lbl_july
+            // 
+            this.lbl_july.AutoSize = true;
+            this.lbl_july.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_july.ForeColor = System.Drawing.Color.Maroon;
+            this.lbl_july.Location = new System.Drawing.Point(716, 27);
+            this.lbl_july.Name = "lbl_july";
+            this.lbl_july.Size = new System.Drawing.Size(16, 16);
+            this.lbl_july.TabIndex = 10;
+            this.lbl_july.Text = "0";
+            // 
+            // lbl_june
+            // 
+            this.lbl_june.AutoSize = true;
+            this.lbl_june.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_june.ForeColor = System.Drawing.Color.Maroon;
+            this.lbl_june.Location = new System.Drawing.Point(601, 27);
+            this.lbl_june.Name = "lbl_june";
+            this.lbl_june.Size = new System.Drawing.Size(16, 16);
+            this.lbl_june.TabIndex = 9;
+            this.lbl_june.Text = "0";
+            // 
+            // lbl_may
+            // 
+            this.lbl_may.AutoSize = true;
+            this.lbl_may.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_may.ForeColor = System.Drawing.Color.Maroon;
+            this.lbl_may.Location = new System.Drawing.Point(486, 27);
+            this.lbl_may.Name = "lbl_may";
+            this.lbl_may.Size = new System.Drawing.Size(16, 16);
+            this.lbl_may.TabIndex = 8;
+            this.lbl_may.Text = "0";
+            // 
+            // lbl_april
+            // 
+            this.lbl_april.AutoSize = true;
+            this.lbl_april.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_april.ForeColor = System.Drawing.Color.Maroon;
+            this.lbl_april.Location = new System.Drawing.Point(371, 27);
+            this.lbl_april.Name = "lbl_april";
+            this.lbl_april.Size = new System.Drawing.Size(16, 16);
+            this.lbl_april.TabIndex = 7;
+            this.lbl_april.Text = "0";
+            this.lbl_april.Click += new System.EventHandler(this.lbl_april_Click);
+            // 
+            // lbl_march
+            // 
+            this.lbl_march.AutoSize = true;
+            this.lbl_march.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_march.ForeColor = System.Drawing.Color.Maroon;
+            this.lbl_march.Location = new System.Drawing.Point(256, 27);
+            this.lbl_march.Name = "lbl_march";
+            this.lbl_march.Size = new System.Drawing.Size(16, 16);
+            this.lbl_march.TabIndex = 6;
+            this.lbl_march.Text = "0";
+            // 
+            // lbl_feb
+            // 
+            this.lbl_feb.AutoSize = true;
+            this.lbl_feb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_feb.ForeColor = System.Drawing.Color.Maroon;
+            this.lbl_feb.Location = new System.Drawing.Point(141, 27);
+            this.lbl_feb.Name = "lbl_feb";
+            this.lbl_feb.Size = new System.Drawing.Size(16, 16);
+            this.lbl_feb.TabIndex = 5;
+            this.lbl_feb.Text = "0";
+            // 
+            // lbl_jan
+            // 
+            this.lbl_jan.AutoSize = true;
+            this.lbl_jan.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_jan.ForeColor = System.Drawing.Color.Maroon;
+            this.lbl_jan.Location = new System.Drawing.Point(26, 27);
+            this.lbl_jan.Name = "lbl_jan";
+            this.lbl_jan.Size = new System.Drawing.Size(16, 16);
+            this.lbl_jan.TabIndex = 0;
+            this.lbl_jan.Text = "0";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.ContextMenuStrip = this.contextMenuStrip1;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(1276, 507);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exportToExcelToolStripMenuItem,
+            this.showBreakUpOfMonthToolStripMenuItem,
+            this.tsm_stylewisebrk});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(207, 70);
+            // 
+            // exportToExcelToolStripMenuItem
+            // 
+            this.exportToExcelToolStripMenuItem.Name = "exportToExcelToolStripMenuItem";
+            this.exportToExcelToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.exportToExcelToolStripMenuItem.Text = "Export to Excel";
+            this.exportToExcelToolStripMenuItem.Click += new System.EventHandler(this.exportToExcelToolStripMenuItem_Click);
+            // 
+            // showBreakUpOfMonthToolStripMenuItem
+            // 
+            this.showBreakUpOfMonthToolStripMenuItem.Name = "showBreakUpOfMonthToolStripMenuItem";
+            this.showBreakUpOfMonthToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.showBreakUpOfMonthToolStripMenuItem.Text = "Show Break Up of Month";
+            this.showBreakUpOfMonthToolStripMenuItem.Click += new System.EventHandler(this.showBreakUpOfMonthToolStripMenuItem_Click);
+            // 
+            // tsm_stylewisebrk
+            // 
+            this.tsm_stylewisebrk.Enabled = false;
+            this.tsm_stylewisebrk.Name = "tsm_stylewisebrk";
+            this.tsm_stylewisebrk.Size = new System.Drawing.Size(206, 22);
+            this.tsm_stylewisebrk.Text = "Style Wise BreakUP";
+            this.tsm_stylewisebrk.Click += new System.EventHandler(this.tsm_stylewisebrk_Click);
+            // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage_1);
+            // 
+            // AllMonthDetails
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1276, 594);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.groupBox2);
+            this.Name = "AllMonthDetails";
+            this.Text = "Availability Report";
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button btn_getavailability;
+        private System.Windows.Forms.ComboBox cmb_year;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Label lbl_april;
+        private System.Windows.Forms.Label lbl_march;
+        private System.Windows.Forms.Label lbl_feb;
+        private System.Windows.Forms.Label lbl_jan;
+        private System.Windows.Forms.Label lbl_august;
+        private System.Windows.Forms.Label lbl_july;
+        private System.Windows.Forms.Label lbl_june;
+        private System.Windows.Forms.Label lbl_may;
+        private System.Windows.Forms.Label lbl_dec;
+        private System.Windows.Forms.Label lbl_nov;
+        private System.Windows.Forms.Label lbl_oct;
+        private System.Windows.Forms.Label lbl_sept;
+        private System.Windows.Forms.Label lbl_motham;
+        private System.Windows.Forms.Button btn_getCapacity;
+        private System.Windows.Forms.Button btn_enquryCapacity;
+        private System.Windows.Forms.Button btn_enquiry;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem exportToExcelToolStripMenuItem;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.ToolStripMenuItem showBreakUpOfMonthToolStripMenuItem;
+        private System.Windows.Forms.Label lbl_message;
+        private System.Windows.Forms.ToolStripMenuItem tsm_stylewisebrk;
+        private System.Windows.Forms.LinkLabel linkLabel1;
+    }
+}

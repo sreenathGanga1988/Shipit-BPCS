@@ -1,0 +1,211 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Shipit.Production
+{
+    public partial class FactoryLinesMasterFrm : Form
+    {
+        Transaction.DataTransaction dttrans = null;
+        public FactoryLinesMasterFrm()
+        {
+            InitializeComponent();
+            dttrans = new Transaction.DataTransaction();
+        }
+
+        private void FactoryLinesMasterFrm_Load(object sender, EventArgs e)
+        {
+            LoadFactoryCombo();
+        }
+        public void LoadFactoryCombo()
+        {
+            CourierDataDataContext courdatacontext = new CourierDataDataContext(Program.ConnStr);
+            var q = from fctry in courdatacontext.Factory_Masters
+                    select fctry;
+
+
+
+            cmb_factory.DataSource = q;
+            cmb_factory.DisplayMember = "Factory_name";
+            cmb_factory.ValueMember = "Factory_ID";
+            cmb_factory.SelectedValue = Program.lctnpk;
+            //   Buyercombo.DataBind();
+
+
+
+        }
+
+        private void cmb_year_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmb_factory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dttrans.resrictacess(cmb_factory);
+        }
+
+
+
+        public void addrow()
+        {
+            if(!dttrans.IsComboboxemptyorNull (cmb_factory ))
+            {
+                MessageBox.Show("Select Factory");
+
+            }
+            else if (!dttrans.IsTextboxemptyorNull(txt_lineno))
+            {
+                MessageBox.Show("Enter Number of Lines");
+            }
+            else if(!dttrans.Isnumbericentry(txt_lineno.Text) )
+            {
+                MessageBox.Show("Number of Lines Must be Numeric");
+            }
+            else
+            {
+                tbl_linedata.DataSource = null;
+                tbl_linedata.Columns[0].Visible = true; ;
+                tbl_linedata.Columns[1].Visible = true;
+                tbl_linedata.RowCount = int.Parse(txt_lineno.Text);
+                for (int i = 0; i < tbl_linedata.RowCount; i++)
+                {
+                    tbl_linedata.Rows[i].Cells[0].Value = i.ToString();
+                    tbl_linedata.Rows[i].Cells[1].Value = "Line " + i.ToString();
+
+                }
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            addrow();
+        }
+
+
+
+
+
+
+
+
+        public Boolean validationcontrol()
+        {
+            Boolean sucess = false;
+            if(!dttrans.IsComboboxemptyorNull(cmb_factory))
+            {
+                sucess=false;
+            }
+            else if (!isgridempty())
+            {
+                MessageBox.Show("Enter Name of All the Lines");
+
+            }
+            else
+            {
+                sucess = true;
+            }
+            return sucess;
+        }
+
+
+        public Boolean  isgridempty()
+        {
+            Boolean sucess = false;
+            for (int i = 0; i < tbl_linedata.Rows.Count; i++)
+            {
+                //if (tbl_linedata.Rows[i].Cells[1].Value==null|| tbl_linedata.Rows[i].Cells[1].Value.ToString() == "")
+                if (tbl_linedata.Rows[i].Cells[1].Value == null || tbl_linedata.Rows[i].Cells[1].Value.ToString() == "")
+                {
+                    sucess = true;
+                }
+            }
+            return sucess;
+        }
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            if (validationcontrol())
+            {
+
+                for (int i = 0; i < tbl_linedata.Rows.Count; i++)
+                {
+                    CourierDataDataContext curdatacontext = new CourierDataDataContext(Program.ConnStr);
+
+                    if (!tbl_linedata.Columns[1].Visible && tbl_linedata.Rows[i].Cells[1].Value!=null)
+                    {
+                        LineMaster linemstr = new LineMaster();
+                        linemstr.LineNum = tbl_linedata.Rows[i].Cells[1].Value.ToString();
+                        linemstr.AddedBy = Program.uername;
+                        linemstr.FactoryID = int.Parse(cmb_factory.SelectedValue.ToString());
+                        linemstr.AddedDate = DateTime.Now.Date;
+                        //linemstr.Lineid = Convert.ToDecimal(tbl_linedata.Rows[i].Cells[2].Value);
+                        //linemstr.
+                        curdatacontext.LineMasters.InsertOnSubmit(linemstr);
+                    }
+                    else
+                   // CourierDataDataContext dtx = new CourierDataDataContext(Program.ConnStr);
+                   // dtx.LineMasters.
+                    {
+
+                        LineMaster line = curdatacontext.LineMasters.Where(s => s.Lineid == Convert.ToDecimal(tbl_linedata.Rows[i].Cells[2].Value)).FirstOrDefault();
+                        if (line != null && tbl_linedata.Rows[i].Cells[3].Value!=null)
+                        {
+                            line.LineNum = tbl_linedata.Rows[i].Cells[3].Value.ToString();
+                            //curdatacontext.
+                        }
+                        
+                    }
+                  
+                    curdatacontext.SubmitChanges();
+
+                }
+            }
+            MessageBox.Show("Done");
+
+        }
+
+        void UpdateLines(string lineName,int lineid){
+          CourierDataDataContext cntx=new CourierDataDataContext (Program.ConnStr);
+          LineMaster line = cntx.LineMasters.Where(s=>s.Lineid == lineid).FirstOrDefault();
+          if (line != null)
+          {
+              line.LineNum = lineName;
+              
+          }
+           var dbctx=new CourierDataDataContext ();
+            //dbctx.LineMasters.GetOriginalEntityState(line).st
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (dttrans.IsComboboxemptyorNull(cmb_factory))
+            {
+                CourierDataDataContext curdatacontext = new CourierDataDataContext(Program.ConnStr);
+                var q = from lnmstr in curdatacontext.LineMasters
+                        where lnmstr.FactoryID == int.Parse(cmb_factory.SelectedValue.ToString())
+                        select lnmstr;
+                tbl_linedata.DataSource = q;
+                tbl_linedata.Columns[0].Visible = false;
+                tbl_linedata.Columns[1].Visible = false; // why is hidden ??
+                tbl_linedata.Columns[3].Visible = false;
+
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            DataGridViewButtonColumn btnColumn = new DataGridViewButtonColumn();
+            btnColumn.HeaderText = "Update LineNum";
+            btnColumn.Text = "Update LineNum";
+            btnColumn.UseColumnTextForButtonValue = true;
+            tbl_linedata.Columns.Add(btnColumn);
+           
+
+        }
+    }
+}

@@ -1,0 +1,490 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Shipit
+{
+    public partial class Mainform : Form
+    {
+        Transaction.DataTransaction dttrans = null;
+        public Mainform()
+        {
+            InitializeComponent();
+            dttrans = new Transaction.DataTransaction();
+            this.WindowState = FormWindowState.Maximized;
+            this.Text = "Ship IT -" + Application.ProductVersion .ToString();
+            lbl_loc.Text = Program.logloc;
+            lblUsername.Text = Program.uername;
+        }
+        private bool IsAlreadyOpen(Type formType)
+        {
+
+            bool isOpen = false;
+
+
+
+            foreach (Form f in Application.OpenForms)
+            {
+
+                if (f.GetType() == formType)
+                {
+
+                    f.BringToFront();
+
+                    f.WindowState = FormWindowState.Normal;
+
+                    isOpen = true;
+
+                }
+
+            }
+
+
+            return isOpen;
+
+        }
+
+        private void factoryCapacityToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+
+
+            //Factorymaster frm = new Factorymaster();
+            //bool isFormOpen = IsAlreadyOpen(typeof(Factorymaster ));
+            //if (isFormOpen == false)
+            //{
+            //    frm = new Factorymaster();
+            ////    frm.MdiParent = this;
+            //    frm.StartPosition = FormStartPosition.CenterScreen;
+            //    frm.Show();
+            //}
+
+
+
+
+        }
+
+        private void bookingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            OrderBooking ordr = new OrderBooking();
+            bool isFormOpen = IsAlreadyOpen(typeof(OrderBooking));
+            if (isFormOpen == false)
+            {
+                ordr = new OrderBooking();
+              ordr.MdiParent = this;
+                ordr.StartPosition = FormStartPosition.CenterScreen;
+                ordr.Show();
+            }
+
+
+
+
+
+
+        }
+
+
+
+        public void getFactories()
+        {
+
+        }
+
+        private void bookingConfirmationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+
+            BokkingConfirmation ordr = new BokkingConfirmation();
+            bool isFormOpen = IsAlreadyOpen(typeof(BokkingConfirmation));
+            if (isFormOpen == false)
+            {
+                ordr = new BokkingConfirmation();
+           ordr.MdiParent = this;
+                ordr.StartPosition = FormStartPosition.CenterScreen;
+                ordr.Show();
+            }
+
+
+
+
+          
+        }
+
+        private void newFactoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NewFactory frm = new NewFactory();
+            bool isFormOpen = IsAlreadyOpen(typeof(NewFactory));
+            if (isFormOpen == false)
+            {
+                frm = new NewFactory();
+              //  frm.MdiParent = this;
+                frm.StartPosition = FormStartPosition.CenterScreen;
+                frm.Show();
+            }
+
+        }
+
+        private void holidaysToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FactoryHolidays frm = new FactoryHolidays();
+            bool isFormOpen = IsAlreadyOpen(typeof(FactoryHolidays));
+            if (isFormOpen == false)
+            {
+                frm = new FactoryHolidays();
+                frm.MdiParent = this;
+                frm.StartPosition = FormStartPosition.CenterScreen;
+                frm.Show();
+            }
+        }
+
+        private void report1ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Capacity_Booking.BookingReport frm = new Capacity_Booking.BookingReport();
+            bool isFormOpen = IsAlreadyOpen(typeof(Capacity_Booking.BookingReport));
+            if (isFormOpen == false)
+            {
+                frm = new Capacity_Booking.BookingReport();
+                 frm.MdiParent = this;
+                frm.StartPosition = FormStartPosition.CenterScreen;
+                frm.Show();
+            }
+
+        }
+
+        private void report2ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AllMonthDetails frm = new AllMonthDetails();
+            bool isFormOpen = IsAlreadyOpen(typeof(AllMonthDetails));
+            if (isFormOpen == false)
+            {
+                frm = new AllMonthDetails();
+                  frm.MdiParent = this;
+                frm.StartPosition = FormStartPosition.CenterScreen;
+                frm.Show();
+            }
+        }
+
+        private void categoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CategoryMaster frm = new CategoryMaster();
+            bool isFormOpen = IsAlreadyOpen(typeof(CategoryMaster));
+            if (isFormOpen == false)
+            {
+                frm = new CategoryMaster();
+                //  frm.MdiParent = this;
+                frm.StartPosition = FormStartPosition.CenterScreen;
+                frm.Show();
+            }
+
+        }
+
+        private void categoryPercentageToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CategoryPercentage frm = new CategoryPercentage();
+            bool isFormOpen = IsAlreadyOpen(typeof(CategoryPercentage));
+            if (isFormOpen == false)
+            {
+                frm = new CategoryPercentage();
+                //  frm.MdiParent = this;
+                frm.StartPosition = FormStartPosition.CenterScreen;
+                frm.Show();
+            }
+
+        }
+
+        private void bookingsEditToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AllBookingForm frm = new AllBookingForm();
+            bool isFormOpen = IsAlreadyOpen(typeof(AllBookingForm));
+            if (isFormOpen == false)
+            {
+                frm = new AllBookingForm();
+                 frm.MdiParent = this;
+                frm.StartPosition = FormStartPosition.CenterScreen;
+                frm.Show();
+            }
+        }
+
+        private void bookingReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bookingReportBeforeApprovalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AllMonthDetails frm = new AllMonthDetails("Before Approval");
+            bool isFormOpen = IsAlreadyOpen(typeof(AllMonthDetails));
+            if (isFormOpen == false)
+            {
+                frm = new AllMonthDetails("Before Approval");
+                frm.MdiParent = this;
+                frm.StartPosition = FormStartPosition.CenterScreen;
+                frm.Show();
+            }
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           
+            Application.Exit();
+        }
+
+        private void Mainform_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void Mainform_Load(object sender, EventArgs e)
+        {
+            if (Program.lctnpk == 0)
+            {
+                Notification frm = new Notification();
+                frm.ShowDialog();
+            }
+            else
+            {
+                getitems();
+            }
+           
+
+        }
+
+
+
+
+        
+        public   void getitems()
+
+        {
+            foreach (ToolStripMenuItem i in menuStrip1.Items)
+            {
+                GetMenuItems(i);
+            }
+    }
+
+   public void GetMenuItems(ToolStripMenuItem item)
+    {
+       
+        foreach (ToolStripItem i in item.DropDownItems)
+        {
+            if (i is ToolStripMenuItem)
+            {
+                
+                if (Get_Menu(Program.userpk , i.Text) == true)
+                {
+                    i.Visible = true;
+                    
+                }
+                else
+                {
+                    i.Visible = false;
+                }
+                GetMenuItems((ToolStripMenuItem)i);
+
+            }
+        }
+    }
+       
+
+ public Boolean Get_Menu(int userid, string fnam)
+       {
+           Boolean frmnam = false;
+           DataSet ds = Transaction.DataTransaction .Get_Data("select access_right from User_Rights where "
+           +" user_id="+userid+" and form_name='" + fnam + "'");
+           if (ds.Tables[0].Rows.Count > 0)
+           {
+             frmnam = true;
+           }
+           return frmnam;
+       }
+
+        private void uploadDataToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void weekPlaningToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void weeklyProductionEntryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Production.ProductionEntry frm = new Production.ProductionEntry();
+            bool isFormOpen = IsAlreadyOpen(typeof(Production.ProductionEntry));
+            if (isFormOpen == false)
+            {
+                frm = new Production.ProductionEntry();
+                frm.MdiParent = this;
+                frm.StartPosition = FormStartPosition.CenterScreen;
+                frm.Show();
+            }
+
+        }
+
+        private void weekStatusToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Production.tryfrm frm = new Production.tryfrm();
+            bool isFormOpen = IsAlreadyOpen(typeof(Production.tryfrm));
+            if (isFormOpen == false)
+            {
+                frm = new Production.tryfrm();
+                frm.MdiParent = this;
+                frm.StartPosition = FormStartPosition.CenterScreen;
+                frm.Show();
+            }
+        }
+
+        private void userRightsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Administrator.UserRights urm = new Administrator.UserRights();
+            bool isFormOpen = IsAlreadyOpen(typeof(Administrator.UserRights));
+            if (isFormOpen == false)
+            {
+                urm = new Administrator.UserRights();
+                urm.MdiParent = this;
+                urm.StartPosition = FormStartPosition.CenterScreen;
+                urm.Show();
+            }
+
+        }
+
+        private void poWiseProductionReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Production.ProductionReport frm = new Production.ProductionReport();
+            bool isFormOpen = IsAlreadyOpen(typeof(Production.ProductionReport));
+            if (isFormOpen == false)
+            {
+                frm = new Production.ProductionReport();
+                frm.MdiParent = this;
+                frm.StartPosition = FormStartPosition.CenterScreen;
+                frm.Show();
+            }
+        }
+
+        private void factoryLineMasterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Production.FactoryLinesMasterFrm frm = new Production.FactoryLinesMasterFrm();
+            bool isFormOpen = IsAlreadyOpen(typeof(Production.FactoryLinesMasterFrm));
+            if (isFormOpen == false)
+            {
+                frm = new Production.FactoryLinesMasterFrm();
+                frm.MdiParent = this;
+                frm.StartPosition = FormStartPosition.CenterScreen;
+                frm.Show();
+            }
+        }
+
+        private void lineAssignerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Production.POWiseLineAssigner frm = new Production.POWiseLineAssigner();
+            bool isFormOpen = IsAlreadyOpen(typeof(Production.POWiseLineAssigner));
+            if (isFormOpen == false)
+            {
+                frm = new Production.POWiseLineAssigner();
+                frm.MdiParent = this;
+                frm.StartPosition = FormStartPosition.CenterScreen;
+                frm.Show();
+            }
+        }
+
+        private void dailyProductionUpdaterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Production.DailyProductionUpdater frm = new Production.DailyProductionUpdater();
+            bool isFormOpen = IsAlreadyOpen(typeof(Production.DailyProductionUpdater));
+            if (isFormOpen == false)
+            {
+                frm = new Production.DailyProductionUpdater();
+                frm.MdiParent = this;
+                frm.StartPosition = FormStartPosition.CenterScreen;
+                frm.Show();
+            }
+        }
+
+        private void weekPlanToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Production.WeekPlanviewer frm = new Production.WeekPlanviewer();
+            bool isFormOpen = IsAlreadyOpen(typeof(Production.WeekPlanviewer));
+            if (isFormOpen == false)
+            {
+                frm = new Production.WeekPlanviewer();
+                frm.MdiParent = this;
+                frm.StartPosition = FormStartPosition.CenterScreen;
+                frm.Show();
+            }
+        }
+
+        private void dailyPlanToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Reports.AtcLinePlanrReportfrm frm = new Reports.AtcLinePlanrReportfrm();
+            bool isFormOpen = IsAlreadyOpen(typeof(Reports.AtcLinePlanrReportfrm));
+            if (isFormOpen == false)
+            {
+                frm = new Reports.AtcLinePlanrReportfrm();
+                frm.MdiParent = this;
+                frm.StartPosition = FormStartPosition.CenterScreen;
+                frm.Show();
+            }
+        }
+
+        private void userToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Administrator.Usermasterfrm frm = new Administrator.Usermasterfrm();
+            bool isFormOpen = IsAlreadyOpen(typeof(Administrator.Usermasterfrm));
+            if (isFormOpen == false)
+            {
+                frm = new Administrator.Usermasterfrm();
+                frm.MdiParent = this;
+                frm.StartPosition = FormStartPosition.CenterScreen;
+                frm.Show();
+            }
+
+        }
+
+        private void factoryAllocationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Capacity_Booking.ApprovedBooking frm = new Capacity_Booking.ApprovedBooking();
+            bool isFormOpen = IsAlreadyOpen(typeof(Capacity_Booking.ApprovedBooking));
+            if (isFormOpen == false)
+            {
+                frm = new Capacity_Booking.ApprovedBooking();
+                frm.MdiParent = this;
+                frm.StartPosition = FormStartPosition.CenterScreen;
+                frm.Show();
+            }
+        }
+
+        private void newWeekAllocationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Production.WeeklyChartform frm = new Production.WeeklyChartform();
+            bool isFormOpen = IsAlreadyOpen(typeof(Production.WeeklyChartform));
+            if (isFormOpen == false)
+            {
+                frm = new Production.WeeklyChartform();
+                frm.MdiParent = this;
+                frm.StartPosition = FormStartPosition.CenterScreen;
+                frm.Show();
+            }
+        }
+
+        private void editWeeklyAllocationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Production.WeeklyPlanEdit frm = new Production.WeeklyPlanEdit();
+            bool isFormOpen = IsAlreadyOpen(typeof(Production.WeeklyPlanEdit));
+            if (isFormOpen == false)
+            {
+                frm = new Production.WeeklyPlanEdit();
+                frm.MdiParent = this;
+                frm.StartPosition = FormStartPosition.CenterScreen;
+                frm.Show();
+            }
+        }
+    }
+}

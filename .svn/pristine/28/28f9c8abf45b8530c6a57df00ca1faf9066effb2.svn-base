@@ -1,0 +1,537 @@
+﻿namespace Shipit
+{
+    partial class BookingChanges
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tb_factory = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
+            this.cmb_factory = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_currentvalue = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lbl_orderid = new System.Windows.Forms.Label();
+            this.lbl_text = new System.Windows.Forms.Label();
+            this.tb_qty = new System.Windows.Forms.TabPage();
+            this.button2 = new System.Windows.Forms.Button();
+            this.txt_newqty = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lbl_fct = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lbl_currentQty = new System.Windows.Forms.Label();
+            this.asd = new System.Windows.Forms.Label();
+            this.lbl_orderidforqty = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.tb_style = new System.Windows.Forms.TabPage();
+            this.button3 = new System.Windows.Forms.Button();
+            this.txt_style = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.lbl_currentstyle = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.lbl_currentstyleBookid = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.tb_approvedqty = new System.Windows.Forms.TabPage();
+            this.button4 = new System.Windows.Forms.Button();
+            this.lbl_consumption = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txt_approvedqty = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.lbl_apprvdqty = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.lbl_appbookid = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.lbl_aapporderid = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.tabControl1.SuspendLayout();
+            this.tb_factory.SuspendLayout();
+            this.tb_qty.SuspendLayout();
+            this.tb_style.SuspendLayout();
+            this.tb_approvedqty.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tb_factory);
+            this.tabControl1.Controls.Add(this.tb_qty);
+            this.tabControl1.Controls.Add(this.tb_style);
+            this.tabControl1.Controls.Add(this.tb_approvedqty);
+            this.tabControl1.Location = new System.Drawing.Point(-2, -2);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(397, 231);
+            this.tabControl1.TabIndex = 0;
+            // 
+            // tb_factory
+            // 
+            this.tb_factory.Controls.Add(this.button1);
+            this.tb_factory.Controls.Add(this.cmb_factory);
+            this.tb_factory.Controls.Add(this.label1);
+            this.tb_factory.Controls.Add(this.lbl_currentvalue);
+            this.tb_factory.Controls.Add(this.label2);
+            this.tb_factory.Controls.Add(this.lbl_orderid);
+            this.tb_factory.Controls.Add(this.lbl_text);
+            this.tb_factory.Location = new System.Drawing.Point(4, 22);
+            this.tb_factory.Name = "tb_factory";
+            this.tb_factory.Padding = new System.Windows.Forms.Padding(3);
+            this.tb_factory.Size = new System.Drawing.Size(389, 205);
+            this.tb_factory.TabIndex = 0;
+            this.tb_factory.Text = "Factory Change";
+            this.tb_factory.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(157, 123);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "Update";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // cmb_factory
+            // 
+            this.cmb_factory.FormattingEnabled = true;
+            this.cmb_factory.Items.AddRange(new object[] {
+            "2014",
+            "2015",
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2020"});
+            this.cmb_factory.Location = new System.Drawing.Point(125, 85);
+            this.cmb_factory.Name = "cmb_factory";
+            this.cmb_factory.Size = new System.Drawing.Size(121, 21);
+            this.cmb_factory.TabIndex = 9;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(24, 88);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(82, 13);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "New Location  :";
+            // 
+            // lbl_currentvalue
+            // 
+            this.lbl_currentvalue.AutoSize = true;
+            this.lbl_currentvalue.Location = new System.Drawing.Point(131, 59);
+            this.lbl_currentvalue.Name = "lbl_currentvalue";
+            this.lbl_currentvalue.Size = new System.Drawing.Size(13, 13);
+            this.lbl_currentvalue.TabIndex = 7;
+            this.lbl_currentvalue.Text = "0";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(24, 59);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(85, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Current Factory :";
+            // 
+            // lbl_orderid
+            // 
+            this.lbl_orderid.AutoSize = true;
+            this.lbl_orderid.Location = new System.Drawing.Point(131, 21);
+            this.lbl_orderid.Name = "lbl_orderid";
+            this.lbl_orderid.Size = new System.Drawing.Size(55, 13);
+            this.lbl_orderid.TabIndex = 5;
+            this.lbl_orderid.Text = "lbl_orderid";
+            // 
+            // lbl_text
+            // 
+            this.lbl_text.AutoSize = true;
+            this.lbl_text.Location = new System.Drawing.Point(24, 21);
+            this.lbl_text.Name = "lbl_text";
+            this.lbl_text.Size = new System.Drawing.Size(56, 13);
+            this.lbl_text.TabIndex = 4;
+            this.lbl_text.Text = "Order ID : ";
+            // 
+            // tb_qty
+            // 
+            this.tb_qty.Controls.Add(this.button2);
+            this.tb_qty.Controls.Add(this.txt_newqty);
+            this.tb_qty.Controls.Add(this.label4);
+            this.tb_qty.Controls.Add(this.lbl_fct);
+            this.tb_qty.Controls.Add(this.label3);
+            this.tb_qty.Controls.Add(this.lbl_currentQty);
+            this.tb_qty.Controls.Add(this.asd);
+            this.tb_qty.Controls.Add(this.lbl_orderidforqty);
+            this.tb_qty.Controls.Add(this.label6);
+            this.tb_qty.Location = new System.Drawing.Point(4, 22);
+            this.tb_qty.Name = "tb_qty";
+            this.tb_qty.Padding = new System.Windows.Forms.Padding(3);
+            this.tb_qty.Size = new System.Drawing.Size(389, 205);
+            this.tb_qty.TabIndex = 1;
+            this.tb_qty.Text = "Qty change";
+            this.tb_qty.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(142, 165);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 16;
+            this.button2.Text = "Submit";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // txt_newqty
+            // 
+            this.txt_newqty.Location = new System.Drawing.Point(142, 118);
+            this.txt_newqty.Name = "txt_newqty";
+            this.txt_newqty.Size = new System.Drawing.Size(112, 20);
+            this.txt_newqty.TabIndex = 15;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(32, 125);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(54, 13);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "New Qty :";
+            // 
+            // lbl_fct
+            // 
+            this.lbl_fct.AutoSize = true;
+            this.lbl_fct.Location = new System.Drawing.Point(139, 90);
+            this.lbl_fct.Name = "lbl_fct";
+            this.lbl_fct.Size = new System.Drawing.Size(13, 13);
+            this.lbl_fct.TabIndex = 13;
+            this.lbl_fct.Text = "0";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(32, 90);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(85, 13);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "Current Factory :";
+            // 
+            // lbl_currentQty
+            // 
+            this.lbl_currentQty.AutoSize = true;
+            this.lbl_currentQty.Location = new System.Drawing.Point(139, 59);
+            this.lbl_currentQty.Name = "lbl_currentQty";
+            this.lbl_currentQty.Size = new System.Drawing.Size(13, 13);
+            this.lbl_currentQty.TabIndex = 11;
+            this.lbl_currentQty.Text = "0";
+            // 
+            // asd
+            // 
+            this.asd.AutoSize = true;
+            this.asd.Location = new System.Drawing.Point(32, 59);
+            this.asd.Name = "asd";
+            this.asd.Size = new System.Drawing.Size(66, 13);
+            this.asd.TabIndex = 10;
+            this.asd.Text = "Current Qty :";
+            // 
+            // lbl_orderidforqty
+            // 
+            this.lbl_orderidforqty.AutoSize = true;
+            this.lbl_orderidforqty.Location = new System.Drawing.Point(139, 21);
+            this.lbl_orderidforqty.Name = "lbl_orderidforqty";
+            this.lbl_orderidforqty.Size = new System.Drawing.Size(35, 13);
+            this.lbl_orderidforqty.TabIndex = 9;
+            this.lbl_orderidforqty.Text = "label5";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(32, 21);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(56, 13);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Order ID : ";
+            // 
+            // tb_style
+            // 
+            this.tb_style.Controls.Add(this.button3);
+            this.tb_style.Controls.Add(this.txt_style);
+            this.tb_style.Controls.Add(this.label7);
+            this.tb_style.Controls.Add(this.lbl_currentstyle);
+            this.tb_style.Controls.Add(this.label8);
+            this.tb_style.Controls.Add(this.lbl_currentstyleBookid);
+            this.tb_style.Controls.Add(this.label5);
+            this.tb_style.Location = new System.Drawing.Point(4, 22);
+            this.tb_style.Name = "tb_style";
+            this.tb_style.Padding = new System.Windows.Forms.Padding(3);
+            this.tb_style.Size = new System.Drawing.Size(389, 205);
+            this.tb_style.TabIndex = 2;
+            this.tb_style.Text = "Change Style";
+            this.tb_style.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(131, 155);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 11;
+            this.button3.Text = "Update";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // txt_style
+            // 
+            this.txt_style.Location = new System.Drawing.Point(119, 120);
+            this.txt_style.Name = "txt_style";
+            this.txt_style.Size = new System.Drawing.Size(100, 20);
+            this.txt_style.TabIndex = 10;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(28, 128);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(67, 13);
+            this.label7.TabIndex = 9;
+            this.label7.Text = "New  Style : ";
+            // 
+            // lbl_currentstyle
+            // 
+            this.lbl_currentstyle.AutoSize = true;
+            this.lbl_currentstyle.Location = new System.Drawing.Point(116, 78);
+            this.lbl_currentstyle.Name = "lbl_currentstyle";
+            this.lbl_currentstyle.Size = new System.Drawing.Size(35, 13);
+            this.lbl_currentstyle.TabIndex = 8;
+            this.lbl_currentstyle.Text = "label7";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(28, 78);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(76, 13);
+            this.label8.TabIndex = 7;
+            this.label8.Text = "Current Style : ";
+            // 
+            // lbl_currentstyleBookid
+            // 
+            this.lbl_currentstyleBookid.AutoSize = true;
+            this.lbl_currentstyleBookid.Location = new System.Drawing.Point(116, 31);
+            this.lbl_currentstyleBookid.Name = "lbl_currentstyleBookid";
+            this.lbl_currentstyleBookid.Size = new System.Drawing.Size(35, 13);
+            this.lbl_currentstyleBookid.TabIndex = 6;
+            this.lbl_currentstyleBookid.Text = "label7";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(28, 31);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(56, 13);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "Order ID : ";
+            // 
+            // tb_approvedqty
+            // 
+            this.tb_approvedqty.Controls.Add(this.button4);
+            this.tb_approvedqty.Controls.Add(this.lbl_consumption);
+            this.tb_approvedqty.Controls.Add(this.label9);
+            this.tb_approvedqty.Controls.Add(this.txt_approvedqty);
+            this.tb_approvedqty.Controls.Add(this.label13);
+            this.tb_approvedqty.Controls.Add(this.lbl_apprvdqty);
+            this.tb_approvedqty.Controls.Add(this.label15);
+            this.tb_approvedqty.Controls.Add(this.lbl_appbookid);
+            this.tb_approvedqty.Controls.Add(this.label12);
+            this.tb_approvedqty.Controls.Add(this.lbl_aapporderid);
+            this.tb_approvedqty.Controls.Add(this.label10);
+            this.tb_approvedqty.Location = new System.Drawing.Point(4, 22);
+            this.tb_approvedqty.Name = "tb_approvedqty";
+            this.tb_approvedqty.Padding = new System.Windows.Forms.Padding(3);
+            this.tb_approvedqty.Size = new System.Drawing.Size(389, 205);
+            this.tb_approvedqty.TabIndex = 3;
+            this.tb_approvedqty.Text = "Approved Qty";
+            this.tb_approvedqty.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(114, 172);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 22;
+            this.button4.Text = "Update";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // lbl_consumption
+            // 
+            this.lbl_consumption.AutoSize = true;
+            this.lbl_consumption.Location = new System.Drawing.Point(167, 117);
+            this.lbl_consumption.Name = "lbl_consumption";
+            this.lbl_consumption.Size = new System.Drawing.Size(13, 13);
+            this.lbl_consumption.TabIndex = 21;
+            this.lbl_consumption.Text = "0";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(50, 117);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(111, 13);
+            this.label9.TabIndex = 20;
+            this.label9.Text = "Current Consumption :";
+            // 
+            // txt_approvedqty
+            // 
+            this.txt_approvedqty.Location = new System.Drawing.Point(128, 142);
+            this.txt_approvedqty.Name = "txt_approvedqty";
+            this.txt_approvedqty.Size = new System.Drawing.Size(112, 20);
+            this.txt_approvedqty.TabIndex = 19;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(40, 149);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(54, 13);
+            this.label13.TabIndex = 18;
+            this.label13.Text = "New Qty :";
+            // 
+            // lbl_apprvdqty
+            // 
+            this.lbl_apprvdqty.AutoSize = true;
+            this.lbl_apprvdqty.Location = new System.Drawing.Point(157, 87);
+            this.lbl_apprvdqty.Name = "lbl_apprvdqty";
+            this.lbl_apprvdqty.Size = new System.Drawing.Size(13, 13);
+            this.lbl_apprvdqty.TabIndex = 17;
+            this.lbl_apprvdqty.Text = "0";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(50, 87);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(64, 13);
+            this.label15.TabIndex = 16;
+            this.label15.Text = "Current qty :";
+            // 
+            // lbl_appbookid
+            // 
+            this.lbl_appbookid.AutoSize = true;
+            this.lbl_appbookid.Location = new System.Drawing.Point(138, 47);
+            this.lbl_appbookid.Name = "lbl_appbookid";
+            this.lbl_appbookid.Size = new System.Drawing.Size(35, 13);
+            this.lbl_appbookid.TabIndex = 10;
+            this.lbl_appbookid.Text = "label7";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(50, 47);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(63, 13);
+            this.label12.TabIndex = 9;
+            this.label12.Text = "Bookid ID : ";
+            // 
+            // lbl_aapporderid
+            // 
+            this.lbl_aapporderid.AutoSize = true;
+            this.lbl_aapporderid.Location = new System.Drawing.Point(138, 12);
+            this.lbl_aapporderid.Name = "lbl_aapporderid";
+            this.lbl_aapporderid.Size = new System.Drawing.Size(35, 13);
+            this.lbl_aapporderid.TabIndex = 8;
+            this.lbl_aapporderid.Text = "label7";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(50, 12);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(56, 13);
+            this.label10.TabIndex = 7;
+            this.label10.Text = "Order ID : ";
+            // 
+            // BookingChanges
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(390, 227);
+            this.Controls.Add(this.tabControl1);
+            this.Name = "BookingChanges";
+            this.Text = "BookingChanges";
+            this.tabControl1.ResumeLayout(false);
+            this.tb_factory.ResumeLayout(false);
+            this.tb_factory.PerformLayout();
+            this.tb_qty.ResumeLayout(false);
+            this.tb_qty.PerformLayout();
+            this.tb_style.ResumeLayout(false);
+            this.tb_style.PerformLayout();
+            this.tb_approvedqty.ResumeLayout(false);
+            this.tb_approvedqty.PerformLayout();
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tb_factory;
+        private System.Windows.Forms.Label lbl_currentvalue;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbl_orderid;
+        private System.Windows.Forms.Label lbl_text;
+        private System.Windows.Forms.TabPage tb_qty;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cmb_factory;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lbl_currentQty;
+        private System.Windows.Forms.Label asd;
+        private System.Windows.Forms.Label lbl_orderidforqty;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lbl_fct;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox txt_newqty;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TabPage tb_style;
+        private System.Windows.Forms.Label lbl_currentstyleBookid;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lbl_currentstyle;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox txt_style;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TabPage tb_approvedqty;
+        private System.Windows.Forms.TextBox txt_approvedqty;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label lbl_apprvdqty;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label lbl_appbookid;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label lbl_aapporderid;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lbl_consumption;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button button4;
+    }
+}

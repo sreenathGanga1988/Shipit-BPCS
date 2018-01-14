@@ -1,0 +1,62 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Shipit.Production
+{
+    public partial class WeekPlanEditform : Form
+    {
+        public WeekPlanEditform()
+        {
+            InitializeComponent();
+        }
+        public WeekPlanEditform(int weekid, int qty, String stylenum, String Ponum, DateTime actualdelivery)
+        {
+            InitializeComponent();
+            txt_newQty.Text = qty.ToString ();
+            txt_pono.Text = Ponum;
+            lbl_weekid.Text = weekid.ToString();
+            txt_style.Text = stylenum;
+            try
+            {
+                dateTimePicker1.Value = actualdelivery;
+            }
+            catch (Exception)
+            {
+                
+                
+            }
+        }
+        
+        private void txt_newQty_KeyUp(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CourierDataDataContext couriercontext = new CourierDataDataContext(Program.ConnStr);
+            var updategrp = from factory in couriercontext.WeeklyPlan_Masters
+                            where factory.WeekID == int.Parse(lbl_weekid.Text)
+                            select factory;
+            foreach (var v in updategrp)
+            {
+                v.ActualDelivery_date = dateTimePicker1.Value.Date;
+                v.PO_ = txt_pono.Text;
+                v.stylenum = txt_style.Text;
+                v.Qty = int.Parse (txt_newQty .Text);
+
+                couriercontext.SubmitChanges();
+            }
+
+            MessageBox.Show("Done");
+            this.Close();
+        }
+    }
+}

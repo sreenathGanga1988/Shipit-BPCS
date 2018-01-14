@@ -1,0 +1,31 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using Shipit.Properties;
+
+namespace Shipit
+{
+    static class Program
+    {
+        /// <summary>
+        /// The main entry point for the application.
+        /// </summary>
+       public static String ConnStr = Settings.Default.CourierDetailsConnectionString ;
+       public static String uername = "asd";
+       public static String emailid = "asd@";
+        public static String logloc="Office";
+        public static String OurLogSource = "";
+       public static int lctnpk = 0;
+       public static int userpk = 0;
+        [STAThread]
+        static void Main()
+        {
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Loginform    ());
+          //  Application.Run(new Reports.Reportform ());
+        }
+    }
+}

@@ -1,0 +1,41 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+
+namespace Shipit.Production
+{
+    public partial class EditLinePlanForm : Form
+    {
+        public EditLinePlanForm()
+        {
+            InitializeComponent();
+        }
+        public EditLinePlanForm(int factoryid, int qty)
+        {
+            InitializeComponent();
+            lbl_factprodid.Text = factoryid.ToString();
+            txt_newqty.Text = qty.ToString();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CourierDataDataContext cntxt = new CourierDataDataContext(Program.ConnStr);
+            var q = from lineplan in cntxt.FactoryWeeklyPlan_tbls
+                    where lineplan.FctProdID == int.Parse(lbl_factprodid.Text)
+                    select lineplan;
+            foreach (var v in q)
+            {
+                v.TargetQty = int.Parse(txt_newqty.Text);
+
+                cntxt.SubmitChanges();
+            }
+            MessageBox.Show("Done");
+
+        }
+    }
+}

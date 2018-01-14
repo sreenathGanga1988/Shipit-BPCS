@@ -1,0 +1,83 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Shipit.Masters
+{
+    public partial class AtcMaster : Form
+    {
+        public AtcMaster()
+        {
+            InitializeComponent();
+        }
+
+
+        public void loadbuyercombo()
+        {
+            CourierDataDataContext courdatacontext = new CourierDataDataContext(Program.ConnStr);
+            var q = from buyer in courdatacontext.Buyer_Masters
+                    select buyer;
+
+
+
+            Buyercombo.DataSource = q;
+            Buyercombo.DisplayMember = "BuyerName";
+            Buyercombo.ValueMember = "Buyer_Id";
+            //   Buyercombo.DataBind();
+
+
+
+        }
+
+        private void AtcMaster_Load(object sender, EventArgs e)
+        {
+            loadbuyercombo();
+            showexistinguser();
+        }
+        public void addnewfactory()
+        {
+            CourierDataDataContext couriercontext = new CourierDataDataContext(Program.ConnStr);
+            Atc_master atcmstr = new Atc_master();
+            atcmstr.AtcNum  = txt_atc.Text.Trim();
+
+            atcmstr.Buyer_id = int.Parse(Buyercombo.SelectedValue.ToString());
+
+            couriercontext.Atc_masters .InsertOnSubmit(atcmstr);
+            couriercontext.SubmitChanges();
+
+        }
+        public void showexistinguser()
+        {
+            CourierDataDataContext couriercontext = new CourierDataDataContext(Program.ConnStr);
+
+            var q = from cust in couriercontext.Atc_masters
+                    select cust;
+            dataGridView1.DataSource = q;
+            dataGridView1.Columns["Buyer_id"].Visible = false;
+           
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            addnewfactory();
+            MessageBox.Show("Done");
+            txt_atc.Text = "";
+            showexistinguser();
+        }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    }
+}

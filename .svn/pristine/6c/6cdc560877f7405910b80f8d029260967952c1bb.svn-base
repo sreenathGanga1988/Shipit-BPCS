@@ -1,0 +1,328 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Data.SqlClient;
+namespace Shipit
+{
+    public partial class OrderBooking : Form
+    {
+        public OrderBooking()
+        {
+            InitializeComponent();
+            cmb_month.SelectedIndex = 0;
+            cmb_year.SelectedIndex = 0;
+            loadbuyercombo();
+        }
+
+        private void btn_getavailability_Click(object sender, EventArgs e)
+        {
+            Showdata();
+
+         
+
+        }
+
+        public Boolean validationcontrol(int i)
+        {
+
+           
+
+            Boolean sucess = false;
+
+            if (tbl_bookdata.Rows[i].Cells[0].Value ==null || tbl_bookdata.Rows[i].Cells[0].Value.ToString ().Trim() =="")
+            {
+                MessageBox.Show("Error In factory details");
+
+               
+
+            }
+
+
+            else if (tbl_bookdata.Rows[i].Cells[6].Value ==null || tbl_bookdata.Rows[i].Cells[6].Value.ToString ().Trim() =="")
+            {
+                MessageBox.Show("Error Book Qty");
+
+               
+
+            }
+            else  if (tbl_bookdata.Rows[i].Cells[7].Value ==null || tbl_bookdata.Rows[i].Cells[7].Value.ToString ().Trim() =="")
+            {
+                MessageBox.Show("Enter Buyer Detail");
+
+               
+
+            }
+            else if (tbl_bookdata.Rows[i].Cells[8].Value == null || tbl_bookdata.Rows[i].Cells[8].Value.ToString().Trim() == "")
+            {
+                MessageBox.Show("Enter Style Detail");
+
+
+
+            }
+                
+            else  if (cmb_year.Text  ==null || cmb_year.Text =="")
+            {
+                MessageBox.Show("Enter Year");
+
+               
+
+            }
+                 else  if (cmb_month .Text  ==null || cmb_month.Text =="")
+            {
+                MessageBox.Show("Enter Month");
+
+               
+
+            }
+
+
+            else if(!iscorrectentry (i))
+            {
+
+
+            }
+
+            else
+            {
+                sucess = true;
+            }
+
+
+            return sucess;
+       
+        }
+
+
+
+
+        public Boolean  iscorrectentry(int i)
+        {
+            Boolean iscorrect = false;
+            float  balance = float.Parse(tbl_bookdata.Rows[i].Cells[5].Value.ToString());
+            float bookQty = float.Parse(tbl_bookdata.Rows[i].Cells[6].Value.ToString());
+
+            
+            if (bookQty > balance)
+            {
+                MessageBox.Show("You are Not allowed to make Over Booking");
+
+            }
+            else if (Program.uername != "zohair")
+            {
+                String[] ourfactory = { "AA2", "MA2", "MA3", "MA1" };
+                if (!ourfactory.Contains(tbl_bookdata.Rows[i].Cells[1].Value.ToString().Trim()))
+                {
+                    MessageBox.Show("You are Not allowed to make bookings in CM factories");
+                }
+                else
+                {
+                    iscorrect = true;
+                }
+
+            }
+            else
+            {
+                iscorrect = true;
+                
+            }
+            return iscorrect;
+        }
+
+        public void Showdata()
+        {
+            if (cmb_year.Text != "" && cmb_month.Text != "")
+            {
+                tbl_bookdata.RowCount = 0;
+
+                int year = int.Parse(cmb_year.Text);
+                String month = cmb_month.Text;
+               
+                DataTable dt = new DataTable();
+                dt = GetFactories(year, month);
+
+                if (dt != null)
+                {
+                    if (dt.Rows.Count > 0)
+                    {
+                        tbl_bookdata.RowCount = dt.Rows.Count ;
+
+
+                        for (int i = 0; i < dt.Rows.Count; i++)
+                        {
+                            tbl_bookdata.Rows[i].Cells[0].Value = dt.Rows[i][0].ToString();// SL
+                            tbl_bookdata.Rows[i].Cells[1].Value = dt.Rows[i][1].ToString();//FACTORYNAME
+                            tbl_bookdata.Rows[i].Cells[2].Value = dt.Rows[i][2].ToString();//BASE CAPACITY
+                            tbl_bookdata.Rows[i].Cells[3].Value = dt.Rows[i][4].ToString();//APPROVED qTY
+                            tbl_bookdata.Rows[i].Cells[4].Value = dt.Rows[i][3].ToString(); //Book Qty
+
+                        }
+
+                        calculatebalance();
+                        getsum();
+                    }
+                }
+
+            }
+
+        }
+
+        public void insertdata()
+        {
+            int rownumber = tbl_bookdata.CurrentRow.Index;
+
+            CourierDataDataContext curdatacontext = new CourierDataDataContext(Program.ConnStr);
+            OrderBooking_tbl  ordrbookin = new OrderBooking_tbl();
+            ordrbookin.Factory_Id = int.Parse (tbl_bookdata.Rows[rownumber].Cells[0].Value.ToString());
+            ordrbookin.Year = int.Parse (cmb_year.Text.Trim());
+            ordrbookin.Month = cmb_month .Text.Trim ();
+            ordrbookin.BookQty = int.Parse(tbl_bookdata.Rows[rownumber].Cells[6].Value.ToString());
+            ordrbookin.Buyer_ID = int.Parse(tbl_bookdata.Rows[rownumber].Cells[7].Value.ToString());
+            ordrbookin.Style = tbl_bookdata.Rows[rownumber].Cells[8].Value.ToString().Trim ();
+            ordrbookin.ISApproved = "N";
+            ordrbookin.UserId = Program.uername;
+            ordrbookin.AddedDate = DateTime.Now.Date;
+         curdatacontext.OrderBooking_tbls.InsertOnSubmit(ordrbookin);
+
+          string buyer = tbl_bookdata.Rows[rownumber].Cells[7].FormattedValue.ToString().Trim ();
+          curdatacontext.SubmitChanges();
+         Transaction.ClsEmailer.bookingnotifier(Program.uername, buyer, tbl_bookdata.Rows[rownumber].Cells[1].Value.ToString(), cmb_year.Text ,cmb_month.Text, tbl_bookdata.Rows[rownumber].Cells[8].Value.ToString(), tbl_bookdata.Rows[rownumber].Cells[6].Value.ToString());
+
+        }
+        
+
+
+
+
+
+        public DataTable  GetFactories(int year , String Month)
+        {
+            DataTable dt = new DataTable();
+
+            using (SqlConnection con = new SqlConnection(Program.ConnStr ))
+            {
+                try
+                {
+                    con.Open();
+
+
+                    SqlCommand cmd = new SqlCommand(@"SELECT       f.Factory_ID  Factory_ID, f.Factory_name Factory_name,f.MonthlyCapacity MonthlyCapacity,ISNULL ((SELECT        sum(BookQty)
+FROM            OrderBooking_tbl
+WHERE        (ISApproved = N'N') AND (Factory_Id = f.Factory_ID ) AND (Year = @year) AND (Month = @month)) ,0) as PendingApprovalQty ,ISNULL ((SELECT      sum (  ConsumptionQty )
+FROM            FinalBooking_master
+WHERE        (Factory_Id = f.Factory_ID ) AND (Year = @year) AND (Month = @month)) ,0) as ConsumptionQty,ISNULL ((SELECT      sum (  BookQty )
+FROM            FinalBooking_master
+WHERE       (Factory_Id = f.Factory_ID ) AND (Year = @year) AND (Month = @month)) ,0) as ApprovedQty
+FROM            Factory_Master f", con);
+
+
+                    cmd.Parameters.AddWithValue("@year", year);
+                    cmd.Parameters.AddWithValue("@month", Month);
+
+                    SqlDataReader rdr = cmd.ExecuteReader();
+
+                    dt.Load(rdr);
+                }
+                catch (Exception )
+                {
+
+                    MessageBox.Show("Cannot Access database " + Program.ConnStr);
+                }
+
+
+
+            }
+            return dt;
+        }
+
+
+        public void calculatebalance()
+        {
+               for (int i = 0; i < tbl_bookdata.Rows.Count; i++)
+            {
+                int bal = int.Parse(tbl_bookdata.Rows[i].Cells[2].Value.ToString()) - (int.Parse(tbl_bookdata.Rows[i].Cells[3].Value.ToString()) + int.Parse(tbl_bookdata.Rows[i].Cells[4].Value.ToString()));
+
+                tbl_bookdata.Rows[i].Cells[5].Value = bal.ToString();
+
+
+                if (bal < 0)
+                {
+                    tbl_bookdata.Rows[i].DefaultCellStyle.BackColor = Color.Red;
+                }
+               
+               }
+        }
+
+        public void loadbuyercombo()
+        {
+            CourierDataDataContext courdatacontext= new CourierDataDataContext (Program.ConnStr);
+           var q= from buyer in courdatacontext.Buyer_Masters
+                  select buyer;
+
+
+
+           Buyercombo.DataSource = q;
+           Buyercombo.DisplayMember = "BuyerName";
+           Buyercombo.ValueMember = "Buyer_Id";
+        //   Buyercombo.DataBind();
+           
+
+
+        }
+
+        private void tbl_bookdata_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == tbl_bookdata.Columns["BookFactory"].Index && e.RowIndex >= 0)
+            {
+                if(validationcontrol (tbl_bookdata.CurrentRow.Index ))
+                {
+                insertdata();
+                Showdata();
+          ;
+                }
+            }
+       
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public void getsum()
+        {
+            int sum = 0;
+            int booked = 0;
+            int pending = 0;
+            for (int i = 0; i < tbl_bookdata .Rows.Count - 1; i++)
+            {
+
+                sum += int.Parse(tbl_bookdata.Rows[i].Cells[2].Value.ToString());
+                booked += int.Parse(tbl_bookdata.Rows[i].Cells[3].Value.ToString());
+                pending += int.Parse(tbl_bookdata.Rows[i].Cells[4].Value.ToString());
+            }
+
+            lbl_totalcap.Text = sum.ToString();
+            lbl_booked.Text = booked.ToString();
+            lbl_Orderpending.Text = pending.ToString();
+
+            try
+            {
+                int balancepending = (sum - (booked + pending));
+                lbl_balance .Text = balancepending.ToString();
+            }
+            catch (Exception)
+            {
+
+                lbl_balance.Text="0";
+            }
+
+
+        }
+    }
+}
